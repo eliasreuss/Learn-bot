@@ -1,3 +1,12 @@
+import sys
+try:
+    __import__('pysqlite3')
+    sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+    print("Successfully replaced sqlite3 with pysqlite3")
+except ImportError:
+    print("pysqlite3 not found, using default sqlite3. This may cause issues with ChromaDB.")
+
+
 # streamlit_app.py
 import os
 import streamlit as st
