@@ -4,7 +4,7 @@ A chatbot that uses Retrieval-Augmented Generation (RAG) to answer questions bas
 
 ## Setup
 
-1. Place your `.txt`, '.png' or '.doxc' files with company knowledge in the `data/` folder.
+1. Place your .txt, .png or .doxc files with company knowledge in the `data/` folder.
 2. Add your OpenAI API key to the `.env` file.
 3. Install dependencies:
    ```bash
