@@ -10,9 +10,7 @@ load_dotenv()
 
 st.set_page_config(page_title="Inact Learn Chatbot", page_icon="💬")
 
-# =================================================================================
-#                     🎨 ENDELIG FONT OG FARVE STYLING (MED !important) 🎨
-# =================================================================================
+#Font og farve
 st.markdown("""
     <style>
     /* --- Importer og anvend Poppins font --- */
@@ -23,10 +21,6 @@ st.markdown("""
     }
     </style>
     """, unsafe_allow_html=True)
-
-# =================================================================================
-#                              END OF UI STYLING
-# =================================================================================
 
 
 @st.cache_resource
@@ -55,7 +49,7 @@ prompt_template = ChatPromptTemplate.from_template(
     "**Svar:**"
 )
 
-# --- Initialisering ---
+# Initialisering
 db = get_vectorstore()
 llm = get_llm()
 
@@ -83,7 +77,7 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-# --- Chat logik med placeholder ---
+# Chat logik med placeholder
 
 for message in st.session_state.messages:
     with st.chat_message(message["role"]):
