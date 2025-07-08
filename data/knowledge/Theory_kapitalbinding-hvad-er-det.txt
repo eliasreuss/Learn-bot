@@ -1,0 +1,6 @@
+Topic: Kapitalbinding
+Source_Article: Guide til Kapitalbinding
+Keywords: kapitalbinding, lagerværdi, varelager, usynlig kapitalbinding, synlig kapitalbinding, optimere lager
+
+Content:
+Kapitalbinding i et varelager refererer til de penge, der er bundet op i de varer, der ligger på lager. Det er en investering, men den udgør en risiko. Ofte er kun "toppen af isbjerget" synlig – den synlige kapitalbinding. Den usynlige kapitalbinding, som f.eks. omfatter omkostninger til lagerplads, håndtering og risiko for ukurans, er ofte meget større. 20-40% af en virksomheds kapitalbinding kan ofte frigøres uden at skuffe kunderne, hvis man anvender de rette metoder.

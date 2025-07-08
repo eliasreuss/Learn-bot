@@ -1,0 +1,6 @@
+Topic: Insights
+Source_Article: Guide til at lave en Insight
+Keywords: navngiv insight, beskrivelse af insight, information, kriterier
+
+Content:
+Det er en god idé at give din Insight et klart navn og en god beskrivelse, så der ikke opstår tvivl om, hvilke kriterier Insighten er sat op efter. Brugerne kan se navnet og klikke på "i"-ikonet for at læse beskrivelsen og se de anvendte kriterier og filtre.

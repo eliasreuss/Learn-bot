@@ -1,0 +1,13 @@
+Topic: Generelt
+Source_Article: Guide til Microsoft Authenticator
+Keywords: two-factor authentication, 2fa, sikkerhed, microsoft authenticator, scan qr, passcode, engangskode, installer app
+
+Content:
+To-faktor-autentifikation (2FA) tilføjer et ekstra lag sikkerhed til din Inact Now-konto.
+Sådan slår du det til:
+1. Installer en authenticator-app som "Microsoft Authenticator" fra din telefons app-butik.
+2. I Inact Now, gå til dine indstillinger og tryk "Enable 2FA".
+3. Åbn Microsoft Authenticator-appen på din telefon.
+4. Tryk på "+" eller "Tilføj konto" og vælg kontotypen "arbejde/skole".
+5. Tryk på "Scan QR-kode" og scan den QR-kode, der vises på skærmen i Inact Now.
+6. Appen vil nu vise en 6-cifret kode, der skifter hvert 30. sekund. Indtast denne kode i Inact Now for at bekræfte opsætningen.

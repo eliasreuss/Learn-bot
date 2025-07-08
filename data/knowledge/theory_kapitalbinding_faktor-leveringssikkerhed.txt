@@ -1,0 +1,6 @@
+Topic: Lagerstyring
+Source_Article: Guide til Kapitalbinding
+Keywords: leveringssikkerhed, service level agreement, SLA, 95%, 100%, pålidelighed
+
+Content:
+Leveringssikkerhed, også kaldet Service Level Agreement (SLA), er et udtryk for virksomhedens evne til at overholde den leveringstid, der er lovet kunden. En god leveringssikkerhed ligger typisk mellem 95% og 98%. At sigte efter 100% er ofte en dårlig forretning, da det medfører en markant større kapitalbinding, lavere omsætningshastighed og mere ukurans, end hvis man sigter efter f.eks. 95%. Det kan ikke betale sig, at alle varenumre har den samme høje leveringssikkerhed.

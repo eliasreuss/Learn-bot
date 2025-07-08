@@ -1,0 +1,17 @@
+Topic: Admin Panel
+Source_Article: Inact Now Admin Panel Guide
+Keywords: oprette ny bruger, tilføje bruger, ny medarbejder, brugeroplysninger, email, fornavn, efternavn, permissions
+
+Content:
+I Admin Panel kan du oprette nye brugere til din organisation. Når du opretter en ny bruger, kan følgende informationer og indstillinger indtastes:
+- Email (*)
+- Fornavn (*)
+- Efternavn (*)
+- Telefonnummer
+- Ønsket sprog på mails
+- Jobtitel (*)
+- Department (*)
+- Permissions
+- Homepage Setup
+- Access Control (skal være sat op for din organisation)
+Felter markeret med (*) er påkrævede.

@@ -1,0 +1,12 @@
+Topic: Insights
+Source_Article: Guide til at lave en Insight
+Keywords: views, visualisering, matrix-view, grid-view, kpi-view, sumsheet, profit-view, trend-view
+
+Content:
+En Insight kan visualisere data på 6 forskellige måder (views). Afhængigt af formålet kan én eller flere af disse views være slået til eller fra af en administrator. De 6 views er:
+1. Matrix-view
+2. Grid-view
+3. KPI-view
+4. Sumsheet
+5. Profit view
+6. Trend View

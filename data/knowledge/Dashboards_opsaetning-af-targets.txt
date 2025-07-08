@@ -1,0 +1,9 @@
+Topic: Dashboards
+Source_Article: Dashboard Creator Guide
+Keywords: targets, mål, benchmarks, number target, table target, positiv trend, negativ trend
+
+Content:
+Du kan opsætte mål (Targets) for dine data i en tabel eller direkte på et Dashboard-Widget. Der er to typer:
+- Number target: En fast, manuelt indtastet værdi.
+- Table Target: Et dynamisk mål, der peger på en anden kolonne i din tabel, så det tilpasser sig baseret på realtidsdata.
+Når et target er sat, kan du definere en trend (positiv/grøn eller negativ/rød) for at vise, om KPI'en er over eller under målet.

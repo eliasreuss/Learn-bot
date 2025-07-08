@@ -1,0 +1,6 @@
+--- LEARNING RESOURCE ---
+
+Type: Artikel
+Titel: Artikel: Oprettelse af Action
+URL: https://www.google.com/search?q=googel&rlz=1C5CHFA_enDK1152DK1152&oq=googel&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIPCAEQLhgKGMcBGNEDGIAEMgkIAhAAGAoYgAQyCQgDEAAYChiABDIJCAQQABgKGIAEMgkIBRAAGAoYgAQyBggGEEUYPDIGCAcQBRhA0gEHNjg2ajBqNKgCALACAQ&sourceid=chrome&ie=UTF-8
+Beskrivelse: Denne trin-for-trin artikelguide viser dig pr�cis, hvordan du tilf�jer og laver en ny Action i Inact Now. Dette er en meget nyttig l�ringsressource.

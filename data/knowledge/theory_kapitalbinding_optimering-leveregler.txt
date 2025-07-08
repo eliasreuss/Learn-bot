@@ -1,0 +1,6 @@
+Topic: Supply Chain Management
+Source_Article: Guide til Kapitalbinding
+Keywords: leveregler, optimering, differentieret tilgang, ABC-kategorisering, lagerstrategi
+
+Content:
+For at optimere kapitalbindingen skal man håndtere de forskellige ABC-kategorier forskelligt. Man kan ikke bruge en "one size fits all"-tilgang. De 6 faktorer (lagerpolitik, pris, leveringssikkerhed, sikkerhedslager, omsætningshastighed og MOQ) skal differentieres. For eksempel bør A- og B-varer have en høj leveringssikkerhed (f.eks. 98%), mens C-varer kan have en lavere (f.eks. 80%) for at reducere kapitalbindingen. Et andet eksempel er CA-kategorien (billige, populære varer), som typisk kan have den højeste leveringssikkerhed (f.eks. 99%) uden at binde meget kapital.

@@ -1,0 +1,10 @@
+Topic: Lagerstyring
+Source_Article: Guide til Kapitalbinding
+Keywords: lagerpolitik, lagerføre, skaffevare, lagervare, efterspørgsel, leveringstid
+
+Content:
+Lagerpolitik handler om at beslutte, hvilke varenumre der skal lagerføres. Svaret afhænger af to faktorer: leveringstid og efterspørgsel. En simpel metode er at vurdere varer således:
+- Varer med høj efterspørgsel og lang leveringstid bør være lagervarer.
+- Varer med høj efterspørgsel og kort leveringstid kan være enten lagervare eller skaffevare (hvis leverandøren kan levere dag-til-dag).
+- Varer med lille efterspørgsel og lang leveringstid er risikable at lagerføre.
+- Varer med lille efterspørgsel og kort leveringstid er oplagte som skaffevarer for at reducere risiko.

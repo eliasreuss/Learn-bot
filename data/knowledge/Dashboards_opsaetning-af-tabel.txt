@@ -1,0 +1,9 @@
+Topic: Dashboards
+Source_Article: Dashboard Creator Guide
+Keywords: opsætning af tabel, master insight, rækker, kolonner, rows, columns, add column, add row
+
+Content:
+En tabel i Dashboard Creator består af rækker (vandret) og kolonner (lodret).
+- Kolonne (Column): Repræsenterer de vandrette sektioner. Hver række kan indeholde en kolonne fra det valgte Dataset (f.eks. "Revenue 12 month."). Du tilføjer en kolonne ved at trykke på "Add Column".
+- Række (Rows): Repræsenterer de lodrette sektioner. Udgangspunktet er en "Master Insight" (Total Insight). Herfra kan du tilføje benchmarks som Lande, Sælgere eller Butikker. Du tilføjer en række med knappen "Add Row".
+For alle Insights vil der være en Master-Insight tilknyttet, som vælges ved oprettelse af en ny Insight.

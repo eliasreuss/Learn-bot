@@ -1,0 +1,10 @@
+Topic: Actions
+Source_Article: Guide til Actions
+Keywords: lav action, opret action, fra insight, slice, filtrer, prikke emner, ctrl + marker
+
+Content:
+Du kan lave Actions direkte fra en Insight.
+1. Start i den Insight, du vil basere din Action på.
+2. Slice/filtrer dig frem til de emner, du ønsker at oprette en alarm på.
+3. Tryk på checkliste-knappen (✔ Create Checklist) for at give din Action et navn. Hvis du ikke ønsker en begrænset Action (f.eks. top 50), skal du fjerne hakket i "limit" checkboxen.
+Du kan også vælge specifikke emner ved at holde 'Ctrl' nede og klikke (prikke) på de enkelte rækker, før du opretter Action'en.

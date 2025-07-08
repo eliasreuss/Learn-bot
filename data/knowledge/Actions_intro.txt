@@ -1,0 +1,6 @@
+Topic: Actions
+Source_Article: Guide til Actions
+Keywords: actions, alarmer, opgaveliste, to-do, problemstilling, filter, regler
+
+Content:
+Inact Actions er "alarmer", der er designet til at overvåge din drift. En Action er en regel-baseret liste, som giver dig besked, når noget kræver din opmærksomhed og handling. Actions er lister baseret på f.eks. varenumre (eller kunder/leverandører), som opfylder bestemte kriterier i form af et filter. Listen opdateres dagligt og scanner data for at tilføje eller fjerne elementer.

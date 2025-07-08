@@ -1,0 +1,6 @@
+Topic: Insights
+Source_Article: Guide til at lave en Insight
+Keywords: vælg data source, insight create, private insights, insight administrator, public insights
+
+Content:
+For at lave en Insight skal du minimum have "Insight Create" permission, som kun giver dig lov til at lave Private Insights (kun synlige for dig). For at lave Public Insights (synlige for andre) skal du være "Insight Administrator". Det første og vigtigste trin er at vælge en Data Source. Dette danner grundlaget for, hvilke data og kolonner der er tilgængelige for brugerne af din nye Insight.

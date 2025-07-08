@@ -1,0 +1,6 @@
+Topic: Lagerstyring
+Source_Article: Guide til Kapitalbinding
+Keywords: sikkerhedslager, genbestillingspunkt, buffer, safety stock, reorder point, varians, aftræksmønster
+
+Content:
+Sikkerhedslager og genbestillingspunkt er direkte forbundet med den ønskede leveringssikkerhed (SLA). Jo højere krav til leveringssikkerhed, jo højere et sikkerhedslager (også kaldet en "buffer") er nødvendigt. Sikkerhedslageret er en kilde til at styre balancen mellem kapitalbinding og service. Dets formål er at tage højde for varians i kunders aftræksmønster og i leverandørens leveringstid. En forkert opsætning kan føre til både overlager på nogle varer og restordre på andre.

@@ -1,0 +1,9 @@
+Topic: Insights
+Source_Article: Guide til Opbygning af Insights
+Keywords: opbygning af insights, rapport, data source, visualisering, søg, filtrer
+
+Content:
+Alle rapporter i Inact Now er bygget op omkring 3 grundsten:
+1. Data: En rapport er afgrænset i forhold til, hvilke data og emner den indeholder (Data Source).
+2. Visualisering: Rapporten kan visualisere data på 6 forskellige måder (views), f.eks. Matrix-view, Grid-view og Trend-view.
+3. Søg & filtrer: Uanset hvor du er, kan du altid filtrere og slice på enkelte emner for at analysere data i dybden.

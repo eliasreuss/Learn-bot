@@ -1,0 +1,11 @@
+Topic: Dashboards
+Source_Article: Dashboard Creator Guide
+Keywords: dashboard creator, adgang til dashboard, lave dashboard, ændre dashboard, kopiere dashboard, slette dashboard
+
+Content:
+For at få adgang til Dashboard Creator skal du have de rette permissions. Kontakt din Admin-bruger eller Support-teamet, hvis du mangler adgang. Når du har adgang, kan du udføre følgende handlinger:
+- Lave et Dashboard fra bunden: Klik på “+ New Dashboard.”
+- Ændre Dashboards: Vælg et dashboard og klik på “Edit”.
+- Kopiere Dashboards: Find et dashboard, vælg “Kopier”, og tilpas kopien.
+- Slette Dashboards: Vælg et dashboard, klik på “Slet” og bekræft.
+Husk altid at gemme dine ændringer.

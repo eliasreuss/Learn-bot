@@ -1,0 +1,6 @@
+Topic: Category Management
+Source_Article: Guide til Category Management
+Keywords: category management, sortiment, den lange hale, produktvarianter, indfasning, udfasning, prisoptimering
+
+Content:
+Category Managements opgave er at sikre et "sundt og attraktivt sortiment". Med mange bevægelser, varianter og nye varer har et Category Management team brug for overblik og værktøjer til at analysere sortimentet og monitorere produkternes livscyklus. Målet er at identificere og bearbejde varer, som bør udgå ("den lange hale"), opdage nye produktvarianter, der ikke performer, og følge tæt op på varer under indfasning. Dette arbejde sker ofte i dialog med leverandørerne med henblik på udfasning og prisoptimering.

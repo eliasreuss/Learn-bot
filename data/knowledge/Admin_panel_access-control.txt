@@ -1,0 +1,6 @@
+Topic: Admin Panel
+Source_Article: Inact Now Admin Panel Guide
+Keywords: access control, datasources, datakilder, adgang til data, bruger adgang
+
+Content:
+Funktionen 'Access Control' skal være sat op for din organisation for at være tilgængelig. Den giver dig mulighed for at konfigurere, hvilke specifikke datakilder (Data Sources) hver enkelt bruger har adgang til. I dette view kan du flytte datakilder mellem 'User has not access to' og 'User has access to'.

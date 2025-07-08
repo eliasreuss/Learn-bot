@@ -1,0 +1,10 @@
+Topic: Admin Panel
+Source_Article: Inact Now Admin Panel Guide
+Keywords: permissions, niveauer, rettigheder, administrer rapporter, create reports, view reports, edit mode, download data
+
+Content:
+Permissions i Inact Now styrer, hvad en bruger kan se og gøre. Der er tre hovedniveauer, som fungerer som en trappe (hvis du har det øverste niveau, har du også de underliggende):
+- Administrate: Giver brugeren mulighed for at administrere rapporter for hele organisationen, inklusive "Edit Mode". Giver også mulighed for at redigere alle checklists.
+- Create: Giver brugeren mulighed for at lave private rapporter og oprette/tildele checklister.
+- View: Giver kun rettighed til at se rapporter og checklister.
+Derudover findes en "Download data" permission, som giver brugeren ret til at downloade data direkte fra Inact Now.

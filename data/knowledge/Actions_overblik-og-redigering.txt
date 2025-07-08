@@ -1,0 +1,13 @@
+Topic: Actions
+Source_Article: Guide til Actions
+Keywords: overblik over actions, rediger actions, assign, tildel action, change author, change layout, copy, delete
+
+Content:
+Under 'Actions' i hovedmenuen får du et overblik over alle Actions i din organisation. Du kan filtrere listen baseret på, hvem Action'en er tildelt, eller hvem der har lavet den. Yderst til højre for hver Action er der en dropdown-menu, hvorfra du kan:
+- Assign: Tildele Action'en til en anden person.
+- Edit: Ændre navn, filtre og limit.
+- Change author: Skifte ejeren af Action'en.
+- Change Layout: Ændre layout (f.eks. fra "To do" til "Done").
+- Copy this Actions: Kopiere Action'en.
+- Delete: Slette Action'en.
+Du kan også markere flere Actions og udføre handlinger (assigne, ændre layout, slette) på dem alle på én gang.

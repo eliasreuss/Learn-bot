@@ -1,0 +1,6 @@
+Topic: Dashboards
+Source_Article: Dashboard Creator Guide
+Keywords: widgets, opsætning af widgets, dashboard, add kpi row, skræddersy dashboard, trend pil
+
+Content:
+Når du har tilføjet nøgletal i din tabel, kan du fremhæve dem i dit Dashboard ved at trykke på “Add KPI Row”. Du kan vælge mellem store og små widgets. Du kan rykke rundt på rækker af widgets med pilene og slette dem med skraldespanden. For at skræddersy et widget, skal du trykke på det ønskede tal i tabellen. Du kan give widget'en en ny overskrift/label. Trend-pilen i widget'en viser, om KPI'en er steget eller faldet siden forrige måned, og du kan definere, om en stigning er positiv, negativ eller neutral.

@@ -1,0 +1,6 @@
+Topic: Lagerstyring
+Source_Article: Guide til Kapitalbinding
+Keywords: omsætningshastighed, inventory turnover, varelager, lav omsætning, høj omsætning
+
+Content:
+Omsætningshastigheden udtrykker forholdet mellem virksomhedens varelager og omsætning. En lav omsætningshastighed (typisk 1-2) betyder, at virksomheden har forholdsmæssigt meget på lager i forhold til omsætningen, hvilket indikerer, at der er potentiale for at reducere lageret. Omvendt betyder en høj omsætningshastighed (over 6), at lageret er lille i forhold til omsætningen, hvilket øger sandsynligheden for restordrer. Omsætningshastigheden er en direkte konsekvens af den valgte Service Level Agreement (SLA).

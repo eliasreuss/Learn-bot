@@ -1,0 +1,6 @@
+Topic: Admin Panel
+Source_Article: Inact Now Admin Panel Guide
+Keywords: rediger bruger, ændre bruger, opdatere information, ændre permissions, pop-up
+
+Content:
+For at redigere en eksisterende bruger, skal du klikke på brugeren i overblikket i Admin Panel. Dette åbner et pop-up-vindue, hvor du kan opdatere brugerens information, ændre permissions, administrere brugerens forside og ændre access control (hvis tilgængeligt). Når du er færdig med dine ændringer, skal du trykke på knappen “Save & close".

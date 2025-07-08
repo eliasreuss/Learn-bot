@@ -1,0 +1,6 @@
+Topic: Actions
+Source_Article: Guide til Actions
+Keywords: tilpas actions, kategorier, not complete, to do, forecast adjusted, adjust safety stock
+
+Content:
+Actions afhænger af formålet med strategien og er baseret på specifikke arbejdsopgaver. Du kan tilføje eller redigere kategorier (kolonner) i en Action ved at bruge plus- eller edit-knappen til højre for kategorierne. Du kan skelne mellem færdige og ikke-færdige kategorier. Hvis du vælger en kategori til at være "Not Complete", vil den stadig tælle med i det overordnede "To do"-tal, som vises på din forside. Du kan flytte en kategori mellem 'Complete' og 'Not Complete' ved hjælp af pilene i indstillingerne.

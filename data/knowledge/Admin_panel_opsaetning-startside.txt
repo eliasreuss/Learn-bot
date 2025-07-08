@@ -1,0 +1,6 @@
+Topic: Admin Panel
+Source_Article: Inact Now Admin Panel Guide
+Keywords: startside, homepage setup, favorit rapporter, dashboard, tildel checklists, assign checklists
+
+Content:
+I Admin Panel kan du tilpasse en brugers startside (Homepage Setup) for at matche brugerens behov. Her kan du styre, hvilket Dashboard og hvilke rapporter brugeren ser på sin forside. Du kan vælge ét specifikt dashboard per bruger. Antallet af favorit-rapporter er ubegrænset. Du kan også se, hvilke Checklists den pågældende bruger har fået tildelt (assigned).

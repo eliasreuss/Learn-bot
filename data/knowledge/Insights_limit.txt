@@ -1,0 +1,10 @@
+Topic: Insights
+Source_Article: Guide til at lave en Insight
+Keywords: set limit, top liste, bund liste, begrænsning, top 25, bund 50
+
+Content:
+Det er muligt at sætte en begrænsning (limit) på en Insight for at gøre den mere overskuelig. Du kan vælge at vise et bestemt antal emner (fra 5 til 100) baseret på en top- eller bund-liste.
+Eksempler på populære lister:
+- Top 25: Døde varer målt på lagerværdi.
+- Top 100: Kunder målt på omsætning.
+- Bund 50: Kunder målt på dækningsbidrag.

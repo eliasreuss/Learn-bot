@@ -1,0 +1,6 @@
+Topic: Insights
+Source_Article: Guide til at lave en Insight
+Keywords: opsæt kolonner, synlige kolonner, tilpas kolonner, edit mode
+
+Content:
+Det er afgørende, at brugeren har de rette kolonner til rådighed i en Insight. Under opsætningen skal du vælge, hvilke kolonner der skal være synlige for brugeren. Sørg for at kolonnerne er tilpasset Insightens formål, så den bliver så nem og hurtig at arbejde med som muligt. Husk at afslutte og gemme din opsætning via "Save"-knappen i Edit Mode.

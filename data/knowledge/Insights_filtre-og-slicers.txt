@@ -1,0 +1,8 @@
+Topic: Insights
+Source_Article: Guide til at lave en Insight
+Keywords: insight filter, fixed slicer, afgrænse insight, faste slicers
+
+Content:
+For at tilpasse en Insight, kan du opsætte filtre og slicers.
+- Insight Filter: Bruges af en Admin til at afgrænse en Insight permanent. F.eks. kan et filter som "Buyer Equal(=) 1000" afgrænse Insighten til kun at indeholde varenumre tilhørende den specifikke køber.
+- Fixed Slicer: Opsættes af en administrator og gør, at en bestemt slicer altid er fast i Insight-menuen. Dette giver fremtidige brugere mulighed for hurtigt at filtrere på f.eks. ID for kunde/leverandør, varegruppe, eller ansvarlig sælger.

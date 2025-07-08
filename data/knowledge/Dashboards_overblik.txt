@@ -1,0 +1,11 @@
+Topic: Dashboards
+Source_Article: Dashboard Overblik
+Keywords: dashboard overblik, kpi, target, alarm, tabel, homepage
+
+Content:
+Et Dashboard på din Homepage giver et hurtigt overblik over tilstanden i din organisation. Det består af 4 elementer:
+- KPI: De nøgletal, du ønsker at vise.
+- Target: Et mål for hvert KPI, som aktiverer en alarm.
+- Alarm: Lyser grøn, hvis du er bedre end target, og rød, hvis du er under. Lyser blå, hvis intet target er sat.
+- Tabel: Tabellen giver et drilldown-overblik på dine KPI'er. Den er kun synlig, hvis du tilgår dashboardet fra menuen, eller hvis den er slået til i en mail.
+Du kan altid trykke på et widget for at se den underliggende Insight.

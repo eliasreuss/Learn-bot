@@ -1,0 +1,6 @@
+Topic: Category Management
+Source_Article: Guide til Category Management
+Keywords: cost to serve, regnskab, indirekte omkostninger, direkte omkostninger, net profit, produktkategori, leverandørniveau
+
+Content:
+"Cost to Serve" er en metode, hvor man opstiller et detaljeret regnskab for at gennemskue de direkte og indirekte omkostninger, der er forbundet med indkøb, lager og distribution. Analysen kan laves på produktkategori- eller leverandørniveau. Ved at trække omkostninger som Shipping Cost, Discounts, Customer Service, Order Handling og Logistics fra Gross Profit, kan man finde den reelle Net Profit for en kategori og dermed identificere, hvor de sande omkostninger og indtjeningsmuligheder ligger.

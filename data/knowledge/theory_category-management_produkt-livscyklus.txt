@@ -1,0 +1,11 @@
+Topic: Category Management
+Source_Article: Guide til Category Management
+Keywords: produkt livscyklus, PLC framework, indfasning, vækst, modning, nedgang, cash cow, star, question mark, dogs
+
+Content:
+Kategoriarbejde kræver overblik over et produkts livscyklus, som typisk består af fire faser: Introduktion, Vækst, Modning og Nedgang. For at analysere produktmixet kan man bruge et PLC Framework (Product Life Cycle), som ofte inddeler produkter i kategorier som:
+- Cash Cow: Høj markedsandel, lav vækst.
+- Star: Høj markedsandel, høj vækst.
+- Question Mark: Lav markedsandel, høj vækst.
+- Dogs: Lav markedsandel, lav vækst.
+Dette framework hjælper med at tydeliggøre, hvor og hvordan man skal arbejde med forskellige produkter.

@@ -1,0 +1,6 @@
+Topic: Indkøb
+Source_Article: Guide til Kapitalbinding
+Keywords: kostpris, ordrestørrelse, MOQ, minimum order quantity, total cost of ownership, TCO, volumen, indkøb
+
+Content:
+Jagten på lave kostpriser kan føre til, at virksomheder køber for store mængder (høj MOQ - Minimum Order Quantity), som de har svært ved at afsætte. Dette øger kapitalbindingen og risikoen for ukurans, og den lave kostpris bliver dyr i længden. I stedet for kun at fokusere på enhedsprisen, bør virksomheden anskue ordrestørrelsen ud fra varens aftræk og behov. Total Cost of Ownership (TCO) er et mere relevant mål end blot enhedens kostpris.

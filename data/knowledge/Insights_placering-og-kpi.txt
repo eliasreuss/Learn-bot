@@ -1,0 +1,7 @@
+Topic: Insights
+Source_Article: Guide til at lave en Insight
+Keywords: placering, insight overblik, grupper, vælg kpi, trend view
+
+Content:
+Alle Insights kan inddeles i grupper i Insight-overblikket for at organisere dem. Du kan vælge, hvilken gruppe den enkelte Insight skal tilhøre.
+Når du indsætter KPI'er (Key Performance Indicators) i din Insight, kan du følge udviklingen i blandt andet Trend-viewet. Du kan vælge op til fire KPI'er per Insight, så vælg dem med omhu, da det er de vigtigste værdier, der går igen, især i Trend-viewet.

@@ -1,0 +1,11 @@
+Topic: Supply Chain Management
+Source_Article: Guide til Supply Chain
+Keywords: service level agreement, SLA, lagerpolitik, kostpriser, sikkerhedslager, leveringssikkerhed, ordrestørrelse, omsætningshastighed
+
+Content:
+Et Service Level Agreement (SLA) er et fælles regelsæt, der oversættes til politikker og styringsparametre på tværs af indkøb, logistik og salg. Formålet er at imødekomme kundernes forventninger med lavest mulige omkostninger. Et veldefineret SLA tager stilling til flere faktorer for forskellige varekategorier, herunder:
+- Lagerpolitik (skaffevare eller lagervare)
+- Leveringssikkerhed (procentdel)
+- Kostpriser og ordrestørrelse (MOQ)
+- Sikkerhedslagerets størrelse
+- Omsætningshastighed

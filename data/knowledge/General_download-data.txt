@@ -1,0 +1,18 @@
+Topic: Generelt
+Source_Article: Download og Konvertering af Data
+Keywords: download data, hente data, raw.csv, calculated.csv, project.abcx, abc analyzer, excel, konverter csv
+
+Content:
+Under menupunktet 'Download' kan du hente dine data.
+- Calculated.csv: Udvalgte data fra en analyse til overførsel til dit ERP-system.
+- Raw.csv: Hele datagrundlaget for dine analyser i Inact Now.
+- Project.abcx: Filen til ABC Analyzer, hvor du kan ændre modeller og formler (kræver licens).
+
+For at konvertere en downloadet .csv fil til korrekt format i Excel:
+1. Dobbeltklik for at åbne filen i Excel.
+2. Markér kolonne A.
+3. Vælg fanen 'Data' og klik på 'Tekst til kolonner'.
+4. Vælg 'Afgrænset' og klik 'Næste'.
+5. Vælg 'Komma' som afgrænser og klik 'Næste'.
+6. Klik på 'Avanceret' for at tjekke, at decimalseparator er punktum (.) og tusindtalsseparator er komma (,). Klik OK.
+7. Klik 'Udfør'.

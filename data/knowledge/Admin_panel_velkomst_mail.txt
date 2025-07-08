@@ -1,0 +1,6 @@
+Topic: Admin Panel
+Source_Article: Inact Now Admin Panel Guide
+Keywords: velkomstmail, sende mail, nyt login, bruger login, save & send mail
+
+Content:
+Ved alle nye brugere skal du manuelt sende en velkomstmail for at guide brugeren til at oprette sit login. Det er bedst at sende mailen, når du er helt færdig med opsætningen af brugeren. Ved afslutning af brugeroprettelsen kan du sende velkomstmailen ved at trykke på knappen "Save & Send mail".

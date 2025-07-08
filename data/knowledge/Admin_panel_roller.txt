@@ -1,0 +1,11 @@
+Topic: Admin Panel
+Source_Article: Inact Now Admin Panel Guide
+Keywords: roller, brugerroller, admin, super user, user, custom, simple view
+
+Content:
+De prædefinerede brugerroller i Inact Now er:
+- Admin: Har alle permissions for både Rapporter og Checklists.
+- Super User: Har 'Create' mulighed for Rapporter/Checklists.
+- User: Har 'View' permission for Reports/Checklists.
+- Custom: Bliver automatisk valgt ved andre kombinationer af permissions.
+- Simple view: Denne funktion begrænser brugerens menu til kun at bestå af "Home". Hvis 'Simple view' vælges, sættes rollen automatisk til "User" med udelukkende 'View permissions'.

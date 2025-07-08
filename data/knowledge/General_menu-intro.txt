@@ -1,0 +1,12 @@
+Topic: Generelt
+Source_Article: Introduktion til Menuen
+Keywords: menu, menupunkter, home, insights, actions, dashboard, download, navigation
+
+Content:
+Du kan få adgang til 5 hovedmenupunkter i Inact Now:
+1. Home: Giver et hurtigt overblik over dine vigtigste KPI'er.
+2. Insights: Viser alle de rapporter (Insights), du har adgang til.
+3. Actions: Viser en "to-do" liste med emner, du bør fokusere på.
+4. Dashboard: Viser alle virksomhedens Dashboards.
+5. Download: Her kan du hente data ned til din PC.
+Nogle brugere har som standard kun adgang til 'Home'. For at få adgang til alle menupunkter, skal du bede din administrator om at slå det til.

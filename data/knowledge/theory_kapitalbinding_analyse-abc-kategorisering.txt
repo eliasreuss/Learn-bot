@@ -1,0 +1,10 @@
+Topic: ABC-analyse
+Source_Article: Guide til Kapitalbinding
+Keywords: ABC-analyse, ABC-kategorisering, pareto, 80/20 reglen, A-varer, B-varer, C-varer, omsætning
+
+Content:
+ABC-analysen er et redskab til at analysere lagerbinding ved at inddele varer efter deres betydning for omsætningen. Typisk gælder Pareto-princippet (80/20-reglen):
+- A-kategorien: Repræsenterer 80% af omsætningen (men ofte kun 20% af varenumrene). Disse er de vigtigste varer.
+- B-kategorien: Repræsenterer 15% af omsætningen.
+- C-kategorien: Repræsenterer 5% af omsætningen (men ofte en meget stor andel af varenumrene). Disse kan være "tidsrøvere".
+Analysen giver et stærkt fingerpeg om, hvilke varer der skal prioriteres og beskyttes.

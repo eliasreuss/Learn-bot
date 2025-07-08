@@ -1,0 +1,6 @@
+Topic: Supply Chain Management
+Source_Article: Guide til Supply Chain
+Keywords: supply chain, balance, trade-offs, service, omkostninger, profit, silooptimering, one-size-fits-all
+
+Content:
+En Supply Chain Manager er altid i brændpunktet mellem forskellige interesser. Hvis salgsafdelingen ikke klager over lange leveringstider, klager økonomiafdelingen over for høje lagre og afskrivninger. Opgaven er at håndtere disse "performance trade-offs" – altså balancen mellem service, omkostninger og profit. For at undgå "silooptimering", hvor hver afdeling kun tænker på egne mål, er det vigtigt at definere et fælles regelsæt og sprog for leveringstid, sikkerhedslager og ordrestørrelse, i stedet for en "one-size-fits-all" tilgang.
