@@ -26,7 +26,7 @@ st.markdown("""
 @st.cache_resource
 def get_vectorstore():
     embeddings = OpenAIEmbeddings(openai_api_key=os.environ["OPENAI_API_KEY"])
-    return Chroma(persist_directory="chromadb", embedding_function=embeddings)
+    return Chroma(embedding_function=embeddings)
 
 @st.cache_resource
 def get_llm():
