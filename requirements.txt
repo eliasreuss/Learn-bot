@@ -1,8 +1,7 @@
+streamlit
 langchain
 langchain-community
-openai
-chromadb
-streamlit
-tiktoken
+langchain-openai
 python-dotenv
+chromadb
 docx2txt
