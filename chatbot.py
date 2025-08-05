@@ -13,6 +13,13 @@ from langchain_community.llms import OpenAI
 
 load_dotenv()
 
+# Check for OpenAI API key
+if "OPENAI_API_KEY" not in os.environ:
+    raise ValueError(
+        "OPENAI_API_KEY is not set. "
+        "Please create a .env file and add your API key."
+    )
+
 app = FastAPI()
 
 # Add CORS middleware
@@ -37,12 +44,12 @@ class Query(BaseModel):
     question: str
 
 def load_vectorstore():
-    embeddings = OpenAIEmbeddings(openai_api_key=os.environ["OPENAI_API_KEY"])
+    embeddings = OpenAIEmbeddings()
     db = Chroma(persist_directory="chromadb", embedding_function=embeddings)
     return db
 
 def load_chain(db):
-    llm = OpenAI(temperature=0, openai_api_key=os.environ["OPENAI_API_KEY"])
+    llm = OpenAI(temperature=0)
     prompt = PromptTemplate(
         input_variables=["context", "question"],
         template=(

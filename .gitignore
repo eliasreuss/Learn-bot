@@ -43,6 +43,7 @@ env/
 
 # ChromaDB vector store
 chromadb/
+chromadb_streamlit/
 
 # Streamlit
 .streamlit/
