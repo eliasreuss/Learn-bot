@@ -7,3 +7,6 @@ python-dotenv
 chromadb
 docx2txt
 protobuf==3.20.3
+fastapi
+uvicorn
+pydantic

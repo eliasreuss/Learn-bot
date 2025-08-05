@@ -117,7 +117,6 @@ def get_vectorstore():
                 persist_directory=DB_DIR
             )
             print("Created and persisted new ChromaDB database.")
-        st.success("Database oprettet. Du kan nu chatte med din data.")
         
     return db
 
