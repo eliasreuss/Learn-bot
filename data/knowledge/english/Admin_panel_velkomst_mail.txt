@@ -1,0 +1,7 @@
+**Topic: Admin Panel**
+**Source Article: Inact Now Admin Panel Guide**
+
+**Keywords:** welcome email, send email, new login, user login, save & send mail
+
+**Content:**
+For all new users, you need to manually send a welcome email to guide the user in creating their login. It's best to send the email once you have completed setting up the user. Upon finishing user creation, you can send the welcome email by clicking the "Save & Send mail" button.

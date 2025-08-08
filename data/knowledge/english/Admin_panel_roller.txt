@@ -1,0 +1,11 @@
+Topic: Admin Panel
+Source_Article: Inact Now Admin Panel Guide
+Keywords: roles, user roles, admin, super user, user, custom, simple view
+
+Content:
+The predefined user roles in Inact Now are:
+- Admin: Has all permissions for both Reports and Checklists.
+- Super User: Has 'Create' permission for Reports/Checklists.
+- User: Has 'View' permission for Reports/Checklists.
+- Custom: Automatically selected for other combinations of permissions.
+- Simple view: This feature limits the user's menu to only consist of "Home". If 'Simple view' is selected, the role is automatically set to "User" with only 'View permissions'.

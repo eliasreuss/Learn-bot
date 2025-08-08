@@ -1,0 +1,8 @@
+**Topic: Insights**
+**Source Article: Guide to Creating an Insight**
+**Keywords: insight filter, fixed slicer, delimit insight, fixed slicers**
+
+Content:
+To customize an Insight, you can set up filters and slicers.
+- Insight Filter: Used by an Admin to delimit an Insight permanently. For example, a filter like "Buyer Equal(=) 1000" can delimit the Insight to only include item numbers belonging to that specific buyer.
+- Fixed Slicer: Set up by an administrator to keep a specific slicer always fixed in the Insight menu. This allows future users to quickly filter by, for example, customer/supplier ID, product group, or responsible salesperson.

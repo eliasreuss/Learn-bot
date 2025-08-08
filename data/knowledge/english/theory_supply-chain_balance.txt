@@ -1,0 +1,7 @@
+**Topic: Supply Chain Management**
+  
+**Source Article: Guide to Supply Chain**
+  
+**Keywords:** supply chain, balance, trade-offs, service, costs, profit, silo optimization, one-size-fits-all
+
+A Supply Chain Manager is always at the center of different interests. If the sales department is not complaining about long delivery times, the finance department is complaining about high inventories and write-offs. The task is to manage these "performance trade-offs" – balancing service, costs, and profit. To avoid "silo optimization," where each department only thinks about its own goals, it is important to define a common set of rules and language for delivery time, safety stock, and order size, instead of a "one-size-fits-all" approach.

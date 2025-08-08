@@ -1,0 +1,12 @@
+Topic: General
+Source_Article: Introduction to the Menu
+Keywords: menu, menu items, home, insights, actions, dashboard, download, navigation
+
+Content:
+You can access 5 main menu items in Inact Now:
+1. Home: Provides a quick overview of your key KPIs.
+2. Insights: Displays all the reports (Insights) you have access to.
+3. Actions: Shows a "to-do" list with topics you should focus on.
+4. Dashboard: Displays all company Dashboards.
+5. Download: Here you can download data to your PC.
+Some users by default only have access to 'Home'. To access all menu items, ask your administrator to enable it.

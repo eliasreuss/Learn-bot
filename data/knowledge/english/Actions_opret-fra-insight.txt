@@ -1,0 +1,10 @@
+Topic: Actions
+Source_Article: Guide to Actions
+Keywords: create action, from insight, slice, filter, select items, ctrl + click
+
+Content:
+You can create Actions directly from an Insight.
+1. Start in the Insight you want to base your Action on.
+2. Slice/filter to the items you want to create an alert for.
+3. Press the checklist button (✔ Create Checklist) to give your Action a name. If you do not want a limited Action (e.g., top 50), uncheck the "limit" checkbox.
+You can also select specific items by holding down 'Ctrl' and clicking on the individual rows before creating the Action.

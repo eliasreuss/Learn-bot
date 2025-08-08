@@ -1,0 +1,17 @@
+**Topic: Admin Panel**
+**Source Article: Inact Now Admin Panel Guide**
+**Keywords: create new user, add user, new employee, user details, email, first name, last name, permissions**
+
+**Content:**
+In the Admin Panel, you can create new users for your organization. When creating a new user, the following information and settings can be entered:
+- Email (*)
+- First Name (*)
+- Last Name (*)
+- Phone Number
+- Preferred language for emails
+- Job Title (*)
+- Department (*)
+- Permissions
+- Homepage Setup
+- Access Control (must be set up for your organization)
+Fields marked with (*) are required.

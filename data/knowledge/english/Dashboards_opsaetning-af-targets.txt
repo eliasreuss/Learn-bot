@@ -1,0 +1,9 @@
+Topic: Dashboards
+Source_Article: Dashboard Creator Guide
+Keywords: targets, goals, benchmarks, number target, table target, positive trend, negative trend
+
+Content:
+You can set goals (Targets) for your data in a table or directly on a Dashboard Widget. There are two types:
+- Number target: A fixed, manually entered value.
+- Table Target: A dynamic goal that points to another column in your table, adjusting based on real-time data.
+Once a target is set, you can define a trend (positive/green or negative/red) to indicate whether the KPI is above or below the goal.

@@ -1,0 +1,4 @@
+**Admin Panel**
+*Inact Now Admin Panel Guide*
+
+In the Admin Panel, you can customize a user's homepage setup to match their needs. Here, you can control which dashboard and reports the user sees on their homepage. You can choose one specific dashboard per user. The number of favorite reports is unlimited. You can also see which checklists the user has been assigned.

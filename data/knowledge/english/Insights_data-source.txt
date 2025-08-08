@@ -1,0 +1,5 @@
+**Topic: Insights**
+**Source Article: Guide to Creating an Insight**
+**Keywords: select data source, insight create, private insights, insight administrator, public insights**
+
+To create an Insight, you need at least "Insight Create" permission, which allows you to create Private Insights (visible only to you). To create Public Insights (visible to others), you must be an "Insight Administrator". The first and most important step is to select a Data Source. This forms the basis for which data and columns are available to users of your new Insight.

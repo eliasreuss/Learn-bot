@@ -1,0 +1,6 @@
+Topic: Dashboards
+Source_Article: Dashboard Creator Guide
+Keywords: widgets, setting up widgets, dashboard, add kpi row, customize dashboard, trend arrow
+
+Content:
+Once you have added key figures to your table, you can highlight them in your Dashboard by clicking on "Add KPI Row". You can choose between large and small widgets. You can rearrange rows of widgets using the arrows and delete them with the trash can icon. To customize a widget, click on the desired number in the table. You can give the widget a new title/label. The trend arrow in the widget indicates whether the KPI has increased or decreased since the previous month, and you can define whether an increase is positive, negative, or neutral.

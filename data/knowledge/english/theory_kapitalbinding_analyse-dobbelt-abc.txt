@@ -1,0 +1,11 @@
+Topic: ABC Analysis
+Source Article: Guide to Capital Binding
+Keywords: double ABC analysis, AA items, CC items, item consumption, demand, inventory value, matrix
+
+Content:
+A double ABC analysis combines two dimensions to provide an even more nuanced picture. For example, you can combine item consumption in currency (first letter) and demand in number of order lines (second letter). This creates categories such as:
+- AA items: High turnover and high demand. Very important.
+- AC items: High turnover, but few customers/orders.
+- CA items: Low turnover, but very popular (high demand).
+- CC items: Low turnover and low demand.
+This method is a good basis for differentiating inventory investment.

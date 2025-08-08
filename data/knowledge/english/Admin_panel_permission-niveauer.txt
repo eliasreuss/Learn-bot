@@ -1,0 +1,11 @@
+**Admin Panel**
+
+*Inact Now Admin Panel Guide*
+
+**Keywords:** permissions, levels, rights, manage reports, create reports, view reports, edit mode, download data
+
+Permissions in Inact Now control what a user can see and do. There are three main levels that work like a staircase (if you have the top level, you also have the underlying):
+- **Administrate:** Allows the user to manage reports for the entire organization, including "Edit Mode." Also allows editing of all checklists.
+- **Create:** Allows the user to create private reports and create/assign checklists.
+- **View:** Only grants permission to view reports and checklists.
+Additionally, there is a "Download data" permission that allows the user to download data directly from Inact Now.

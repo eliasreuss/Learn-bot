@@ -1,0 +1,6 @@
+Topic: Supply Chain Management
+Source_Article: Guide to Capital Binding
+Keywords: rules of leverage, optimization, differentiated approach, ABC categorization, inventory strategy
+
+Content:
+To optimize capital binding, different ABC categories must be managed differently. One cannot use a "one size fits all" approach. The 6 factors (inventory policy, price, delivery reliability, safety stock, turnover rate, and MOQ) need to be differentiated. For example, A and B items should have a high delivery reliability (e.g., 98%), while C items can have a lower one (e.g., 80%) to reduce capital binding. Another example is the CA category (inexpensive, popular items), which typically can have the highest delivery reliability (e.g., 99%) without binding much capital.

@@ -1,0 +1,6 @@
+Topic: Admin Panel
+Source_Article: Inact Now Admin Panel Guide
+Keywords: edit user, change user, update information, change permissions, pop-up
+
+Content:
+To edit an existing user, click on the user in the overview in the Admin Panel. This will open a pop-up window where you can update the user's information, change permissions, manage the user's homepage, and modify access control (if available). Once you have made your changes, press the "Save & close" button.

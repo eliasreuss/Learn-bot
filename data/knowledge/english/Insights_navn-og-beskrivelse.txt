@@ -1,0 +1,6 @@
+**Topic: Insights**
+**Source Article: Guide to Creating an Insight**
+**Keywords: name insight, describe insight, information, criteria**
+
+Content:
+It's a good idea to give your Insight a clear name and a good description to avoid any confusion about the criteria the Insight is based on. Users can see the name and click on the "i" icon to read the description and view the criteria and filters used.

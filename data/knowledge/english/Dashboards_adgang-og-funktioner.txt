@@ -1,0 +1,11 @@
+**Topic: Dashboards**
+**Source Article: Dashboard Creator Guide**
+**Keywords: dashboard creator, access dashboard, create dashboard, edit dashboard, copy dashboard, delete dashboard**
+
+Content:
+To access the Dashboard Creator, you need to have the right permissions. Contact your Admin user or Support team if you lack access. Once you have access, you can perform the following actions:
+- Create a Dashboard from scratch: Click on "+ New Dashboard."
+- Edit Dashboards: Select a dashboard and click on "Edit."
+- Copy Dashboards: Find a dashboard, select "Copy," and customize the copy.
+- Delete Dashboards: Select a dashboard, click on "Delete," and confirm.
+Remember to always save your changes.

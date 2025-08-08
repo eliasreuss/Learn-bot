@@ -1,0 +1,6 @@
+Topic: Purchasing
+Source_Article: Guide to Capital Binding
+Keywords: cost price, order size, MOQ, minimum order quantity, total cost of ownership, TCO, volume, purchasing
+
+Content:
+The pursuit of low cost prices can lead companies to purchase large quantities (high MOQ - Minimum Order Quantity) that they struggle to sell. This increases capital binding and the risk of obsolescence, making the low cost price expensive in the long run. Instead of focusing solely on unit price, companies should consider order size based on the item's demand and needs. Total Cost of Ownership (TCO) is a more relevant measure than just the unit cost.

@@ -1,0 +1,6 @@
+Topic: Inventory Management
+Source_Article: Guide to Capital Binding
+Keywords: delivery reliability, service level agreement, SLA, 95%, 100%, reliability
+
+Content:
+Delivery reliability, also known as Service Level Agreement (SLA), is a measure of a company's ability to meet the promised delivery time to the customer. A good delivery reliability typically ranges between 95% and 98%. Aiming for 100% is often bad for business, as it results in significantly higher capital binding, lower inventory turnover, and more obsolescence compared to aiming for, for example, 95%. It is not cost-effective for all item numbers to have the same high delivery reliability.

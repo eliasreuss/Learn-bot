@@ -1,0 +1,9 @@
+Topic: Dashboards
+Source_Article: Dashboard Creator Guide
+Keywords: insight row, filter row, multiple filter rows, rows, slicer, dashboard
+
+Content:
+When adding a row ("Add Row") in a table, you can choose from several types:
+- Insight Row: Based on a filter from an existing Insight. This is useful as you can select data not in your Master Insight, and clicking the row in a widget takes you to the other Insight.
+- Filter Row: Based on your Master Insight and a filter you create. Using slicers avoids the need to create separate Insights just for a single row in a dashboard.
+- Multiple Filter Rows: Allows adding multiple filter rows at once, based on a single filter.

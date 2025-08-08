@@ -1,0 +1,18 @@
+Topic: General
+Source_Article: Downloading and Converting Data
+Keywords: download data, fetch data, raw.csv, calculated.csv, project.abcx, abc analyzer, excel, convert csv
+
+Content:
+Under the 'Download' section, you can fetch your data.
+- Calculated.csv: Selected data from an analysis for transfer to your ERP system.
+- Raw.csv: The entire data foundation for your analyses in Inact Now.
+- Project.abcx: The file for ABC Analyzer, where you can modify models and formulas (requires a license).
+
+To convert a downloaded .csv file to the correct format in Excel:
+1. Double-click to open the file in Excel.
+2. Select column A.
+3. Choose the 'Data' tab and click on 'Text to Columns'.
+4. Select 'Delimited' and click 'Next'.
+5. Choose 'Comma' as the delimiter and click 'Next'.
+6. Click on 'Advanced' to ensure that the decimal separator is a period (.) and the thousands separator is a comma (,). Click OK.
+7. Click 'Finish'.

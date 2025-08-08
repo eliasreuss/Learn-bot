@@ -1,0 +1,6 @@
+Topic: Category Management
+Source_Article: Guide to Category Management
+Keywords: cost to serve, accounting, indirect costs, direct costs, net profit, product category, supplier level
+
+Content:
+"Cost to Serve" is a method where a detailed account is set up to understand the direct and indirect costs associated with procurement, inventory, and distribution. The analysis can be done at the product category or supplier level. By subtracting costs such as Shipping Cost, Discounts, Customer Service, Order Handling, and Logistics from Gross Profit, one can find the actual Net Profit for a category and thus identify where the true costs and earning opportunities lie.

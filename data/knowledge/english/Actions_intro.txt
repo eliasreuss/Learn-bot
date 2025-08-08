@@ -1,0 +1,5 @@
+**Topic: Actions**
+**Source Article: Guide to Actions**
+**Keywords: actions, alarms, task list, to-do, issue, filter, rules**
+
+Inact Actions are "alarms" designed to monitor your operations. An Action is a rule-based list that notifies you when something requires your attention and action. Actions are lists based on, for example, item numbers (or customers/suppliers), that meet specific criteria in the form of a filter. The list is updated daily and scans data to add or remove items.

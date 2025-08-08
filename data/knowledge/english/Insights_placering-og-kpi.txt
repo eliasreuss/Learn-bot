@@ -1,0 +1,7 @@
+Topic: Insights
+Source_Article: Guide to Creating an Insight
+Keywords: placement, insight overview, groups, select KPI, trend view
+
+Content:
+All Insights can be grouped in the Insight overview to organize them. You can choose which group each individual Insight belongs to.
+When you add Key Performance Indicators (KPIs) to your Insight, you can track the progress in the Trend view. You can select up to four KPIs per Insight, so choose them carefully as these are the key values that will be prominent, especially in the Trend view.
