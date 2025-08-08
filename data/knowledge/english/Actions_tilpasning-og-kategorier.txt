@@ -1,0 +1,5 @@
+**Topic: Actions**
+*Source Article: Guide to Actions*
+*Keywords: customize actions, categories, not complete, to do, forecast adjusted, adjust safety stock*
+
+Actions depend on the purpose of the strategy and are based on specific tasks. You can add or edit categories (columns) in an Action by using the plus or edit button to the right of the categories. You can distinguish between completed and not completed categories. If you choose a category to be "Not Complete," it will still be included in the overall "To do" count displayed on your homepage. You can move a category between 'Complete' and 'Not Complete' using the arrows in the settings.

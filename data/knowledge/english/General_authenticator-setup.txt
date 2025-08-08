@@ -1,0 +1,13 @@
+Topic: General
+Source_Article: Guide to Microsoft Authenticator
+Keywords: two-factor authentication, 2fa, security, microsoft authenticator, scan qr, passcode, one-time code, install app
+
+Content:
+Two-factor authentication (2FA) adds an extra layer of security to your Inact Now account.
+How to enable it:
+1. Install an authenticator app like "Microsoft Authenticator" from your phone's app store.
+2. In Inact Now, go to your settings and tap "Enable 2FA".
+3. Open the Microsoft Authenticator app on your phone.
+4. Tap on "+" or "Add account" and select the account type "work/school".
+5. Tap on "Scan QR code" and scan the QR code displayed on the screen in Inact Now.
+6. The app will now show a 6-digit code that changes every 30 seconds. Enter this code in Inact Now to confirm the setup.

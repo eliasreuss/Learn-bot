@@ -1,0 +1,6 @@
+**Topic: Admin Panel**
+**Source Article: Inact Now Admin Panel Guide**
+**Keywords: access control, datasources, data sources, data access, user access**
+
+Content:
+The 'Access Control' feature must be set up for your organization to be available. It allows you to configure which specific data sources each user has access to. In this view, you can move data sources between 'User has not access to' and 'User has access to'.

@@ -1,0 +1,12 @@
+**Topic: Insights**
+**Source Article: Guide to Creating an Insight**
+**Keywords: views, visualization, matrix-view, grid-view, kpi-view, sumsheet, profit-view, trend-view**
+
+Content:
+An Insight can visualize data in 6 different ways (views). Depending on the purpose, one or more of these views may be enabled or disabled by an administrator. The 6 views are:
+1. Matrix-view
+2. Grid-view
+3. KPI-view
+4. Sumsheet
+5. Profit view
+6. Trend View

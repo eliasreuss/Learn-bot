@@ -1,0 +1,13 @@
+**Topic: Category Management**  
+**Source Article: Guide to Category Management**  
+
+**Keywords:** product life cycle, PLC framework, introduction, growth, maturity, decline, cash cow, star, question mark, dogs  
+
+Content:  
+Category work requires an overview of a product's life cycle, typically consisting of four phases: Introduction, Growth, Maturity, and Decline. To analyze the product mix, one can use a PLC Framework (Product Life Cycle), which often categorizes products as:  
+- Cash Cow: High market share, low growth.  
+- Star: High market share, high growth.  
+- Question Mark: Low market share, high growth.  
+- Dogs: Low market share, low growth.  
+
+This framework helps clarify where and how to work with different products.

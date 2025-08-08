@@ -1,0 +1,10 @@
+Topic: Insights
+Source_Article: Guide to Creating an Insight
+Keywords: set limit, top list, bottom list, restriction, top 25, bottom 50
+
+Content:
+It is possible to set a limit on an Insight to make it more manageable. You can choose to display a specific number of items (from 5 to 100) based on a top or bottom list.
+Examples of popular lists:
+- Top 25: Dead items measured by inventory value.
+- Top 100: Customers measured by revenue.
+- Bottom 50: Customers measured by contribution margin.

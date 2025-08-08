@@ -1,0 +1,11 @@
+Topic: Dashboards
+Source_Article: Dashboard Overview
+Keywords: dashboard overview, KPI, target, alarm, table, homepage
+
+Content:
+A Dashboard on your Homepage provides a quick overview of your organization's status. It consists of 4 elements:
+- KPI: The key performance indicators you want to display.
+- Target: A goal for each KPI that triggers an alarm.
+- Alarm: Turns green if you exceed the target, red if you fall below, and blue if no target is set.
+- Table: The table offers a drill-down overview of your KPIs. It is only visible when accessing the dashboard from the menu or if enabled in an email.
+You can always click on a widget to view the underlying Insight.

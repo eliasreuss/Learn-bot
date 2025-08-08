@@ -1,0 +1,6 @@
+Topic: Inventory Management
+Source_Article: Guide to Capital Binding
+Keywords: turnover rate, inventory turnover, inventory, low turnover, high turnover
+
+Content:
+The turnover rate expresses the relationship between a company's inventory and turnover. A low turnover rate (typically 1-2) means that the company has a relatively high amount of inventory compared to turnover, indicating potential for inventory reduction. Conversely, a high turnover rate (over 6) indicates that the inventory is small compared to turnover, increasing the likelihood of backorders. The turnover rate is a direct consequence of the chosen Service Level Agreement (SLA).

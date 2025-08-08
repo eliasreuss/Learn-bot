@@ -1,0 +1,9 @@
+Topic: Dashboards
+Source_Article: Dashboard Creator Guide
+Keywords: table setup, master insight, rows, columns, add column, add row
+
+Content:
+A table in Dashboard Creator consists of rows (horizontal) and columns (vertical).
+- Column: Represents the horizontal sections. Each row can contain a column from the selected Dataset (e.g., "Revenue 12 month"). You add a column by clicking "Add Column".
+- Rows: Represents the vertical sections. The starting point is a "Master Insight" (Total Insight). From here, you can add benchmarks like Countries, Sellers, or Stores. You add a row using the "Add Row" button.
+For all Insights, there will be a Master Insight associated, selected when creating a new Insight.

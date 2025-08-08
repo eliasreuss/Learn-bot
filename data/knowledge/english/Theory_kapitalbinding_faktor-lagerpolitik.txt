@@ -1,0 +1,10 @@
+Topic: Inventory Management
+Source_Article: Guide to Capital Binding
+Keywords: inventory policy, stock, procurement item, inventory item, demand, lead time
+
+Content:
+Inventory policy is about deciding which item numbers to stock. The answer depends on two factors: lead time and demand. A simple method is to assess items as follows:
+- Items with high demand and long lead time should be inventory items.
+- Items with high demand and short lead time can be either inventory items or procurement items (if the supplier can deliver day-to-day).
+- Items with low demand and long lead time are risky to stock.
+- Items with low demand and short lead time are ideal as procurement items to reduce risk.

@@ -59,7 +59,16 @@ def load_and_process_documents(directory="data"):
         doc_type = "knowledge"
         if "resources" in root.lower():
             doc_type = "resource"
-            
+        
+        # Detect language based on subfolder for knowledge
+        language = None
+        root_lower = root.lower()
+        if "knowledge" in root_lower:
+            if "danish" in root_lower:
+                language = "danish"
+            elif "english" in root_lower:
+                language = "english"
+        
         for filename in files:
             if not filename.endswith(".txt"):
                 continue
@@ -78,9 +87,11 @@ def load_and_process_documents(directory="data"):
                         chunk.metadata = {}
                     chunk.metadata['doc_type'] = doc_type
                     chunk.metadata['source'] = filename
+                    if language:
+                        chunk.metadata['language'] = language
                 
                 processed_docs.extend(chunks)
-                print(f"Processed {filename} as type: {doc_type}")
+                print(f"Processed {filename} as type: {doc_type} language: {language or 'n/a'}")
                 
             except Exception as e:
                 print(f"Could not read file {filepath}: {e}")
@@ -172,6 +183,11 @@ for message in st.session_state.messages:
     with st.chat_message(message["role"]):
         st.markdown(message["content"])
 
+# Language selector
+col1, col2 = st.columns([1,3])
+with col1:
+    selected_language = st.selectbox("Language", ["all", "danish", "english"], index=0)
+
 # Handle user input
 if user_question := st.chat_input("How do I create an Insight in Inact Now?"):
     st.session_state.messages.append({"role": "user", "content": user_question})
@@ -182,12 +198,19 @@ if user_question := st.chat_input("How do I create an Insight in Inact Now?"):
         message_placeholder = st.empty()
         message_placeholder.markdown("Tænker...") 
 
-        # Retrieve relevant documents from both resource and knowledge types
-        resource_retriever = db.as_retriever(search_kwargs={"k": 5, "filter": {"doc_type": "resource"}})
+        # Build filters
+        resource_filter = {"doc_type": "resource"}
+        knowledge_filter = {"doc_type": "knowledge"}
+        if selected_language != "all":
+            # Only apply language filter to knowledge docs
+            knowledge_filter["language"] = selected_language
+
+        # Retrieve relevant documents
+        resource_retriever = db.as_retriever(search_kwargs={"k": 5, "filter": resource_filter})
         resource_docs = resource_retriever.get_relevant_documents(user_question)
         resource_context = "\n\n---\n\n".join([doc.page_content for doc in resource_docs])
 
-        knowledge_retriever = db.as_retriever(search_kwargs={"k": 3, "filter": {"doc_type": "knowledge"}})
+        knowledge_retriever = db.as_retriever(search_kwargs={"k": 3, "filter": knowledge_filter})
         knowledge_docs = knowledge_retriever.get_relevant_documents(user_question)
         knowledge_context = "\n\n---\n\n".join([doc.page_content for doc in knowledge_docs])
         

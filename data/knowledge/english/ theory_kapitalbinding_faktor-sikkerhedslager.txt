@@ -1,0 +1,6 @@
+Topic: Inventory Management
+Source_Article: Guide to Capital Binding
+Keywords: safety stock, reorder point, buffer, safety stock, reorder point, variance, demand pattern
+
+Content:
+Safety stock and reorder point are directly related to the desired service level agreement (SLA). The higher the demand for delivery reliability, the higher the need for safety stock (also known as a "buffer"). Safety stock is a tool to manage the balance between capital binding and service. Its purpose is to account for variance in customer demand patterns and supplier lead time. Incorrect setup can lead to both overstocking some items and backorders on others.

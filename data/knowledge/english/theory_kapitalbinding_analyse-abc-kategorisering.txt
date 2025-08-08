@@ -1,0 +1,10 @@
+Topic: ABC Analysis
+Source Article: Guide to Capital Binding
+Keywords: ABC analysis, ABC categorization, Pareto, 80/20 rule, A items, B items, C items, turnover
+
+Content:
+The ABC analysis is a tool for analyzing inventory binding by categorizing items based on their importance to turnover. Typically, the Pareto principle (80/20 rule) applies:
+- A category: Represents 80% of turnover (but often only 20% of item numbers). These are the most important items.
+- B category: Represents 15% of turnover.
+- C category: Represents 5% of turnover (but often a large share of item numbers). These can be "time wasters."
+The analysis provides a strong indication of which items should be prioritized and protected.

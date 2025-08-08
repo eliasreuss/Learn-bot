@@ -1,0 +1,5 @@
+**Topic: Insights**
+**Source Article: Guide to Creating an Insight**
+**Keywords: set up columns, visible columns, customize columns, edit mode**
+
+It is crucial that the user has the right columns available in an Insight. During setup, choose which columns should be visible to the user. Ensure that the columns are customized for the purpose of the Insight, making it as easy and fast to work with as possible. Remember to finish and save your setup using the "Save" button in Edit Mode.

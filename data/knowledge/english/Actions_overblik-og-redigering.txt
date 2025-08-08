@@ -1,0 +1,13 @@
+**Topic: Actions**
+**Source Article: Guide to Actions**
+**Keywords: overview of actions, edit actions, assign, assign action, change author, change layout, copy, delete**
+
+Content:
+Under 'Actions' in the main menu, you get an overview of all Actions in your organization. You can filter the list based on who the Action is assigned to or who created it. On the far right of each Action, there is a dropdown menu where you can:
+- Assign: Assign the Action to another person.
+- Edit: Change name, filters, and limit.
+- Change author: Change the owner of the Action.
+- Change Layout: Change layout (e.g., from "To do" to "Done").
+- Copy this Action: Copy the Action.
+- Delete: Delete the Action.
+You can also select multiple Actions and perform actions (assign, change layout, delete) on all of them at once.

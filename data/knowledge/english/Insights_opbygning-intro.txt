@@ -1,0 +1,9 @@
+Topic: Insights
+Source_Article: Guide to Building Insights
+Keywords: building insights, report, data source, visualization, search, filter
+
+Content:
+All reports in Inact Now are built around 3 cornerstones:
+1. Data: A report is delimited by the data and topics it contains (Data Source).
+2. Visualization: The report can visualize data in 6 different ways (views), such as Matrix-view, Grid-view, and Trend-view.
+3. Search & filter: Wherever you are, you can always filter and slice on individual topics to analyze data in depth.
