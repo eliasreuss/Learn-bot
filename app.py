@@ -135,26 +135,72 @@ def get_vectorstore():
 def get_llm():
     return ChatOpenAI(temperature=0, openai_api_key=os.environ["OPENAI_API_KEY"], model_name="gpt-3.5-turbo")
 
+# --- Language Detection and Prompt Templates ---
+
+@st.cache_data
+def detect_language(text: str) -> str:
+    """
+    Uses the LLM to detect if the text is English or Danish.
+    Defaults to Danish for ambiguous cases.
+    """
+    try:
+        llm = get_llm()
+        prompt = (
+            "You are a language detection expert. "
+            "Is the following text primarily in English or Danish? "
+            "Answer with a single word: 'english' or 'danish'.\n\n"
+            f"Text: '{text}'"
+        )
+        response = llm.invoke(prompt)
+        result = response.content.strip().lower()
+        if "english" in result:
+            return "english"
+    except Exception as e:
+        print(f"Language detection failed: {e}")
+    # Default to Danish if detection fails or is unclear
+    return "danish"
+
+PROMPT_TEMPLATES = {
+    "danish": ChatPromptTemplate.from_template(
+        "Du er en AI-assistent for Inact. Dit mål er at levere præcise svar og yderst relevante anbefalinger.\\n\\n"
+        "### Opgave 1: Svar på spørgsmålet\\n"
+        "Brug 'VIDENSBASE KONTEKST' til at formulere et grundigt og klart svar på brugerens spørgsmål. Hvis der er en trin-for-trin guide, skal den præsenteres som en nummereret liste.\\n\\n"
+        "### Opgave 2: Vurder og Anbefal Læringsressourcer\\n"
+        "Du har modtaget en liste af *potentielle* læringsressourcer i 'LÆRINGSRESSOURCE KONTEKST'. Din opgave er at agere som et intelligent filter.\\n"
+        "1.  **Vurder Relevans:** Gennemgå HVER ressource i 'LÆRINGSRESSOURCE KONTEKST' og vurder, om den er direkte relevant for brugerens specifikke spørgsmål.\\n"
+        "2.  **Lav Anbefalinger:** Hvis du finder en eller flere relevante ressourcer, SKAL du tilføje en sektion til sidst i dit svar med overskriften: '**Anbefalet Læring:**'\\n"
+        "3.  **Formater Kun De Relevante:** For KUN de ressourcer, du har vurderet som relevante, skal du formatere dem som et punkt med et link, f.eks.: `* Se vores video: [Titel på video](URL)`.\\n"
+        "4.  **Hvis Intet er Relevant:** Hvis INGEN af ressourcerne i 'LÆRINGSRESSOURCE KONTEKST' er relevante for spørgsmålet, skal du IKKE tilføje 'Anbefalet Læring'-sektionen.\\n\\n"
+        "---"
+        "\\n\\n**LÆRINGSRESSOURCE KONTEKST (Potentielle kandidater til anbefaling):**\\n{resource_context}\\n\\n"
+        "**VIDENSBASE KONTEKST (Til at formulere svar):**\\n{knowledge_context}\\n\\n"
+        "**Spørgsmål:** {question}\\n\\n"
+        "**Svar:**"
+    ),
+    "english": ChatPromptTemplate.from_template(
+        "You are an AI assistant for Inact. Your goal is to provide precise answers and highly relevant recommendations.\\n\\n"
+        "### Task 1: Answer the question\\n"
+        "Use the 'KNOWLEDGE BASE CONTEXT' to formulate a thorough and clear answer to the user's question. If there is a step-by-step guide, it must be presented as a numbered list.\\n\\n"
+        "### Task 2: Evaluate and Recommend Learning Resources\\n"
+        "You have received a list of *potential* learning resources in the 'LEARNING RESOURCE CONTEXT'. Your task is to act as an intelligent filter.\\n"
+        "1.  **Assess Relevance:** Review EACH resource in the 'LEARNING RESOURCE CONTEXT' and assess whether it is directly relevant to the user's specific question.\\n"
+        "2.  **Make Recommendations:** If you find one or more relevant resources, you MUST add a section at the end of your answer with the heading: '**Recommended Learning:**'\\n"
+        "3.  **Format Only the Relevant Ones:** For ONLY the resources you have assessed as relevant, you must format them as a bullet point with a link, e.g.: `* Watch our video: [Title of video](URL)`.\\n"
+        "4.  **If Nothing is Relevant:** If NONE of the resources in the 'LEARNING RESOURCE CONTEXT' are relevant to the question, you must NOT add the 'Recommended Learning' section.\\n\\n"
+        "---"
+        "\\n\\n**LEARNING RESOURCE CONTEXT (Potential candidates for recommendation):**\\n{resource_context}\\n\\n"
+        "**KNOWLEDGE BASE CONTEXT (To formulate the answer):**\\n{knowledge_context}\\n\\n"
+        "**Question:** {question}\\n\\n"
+        "**Answer:**"
+    ),
+}
+
 
 # --- Main Application Logic ---
 
 # Initialize Chat Prompt Template
-prompt_template = ChatPromptTemplate.from_template(
-    "Du er en AI-assistent for Inact. Dit mål er at levere præcise svar og yderst relevante anbefalinger.\n\n"
-    "### Opgave 1: Svar på spørgsmålet\n"
-    "Brug 'VIDENSBASE KONTEKST' til at formulere et grundigt og klart svar på brugerens spørgsmål. Hvis der er en trin-for-trin guide, skal den præsenteres som en nummereret liste.\n\n"
-    "### Opgave 2: Vurder og Anbefal Læringsressourcer\n"
-    "Du har modtaget en liste af *potentielle* læringsressourcer i 'LÆRINGSRESSOURCE KONTEKST'. Din opgave er at agere som et intelligent filter.\n"
-    "1.  **Vurder Relevans:** Gennemgå HVER ressource i 'LÆRINGSRESSOURCE KONTEKST' og vurder, om den er direkte relevant for brugerens specifikke spørgsmål.\n"
-    "2.  **Lav Anbefalinger:** Hvis du finder en eller flere relevante ressourcer, SKAL du tilføje en sektion til sidst i dit svar med overskriften: '**Anbefalet Læring:**'\n"
-    "3.  **Formater Kun De Relevante:** For KUN de ressourcer, du har vurderet som relevante, skal du formatere dem som et punkt med et link, f.eks.: `* Se vores video: [Titel på video](URL)`.\n"
-    "4.  **Hvis Intet er Relevant:** Hvis INGEN af ressourcerne i 'LÆRINGSRESSOURCE KONTEKST' er relevante for spørgsmålet, skal du IKKE tilføje 'Anbefalet Læring'-sektionen.\n\n"
-    "---"
-    "\n\n**LÆRINGSRESSOURCE KONTEKST (Potentielle kandidater til anbefaling):**\n{resource_context}\n\n"
-    "**VIDENSBASE KONTEKST (Til at formulere svar):**\n{knowledge_context}\n\n"
-    "**Spørgsmål:** {question}\n\n"
-    "**Svar:**"
-)
+# This will be replaced dynamically based on language detection
+prompt_template = PROMPT_TEMPLATES["danish"] 
 
 # --- Initialization & Page Rendering ---
 
@@ -183,11 +229,6 @@ for message in st.session_state.messages:
     with st.chat_message(message["role"]):
         st.markdown(message["content"])
 
-# Language selector
-col1, col2 = st.columns([1,3])
-with col1:
-    selected_language = st.selectbox("Language", ["all", "danish", "english"], index=0)
-
 # Handle user input
 if user_question := st.chat_input("How do I create an Insight in Inact Now?"):
     st.session_state.messages.append({"role": "user", "content": user_question})
@@ -196,16 +237,23 @@ if user_question := st.chat_input("How do I create an Insight in Inact Now?"):
 
     with st.chat_message("assistant"):
         message_placeholder = st.empty()
-        message_placeholder.markdown("Tænker...") 
+        message_placeholder.markdown("Tænker...")
 
-        # Build filters
+        # 1. Detect language and select prompt
+        detected_language = detect_language(user_question)
+        prompt_template = PROMPT_TEMPLATES[detected_language]
+        print(f"Detected language: {detected_language}")
+
+        # 2. Build filters based on detected language
         resource_filter = {"doc_type": "resource"}
-        knowledge_filter = {"doc_type": "knowledge"}
-        if selected_language != "all":
-            # Only apply language filter to knowledge docs
-            knowledge_filter["language"] = selected_language
+        knowledge_filter = {
+            "$and": [
+                {"doc_type": "knowledge"},
+                {"language": detected_language},
+            ]
+        }
 
-        # Retrieve relevant documents
+        # 3. Retrieve relevant documents
         resource_retriever = db.as_retriever(search_kwargs={"k": 5, "filter": resource_filter})
         resource_docs = resource_retriever.get_relevant_documents(user_question)
         resource_context = "\n\n---\n\n".join([doc.page_content for doc in resource_docs])
@@ -214,7 +262,7 @@ if user_question := st.chat_input("How do I create an Insight in Inact Now?"):
         knowledge_docs = knowledge_retriever.get_relevant_documents(user_question)
         knowledge_context = "\n\n---\n\n".join([doc.page_content for doc in knowledge_docs])
         
-        # Create and invoke the chain
+        # 4. Create and invoke the chain
         chain = prompt_template | llm
         response = chain.invoke({
             "resource_context": resource_context,
