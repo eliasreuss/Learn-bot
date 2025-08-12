@@ -1,0 +1,5 @@
+Topic: The Double ABC Matrix
+Source article: ABC-kategorisering  sådan får du overblik
+Keywords: ABC analysis, product categorization, inventory management, procurement strategy
+
+All products are now classified into 9 ABC categories, guiding adjustments in procurement strategies to match product behavior. Treat AA-products significantly differently from CC-products in pricing, safety stock, and order sizes.

@@ -1,0 +1,5 @@
+Topic: Metoden til håndtering af kompleksitet
+Source article: Direktørens bedste ven og værste fjende (1)
+Keywords: kompleksitet, håndtering, analyse, værdikæde
+
+Start med at dyppe tåen, før du laver hovedspring fra 10-meter vippen. Trin 1: Find ud af hvor det gør ondt. Trin 2: Hvor skal virksomheden bruge ressourcer? Arbejd med en strategisk analyse af kompleksiteten i værdikæden og forstå, hvor ressourcerne skal fokuseres effektivt.

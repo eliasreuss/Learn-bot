@@ -1,0 +1,5 @@
+Topic: Actions for Inventory Management
+Source article: Alfa-Laval
+Keywords: inventory monitoring, conflicting parameters, policy compliance, order adjustments, dialogue tool
+
+Inact Now monitors Alfa Laval's inventory daily, highlights items conflicting with set parameters, facilitates order adjustments, and serves as a dialogue tool for informed decision-making.

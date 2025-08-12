@@ -1,0 +1,5 @@
+Topic: Minimum Stock Level
+Source article: 5 leveregler  sådan får du en effektiv supply chain
+Keywords: stock level, automation, lead time, demand pattern, delivery reliability
+
+3. Automate the calculation and updating of minimum stock levels considering lead time, demand pattern, and desired delivery reliability to avoid manual neglect in busy schedules.

@@ -1,0 +1,7 @@
+Topic: ABC-koder og dialog i ledelsen
+Source article: Convena
+Keywords: ABC-koder, dialog, ledelse, lagerværdi
+
+1. Ledelsen bruger ABC-koder som supplement til dialog.
+2. Kigger på indkøbstidspunkt og vareklassifikation.
+3. Fokuserer på hele A- og B-kolonnen i ABC-matrix.

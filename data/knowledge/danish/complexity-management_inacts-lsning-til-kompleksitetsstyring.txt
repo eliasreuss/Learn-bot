@@ -1,0 +1,5 @@
+Topic: Inact's løsning til kompleksitetsstyring
+Source article: Complexity Management
+Keywords: Inact, analysemotor, SaaS-løsning, rentabilitet, SKU
+
+Inact tilbyder en innovativ løsning drevet af en 'analysemotor', der analyserer transaktionsdata på tværs af værdikæden. Deres SaaS-løsning inkluderer konsulenter, der evaluerer rentabilitet og omkostninger for hver SKU, kunde og leverandør, samt identificerer overskuds- og tabsgivende områder.

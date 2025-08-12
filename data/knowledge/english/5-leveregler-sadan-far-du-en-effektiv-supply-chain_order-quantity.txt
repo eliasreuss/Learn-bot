@@ -1,0 +1,5 @@
+Topic: Order Quantity
+Source article: 5 leveregler  sådan får du en effektiv supply chain
+Keywords: order size, Wilson's formula, costs, ABC categorization, stocking days
+
+5. Utilize Wilson's formula to calculate optimal order quantities based on known inventory and ordering costs. Alternatively, adopt a pragmatic approach with ABC categorization by stocking for a specific number of days or weeks per category.

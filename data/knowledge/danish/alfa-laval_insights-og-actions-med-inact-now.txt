@@ -1,0 +1,5 @@
+Topic: Insights og Actions med Inact Now
+Source article: Alfa-Laval
+Keywords: Insights, Actions, visualisering, handlingspunkter
+
+Inact Now tilbyder Insights for visuelt overblik og Actions for konkrete handlingspunkter. Platformen analyserer data fra ERP-systemet, visualiserer parametre som omsætningshastighed og foreslår korrekte opsætninger baseret på friske data.

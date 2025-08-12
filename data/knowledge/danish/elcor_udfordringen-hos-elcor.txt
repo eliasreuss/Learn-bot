@@ -1,0 +1,5 @@
+Topic: Udfordringen hos Elcor
+Source article: Elcor
+Keywords: kapitalbinding, statisk data, markedstilpasning, Excel, analysemetoder
+
+Elcor havde for mange varer på lager pga. statiske data og manglende markedstilpasning. Manuelt arbejde i Excel forhindrede effektiv analyse og eksekvering.

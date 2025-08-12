@@ -1,0 +1,5 @@
+Topic: ABC Analysis and Goal Setting
+Source article: Få 6 tips til at eksekvere på din data
+Keywords: ABC analysis, goal setting, prioritization, service level, inventory management
+
+Run your ABC analysis and set goals for each ABC category to support the overall mission. 1. Define the overall goal for your service level. 2. Set a higher service level goal for AA, BA, and CA products. 3. Set a relatively lower service level goal for the rest to maintain an average of 95%.

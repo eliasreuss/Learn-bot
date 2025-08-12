@@ -1,0 +1,5 @@
+Topic: Ordrestørrelse
+Source article: 5 leveregler  sådan får du en effektiv supply chain
+Keywords: ordrestørrelse, Wilsons formel, lager- og ordreomkostninger, ABC-kategorisering
+
+5. Ordrestørrelse: Brug Wilsons formel eller ABC-kategorisering til at beregne den rette ordrestørrelse baseret på lager- og ordreomkostninger.

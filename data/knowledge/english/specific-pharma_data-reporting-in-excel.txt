@@ -1,0 +1,5 @@
+Topic: Data Reporting in Excel
+Source article: Specific-Pharma
+Keywords: data reporting, Excel, queries, system, report
+
+Extract queries from systems, compile in Excel, and share. Quality manager can generate daily updated report on quarantined items. 1. Extract queries. 2. Compile in Excel. 3. Share with team. 4. Quality manager generates daily report on quarantined items.

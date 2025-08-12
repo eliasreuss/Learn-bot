@@ -1,0 +1,5 @@
+Topic: Effektiv brug af Inact i praksis
+Source article: Johannes-Fog
+Keywords: effektivitet, brug, rapporter, opdaterede tal, sortimentskode
+
+Johannes Fog bruger Inact effektivt til at trække rapporter med opdaterede tal, f.eks. en liste med varer inden for beklædning med en bestemt sortimentskode, hvilket har øget effektiviteten.

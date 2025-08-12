@@ -1,0 +1,5 @@
+Topic: Validating Analysis and Data
+Source article: Få 6 tips til at eksekvere på din data
+Keywords: data validation, accuracy, analysis adjustment
+
+5. Validate your ABC analysis and data to ensure alignment with reality. Address any discrepancies or inaccuracies in the data to improve the quality of insights. Data validation is a valuable process for the entire organization.

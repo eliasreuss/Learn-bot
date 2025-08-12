@@ -1,0 +1,5 @@
+Topic: Data Analysis and Solutions Implementation
+Source article: AUBO
+Keywords: data analysis, solutions, inventory management, data insights, automation
+
+Inact conducted a thorough analysis of AUBO's assortment and proposed solutions to address acute problems and long-term needs. They cleaned and updated the foundational data for correct procurement and disposition. AUBO's data and products were categorized for a simple overview, identifying inefficient processes and areas for improvement on the warehouse. Collaboration focused on gaining data insights and implementing automations to change behaviors. AUBO gained real-time inventory overview and ABC categorization of products, facilitating identification of dead stock, data-driven procurement optimization, and material reuse guidance.

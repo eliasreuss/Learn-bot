@@ -1,0 +1,5 @@
+Topic: Data Requirements for Goals
+Source article: Få 6 tips til at eksekvere på din data
+Keywords: data analysis, decision-making, data complexity
+
+3. Identify the necessary data for each goal. Strike a balance between having enough data for informed decision-making and avoiding data overload. Use cause-and-effect diagrams to determine the type of data needed.

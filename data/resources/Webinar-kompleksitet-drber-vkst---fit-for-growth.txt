@@ -1,0 +1,4 @@
+Type: Webinar
+Title: Kompleksitet dræber vækst - Fit for Growth
+URL: https://inact.io/webinar/kompleksitet-draeber-vaekst/
+Beskrivelse: I webinaret præsenterer Professor Lars Hvam metoder til at analysere og håndtere en voksende portefølje af produkter med case fra Rockwool.

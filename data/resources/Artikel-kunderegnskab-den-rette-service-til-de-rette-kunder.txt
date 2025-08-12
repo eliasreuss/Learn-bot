@@ -1,0 +1,4 @@
+Type: Artikel
+Title: Kunderegnskab: Den rette service til de rette kunder
+URL: https://inact.io/blog/kunderegnskab-den-rette-service-til-de-rette-kunder/
+Beskrivelse: En “one-size-fits-all”-strategi betyder, at virksomheden overservicerer nogle kundegrupper og underservicerer andre – det er ikke profitabelt

@@ -1,0 +1,5 @@
+Topic: Solution Implemented by AUBO
+Source article: AUBO
+Keywords: analysis, data cleansing, ABC categorization, automated analysis, correct procurement
+
+AUBO collaborated with Inact to analyze their assortment, cleanse and update their data, categorize items into ABC categories, and leverage Inact Now platform for automated analysis to facilitate correct procurement.

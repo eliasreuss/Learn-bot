@@ -1,0 +1,5 @@
+Topic: Automated Analysis and Checklists
+Source article: Van-Mossel
+Keywords: automation, checklists, out-of-stock, dead stock, inventory management
+
+Van Mossel automated their analyses and uses Inact Now's checklist feature for managing out-of-stock items, potential returns, and dead stock, streamlining their inventory management processes.

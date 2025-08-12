@@ -1,0 +1,5 @@
+Topic: Delivery Reliability
+Source article: 5 leveregler  sådan får du en effektiv supply chain
+Keywords: delivery, risk management, ABC categorization, minimum stock level, Inact Now
+
+2. Aim for a delivery reliability of 98%. Tailor delivery reliability based on the classification of items (A, B, C) to mitigate risks. Include delivery reliability percentage in calculating minimum stock levels, which can be automated by Inact Now.

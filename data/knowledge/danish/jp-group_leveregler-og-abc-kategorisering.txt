@@ -1,0 +1,5 @@
+Topic: Leveregler og ABC-kategorisering
+Source article: JP-Group
+Keywords: leveregler, ABC-kategorisering, forsyningskæde
+
+Med udgangspunkt i ABC-kategoriseringen udarbejdes et sæt leveregler, der bestemmer, hvordan den enkelte vare, kunde og leverandør i hver ABC-kategori skal håndteres.

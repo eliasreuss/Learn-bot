@@ -1,0 +1,4 @@
+Type: Artikel
+Title: Sådan bygger du en handlingsorienteret techstack
+URL: https://inact.io/blog/saadan-bygger-du-en-handlingsorienteret-techstack/
+Beskrivelse: I denne artikel dykker vi ned i, hvordan du skaber en teknologistack, der kan håndtere virkeligheden – og ikke bare beskrive den.

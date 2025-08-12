@@ -1,0 +1,5 @@
+Topic: Brug af Inact til at løse udfordringer hos Widex
+Source article: Widex
+Keywords: Inact, udfordringer, automatisering, ABC-matrix, indkøbsprofiler
+
+Widex har brugt Inact til at automatisere analyser i indkøb, skabe et overblik og definere et regelsæt ud fra en ABC-matrix. Dette har resulteret i differentierede actions for hver ABC-kategori og forbedret resultaterne.

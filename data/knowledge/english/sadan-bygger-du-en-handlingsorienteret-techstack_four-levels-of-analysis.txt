@@ -1,0 +1,5 @@
+Topic: Four Levels of Analysis
+Source article: Sådan bygger du en handlingsorienteret techstack
+Keywords: data analysis, BI tools, Inact, diagnostic, strategy
+
+There are roughly 4 types of data analysis levels, forming a closed loop where each level depends on the previous. Inact stands out by diagnosing, advising, and aligning data, strategy, and daily decisions.

@@ -1,0 +1,5 @@
+Topic: Segmentation in Supply Chain
+Source article: De 5 fejlsikre trin til en superoptimeret supply chain
+Keywords: supply chain segmentation, service levels, customer needs, multiple supply chains
+
+At this stage, the company segments the supply chain to create multiple chains with varying service levels tailored to different customer needs. The goal is to manage multiple smaller supply chains effectively as one.

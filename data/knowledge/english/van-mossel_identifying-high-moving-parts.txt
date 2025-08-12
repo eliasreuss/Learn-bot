@@ -1,0 +1,5 @@
+Topic: Identifying High-Moving Parts
+Source article: Van-Mossel
+Keywords: analysis, high movers, inventory value, efficiency, decision-making
+
+Through Inact's analyses, Van Mossel discovered that 4% of their parts generate nearly 60% of their revenue, highlighting the need to optimize inventory and reduce dead stock.
