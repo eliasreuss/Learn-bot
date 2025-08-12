@@ -1,0 +1,5 @@
+Topic: Improved KPI Tracking
+Source article: Van-Mossel
+Keywords: KPIs, tracking, performance improvement, motivation, Excel
+
+Van Mossel can now visually track their KPIs month by month, facilitating performance improvement and employee motivation, moving away from cumbersome Excel sheets.

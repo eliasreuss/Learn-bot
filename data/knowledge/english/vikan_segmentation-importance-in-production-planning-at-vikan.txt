@@ -1,0 +1,5 @@
+Topic: Segmentation Importance in Production Planning at Vikan
+Source article: Vikan
+Keywords: supply chain management, segmentation, rules, ABC/XYZ analysis, demand forecasting
+
+Segmentation in Inact Now forms the basis for Vikan's supply chain management, aiding in setting rules for handling each product segment based on ABC/XYZ categorization. This approach ensures a balanced production to meet demand efficiently.

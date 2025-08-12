@@ -1,0 +1,5 @@
+Topic: Effektiv drift og ro i maven over lageret
+Source article: Elcor
+Keywords: effektivitet, lagerstyring, samarbejde, notifikationer, Inact
+
+Kenneth fra Elcor oplever effektiv drift og ro i maven over lageret takket være samarbejdet med Inact. De modtager notifikationer om ændringer i tide, hvilket har flyttet dem fra reaktiv tilgang til proaktiv lagerstyring.

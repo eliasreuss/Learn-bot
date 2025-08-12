@@ -21,6 +21,7 @@ from langchain.text_splitter import CharacterTextSplitter
 from langchain_openai import OpenAIEmbeddings, ChatOpenAI
 from langchain_community.vectorstores import Chroma
 from langchain.prompts import ChatPromptTemplate
+import re
 
 # Load environment variables (e.g., your OPENAI_API_KEY)
 load_dotenv()
@@ -79,19 +80,67 @@ def load_and_process_documents(directory="data"):
                 loader = TextLoader(filepath, encoding="utf-8")
                 documents = loader.load()
                 
-                text_splitter = CharacterTextSplitter(chunk_size=1000, chunk_overlap=100)
-                chunks = text_splitter.split_documents(documents)
+                # For each document, first detect curated header format.
+                curated_handled_any = False
+                for doc in documents:
+                    text = doc.page_content
+                    # Curated knowledge with Topic/Source/Keywords
+                    topic_m = re.search(r"^\s*Topic:\s*(.+)$", text, flags=re.I | re.M)
+                    source_m = re.search(r"^\s*Source article:\s*(.+)$", text, flags=re.I | re.M)
+                    keywords_m = re.search(r"^\s*Keywords:\s*(.+)$", text, flags=re.I | re.M)
+                    # Resource header format
+                    r_type_m = re.search(r"^\s*Type:\s*(.+)$", text, flags=re.I | re.M)
+                    r_title_m = re.search(r"^\s*Title:\s*(.+)$", text, flags=re.I | re.M)
+                    r_url_m = re.search(r"^\s*URL:\s*(.+)$", text, flags=re.I | re.M)
+                    r_desc_m = re.search(r"^\s*(Description|Beskrivelse):\s*(.+)$", text, flags=re.I | re.M)
 
-                for chunk in chunks:
-                    if not isinstance(chunk.metadata, dict):
-                        chunk.metadata = {}
-                    chunk.metadata['doc_type'] = doc_type
-                    chunk.metadata['source'] = filename
-                    if language:
-                        chunk.metadata['language'] = language
+                    if topic_m and source_m and keywords_m and doc_type == "knowledge":
+                        # Strip header lines to keep only content
+                        body = re.sub(r"^\s*Topic:.*\n\s*Source article:.*\n\s*Keywords:.*\n\n?", "", text, flags=re.I)
+                        curated_doc = doc
+                        curated_doc.page_content = body.strip()
+                        if not isinstance(curated_doc.metadata, dict):
+                            curated_doc.metadata = {}
+                        curated_doc.metadata['doc_type'] = doc_type
+                        curated_doc.metadata['source'] = filename
+                        if language:
+                            curated_doc.metadata['language'] = language
+                        curated_doc.metadata['topic'] = topic_m.group(1).strip()
+                        curated_doc.metadata['article_source'] = source_m.group(1).strip()
+                        curated_keywords_list = [k.strip() for k in keywords_m.group(1).split(',') if k.strip()]
+                        curated_doc.metadata['keywords'] = ", ".join(curated_keywords_list)
+                        processed_docs.append(curated_doc)
+                        curated_handled_any = True
+                    elif r_type_m and r_title_m and r_url_m and doc_type == "resource":
+                        # Resources: keep whole text as content for snippet, attach metadata
+                        if not isinstance(doc.metadata, dict):
+                            doc.metadata = {}
+                        doc.metadata['doc_type'] = doc_type
+                        doc.metadata['resource_type'] = r_type_m.group(1).strip()
+                        doc.metadata['title'] = r_title_m.group(1).strip()
+                        doc.metadata['url'] = r_url_m.group(1).strip()
+                        if r_desc_m:
+                            doc.metadata['description'] = r_desc_m.group(2).strip()
+                        processed_docs.append(doc)
+                        curated_handled_any = True
                 
-                processed_docs.extend(chunks)
-                print(f"Processed {filename} as type: {doc_type} language: {language or 'n/a'}")
+                if curated_handled_any:
+                    print(f"Processed {filename} as curated {doc_type} language: {language or 'n/a'}")
+                else:
+                    # Fallback to standard splitting for non-curated files
+                    text_splitter = CharacterTextSplitter(chunk_size=1000, chunk_overlap=100)
+                    chunks = text_splitter.split_documents(documents)
+
+                    for chunk in chunks:
+                        if not isinstance(chunk.metadata, dict):
+                            chunk.metadata = {}
+                        chunk.metadata['doc_type'] = doc_type
+                        chunk.metadata['source'] = filename
+                        if language:
+                            chunk.metadata['language'] = language
+                    
+                    processed_docs.extend(chunks)
+                    print(f"Processed {filename} as type: {doc_type} language: {language or 'n/a'}")
                 
             except Exception as e:
                 print(f"Could not read file {filepath}: {e}")

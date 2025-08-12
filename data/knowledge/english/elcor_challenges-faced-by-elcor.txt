@@ -1,0 +1,5 @@
+Topic: Challenges faced by Elcor
+Source article: Elcor
+Keywords: inventory, capital binding, data analysis, Excel, market changes
+
+Elcor faced challenges of excessive inventory and high capital binding due to static data, preventing timely reactions to market changes. Manual data handling in Excel led to lack of concrete methods for analyzing capital binding.

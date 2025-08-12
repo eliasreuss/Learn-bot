@@ -1,0 +1,5 @@
+Topic: Dag-til-dag levering og kompleksitet hos Vikan
+Source article: Vikan
+Keywords: levering, kompleksitet, lagerværdi, produktion, kunder
+
+Vikan står over for stor kompleksitet med dag-til-dag-levering af op til 25.000 stk. ordrer, hvilket skaber udfordringer med korrekte beslutninger i produktion og lagerstyring.

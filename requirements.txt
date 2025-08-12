@@ -11,3 +11,5 @@ fastapi
 uvicorn
 pydantic
 pypdf
+requests
+beautifulsoup4

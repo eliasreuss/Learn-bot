@@ -1,0 +1,4 @@
+Type: Artikel
+Title: Reducér dit lager og øg din leveringsevne
+URL: https://inact.io/blog/reducer-dit-lager-og-oeg-din-leveringsevne/
+Beskrivelse: Omsætningshastigheden handler altså om at træffe eksplicitte valg omkring virksomhedens ønskede servicegrad, working capital og omsætning.

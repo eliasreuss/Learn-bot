@@ -1,0 +1,5 @@
+Topic: Indekstal
+Source article: 5 anbefalinger til hvordan du undgår store økonomiske tab
+Keywords: indekstal, salgstrend, afvigende salg, Inact Now, sikkerhedslager
+
+1. Compare sales across periods to detect anomalies. 2. Calculate index for recent vs. past months to track sales trends. 3. Utilize Inact Now to identify items with significant deviations.

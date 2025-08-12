@@ -1,0 +1,5 @@
+Topic: Hvad er en hvalkurve?
+Source article: Direktørens bedste ven og værste fjende (1)
+Keywords: hvalkurve, indtjening, produkter, kunder, EBIT
+
+Helt konkret viser kurven, hvilke produkter og kunder virksomheden tjener penge på og hvilke, der er et økonomisk sort hul. Hvalkurven består af Y-aksen, der viser EBIT (Earnings Before Interest and Tax) i procent og X-aksen består af henholdsvis kunder og produkter efter indtjening.

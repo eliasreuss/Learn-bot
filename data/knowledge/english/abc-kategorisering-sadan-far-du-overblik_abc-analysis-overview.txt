@@ -1,0 +1,5 @@
+Topic: ABC Analysis Overview
+Source article: ABC-kategorisering  sådan får du overblik
+Keywords: ABC analysis, product categorization, importance, revenue, inventory management
+
+ABC analysis categorizes products into A, B, and C categories based on their performance. A includes crucial, highly profitable products generating 80% of revenue. B comprises less important products contributing around 15% of revenue. C consists of 'long tail' products with minimal impact on the bottom line, generating only 5% of revenue.

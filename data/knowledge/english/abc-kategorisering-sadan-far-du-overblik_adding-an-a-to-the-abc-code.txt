@@ -1,0 +1,5 @@
+Topic: Adding an 'A' to the ABC Code
+Source article: ABC-kategorisering  sådan får du overblik
+Keywords: ABC analysis, product categorization, inventory management, pluk analysis
+
+Perform another ABC analysis on your products, this time based on 'pluk,' where A-products represent 80%, B-products 15%, and C-products 5% of all picks. Products scoring 'AA' in both revenue and picks receive the ABC code 'AA.'

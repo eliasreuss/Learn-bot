@@ -1,0 +1,5 @@
+Topic: Understanding Whale Curve
+Source article: Direktørens bedste ven og værste fjende (1)
+Keywords: whale curve, profitability, products, customers, EBIT
+
+The whale curve visualizes where the business earns and loses money based on the composition of products and customers. It shows the EBIT (Earnings Before Interest and Tax) in percentage on the Y-axis and customers/products sorted by profitability on the X-axis. A represents the most profitable, B neutral, and C the least profitable. It helps identify which products/customers contribute to profit and which are a financial drain.

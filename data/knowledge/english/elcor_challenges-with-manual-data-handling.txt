@@ -1,0 +1,5 @@
+Topic: Challenges with manual data handling
+Source article: Elcor
+Keywords: outdated data, reporting limitations, insight, inventory management, MOQ adjustment
+
+Manual data handling in Excel led to outdated data, limited insights for inventory management decisions, and challenges like uncontrolled inventory growth, inadequate MOQ adjustments, and inefficient resource allocation.

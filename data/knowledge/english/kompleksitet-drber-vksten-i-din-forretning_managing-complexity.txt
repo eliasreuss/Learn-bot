@@ -1,0 +1,5 @@
+Topic: Managing Complexity
+Source article: Kompleksitet dræber væksten i din forretning
+Keywords: optimal complexity level, customer satisfaction, controlling complexity
+
+When dealing with complexity, the right approach is not always to reduce it as much as possible but rather to find the right level of complexity. Complexity is not inherently bad; it just needs to be controlled.

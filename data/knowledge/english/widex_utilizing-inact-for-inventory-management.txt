@@ -1,0 +1,5 @@
+Topic: Utilizing Inact for Inventory Management
+Source article: Widex
+Keywords: automation, ABC matrix, procurement, decision-making procedures, inventory optimization
+
+Inact automated procurement analysis, created overview, and defined rules based on ABC matrix. Rules determine delivery frequency, negotiation efforts, focus, checking frequency, and other relevant parameters. All procurement profiles are based on these rules, significantly improving results.

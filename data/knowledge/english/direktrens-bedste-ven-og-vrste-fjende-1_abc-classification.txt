@@ -1,0 +1,5 @@
+Topic: ABC Classification
+Source article: Direktørens bedste ven og værste fjende (1)
+Keywords: ABC classification, customer segmentation, product segmentation, value analysis
+
+ABC classification divides elements (customers and products) into three categories based on their relative value or importance for the company: A - most valuable elements with high revenue or profit. B - moderate value elements contributing to success. C - low value elements with minor contribution to revenue or profit. By using ABC classification, identify the most valuable customers and products to focus resources accordingly.

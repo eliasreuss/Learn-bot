@@ -1,0 +1,5 @@
+Topic: Inact's Solution for Insight and Action
+Source article: Complexity Management
+Keywords: Inact, solution, insight, action, profitability
+
+Inact offers an innovative solution driven by their proprietary 'analysis engine' that delves deep into transaction data across the value chain. Their SaaS solution provides insights on profitability, costs for each SKU, customer, and supplier, pinpointing areas of profit and loss in the value chain focusing on products, inventory, suppliers, and customers.

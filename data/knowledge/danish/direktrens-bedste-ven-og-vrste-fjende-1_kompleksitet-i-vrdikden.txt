@@ -1,0 +1,8 @@
+Topic: Kompleksitet i værdikæden
+Source article: Direktørens bedste ven og værste fjende (1)
+Keywords: kompleksitet, værdikæde, produkter, kunder, margin
+
+1. Vækst fører til flere produkter i virksomhedens portefølje.
+2. Over tid mister virksomheden overblik pga. mange produkter.
+3. Lav-margin produkter optager for meget tid og plads.
+4. Høj-margin produkter får ikke tilstrækkelig opmærksomhed.

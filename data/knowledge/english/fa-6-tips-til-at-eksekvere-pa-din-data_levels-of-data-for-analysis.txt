@@ -1,0 +1,5 @@
+Topic: Levels of Data for Analysis
+Source article: Få 6 tips til at eksekvere på din data
+Keywords: data levels, ABC analysis, supply chain, data maturity
+
+4. Utilize different levels of data for analysis, starting with basic datasets for ABC product analysis. Progress to more comprehensive data levels to enhance supply chain execution. Transition from data to insights by aligning analyses with the primary focus areas.

@@ -1,0 +1,5 @@
+Topic: Udfordringer ved manglende standardisering
+Source article: Alfa-Laval
+Keywords: supply chain, standardisering, procesforbedring, omsætningshastighed, Excel
+
+Manglen på standardisering i Alfa Lavals supply chain førte til problemer som høj lagerbeholdning, ukurans, lange leveringstider, manglende fokus på kapitalbinding, dårlige processer, og overflod af Excel-ark. Beslutninger blev truffet uden tilstrækkelig dataindsigt og baseret på kundetilfredshed frem for effektive processer.

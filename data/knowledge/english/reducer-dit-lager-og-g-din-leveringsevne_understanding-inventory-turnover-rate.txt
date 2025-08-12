@@ -1,0 +1,5 @@
+Topic: Understanding Inventory Turnover Rate
+Source article: Reducér dit lager og øg din leveringsevne
+Keywords: inventory, turnover rate, omsætningshastighed, varelager, omsætning
+
+Inventory turnover rate is a key metric that expresses the relationship between inventory and sales. It indicates how quickly a company sells and replaces its stock. A higher turnover rate signifies efficient inventory management. To calculate: Inventory Turnover Rate = Cost of Goods Sold / Average Inventory

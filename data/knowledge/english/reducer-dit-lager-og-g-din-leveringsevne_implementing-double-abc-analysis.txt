@@ -1,0 +1,5 @@
+Topic: Implementing Double ABC Analysis
+Source article: Reducér dit lager og øg din leveringsevne
+Keywords: inventory, double ABC analysis, AA-items, CC-items, AC-items, CA-items
+
+Double ABC analysis evaluates items based on multiple parameters like picking frequency and turnover rate. AA-items are high-profit, high-sales products, while CC-items are low-profit, low-sales items. By focusing on AA-items that drive significant revenue, businesses can enhance their core operations and procurement strategies.

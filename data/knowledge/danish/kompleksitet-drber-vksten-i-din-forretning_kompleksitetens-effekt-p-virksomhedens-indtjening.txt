@@ -1,0 +1,5 @@
+Topic: Kompleksitetens effekt på virksomhedens indtjening
+Source article: Kompleksitet dræber væksten i din forretning
+Keywords: kompleksitet, virksomhedsindtjening, hvalkurve, omkostninger, vækst
+
+Undersøgelser viser, at kompleksitet kan æde op til 40 procent af virksomhedens indtjening. Hvalkurven illustrerer, hvordan kompleksitet kun tilføjer værdi op til et vist niveau, hvorefter værdien i kompleksiteten vil aftage. Virksomhedens omkostninger stiger eksponentielt i takt med vækst og kompleksitet, hvilket kan resultere i øget omsætning uden tilsvarende indtjening.

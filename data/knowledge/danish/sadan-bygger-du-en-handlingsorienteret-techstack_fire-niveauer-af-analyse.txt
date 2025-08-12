@@ -1,0 +1,5 @@
+Topic: Fire niveauer af analyse
+Source article: Sådan bygger du en handlingsorienteret techstack
+Keywords: dataanalyse, BI, Inact, strategi, beslutninger
+
+Der findes fire niveauer af dataanalyse, hvor Inact adskiller sig ved at diagnosticere, rådgive og skabe sammenhæng mellem data, strategi og daglige beslutninger. BI værktøjer strander ofte som eksekveringsværktøj.

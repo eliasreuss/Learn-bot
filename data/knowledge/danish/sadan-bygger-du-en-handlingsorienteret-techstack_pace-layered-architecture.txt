@@ -1,0 +1,5 @@
+Topic: Pace Layered Architecture
+Source article: Sådan bygger du en handlingsorienteret techstack
+Keywords: teknologistack, systemer, ERP, PIM, SCM
+
+Pace Layered Architecture opdeler systemer i tre lag: System of Record (ERP), System of Differentiation (PIM og SCM), System of Innovation. Systemerne skal kombineres for at spille sammen.

@@ -1,0 +1,5 @@
+Topic: Analysis and Solutions for Inventory Management
+Source article: AUBO
+Keywords: inventory, data analysis, product categorization, process optimization, ABC categorization
+
+Inact conducted a thorough analysis of AUBO's assortment, identified critical challenges, and proposed solutions. They cleaned and updated essential data for accurate procurement. AUBO's data and products were categorized for a simple overview, enabling identification of inefficiencies. The collaboration aimed to gain insights into data, implement automations, and change behaviors. AUBO achieved real-time inventory visibility and ABC categorization, leading to benefits like easier identification of dead stock and data-driven procurement optimization.

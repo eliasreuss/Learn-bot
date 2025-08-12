@@ -1,0 +1,4 @@
+Type: Artikel
+Title: 3 faresignaler der indikerer, at prisen er for høj
+URL: https://inact.io/blog/3-faresignaler-pris/
+Beskrivelse: Pris er ofte en parameter som gør sig gældende i beslutningen om IT-systemer og konsulenter. Men hvornår er prisen i virkeligheden for høj?

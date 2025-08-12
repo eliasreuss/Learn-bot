@@ -1,0 +1,5 @@
+Topic: Definer de nødvendige data for hvert mål
+Source article: Få 6 tips til at eksekvere på din data
+Keywords: data, beslutningstagning, kompleksitet
+
+Start med at bruge cause-and-effect diagrammet til at drøfte, hvilken form for data I har brug for. Virksomheder kan komme til ABC-produktanalysen med et grundlæggende datasæt.

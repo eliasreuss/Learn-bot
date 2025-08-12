@@ -1,0 +1,4 @@
+Type: Webinar
+Title: Trim din produktportefølje – uden at miste omsætning
+URL: https://inact.io/webinar/trim-din-produktportefoelje/
+Beskrivelse: Når virksomheden producerer, lagerfører og distribuerer produkter til markedet, påføres direkte og indirekte omkostninger.

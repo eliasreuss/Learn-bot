@@ -1,0 +1,5 @@
+Topic: Reducing Inventory Value and Increasing Turnover
+Source article: Alfa-Laval
+Keywords: inventory, supply chain, data visualization, collaboration, deadstock
+
+The factory focused on three parameters: Minimum Order Quantity (MOQ), Safety Stock, Deadstock and scraping. By visualizing data, the factory reduced inventory value by 25% and increased turnover. Improved collaboration and a common language were achieved.

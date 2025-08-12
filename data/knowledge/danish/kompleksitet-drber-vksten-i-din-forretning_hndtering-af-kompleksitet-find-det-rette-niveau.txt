@@ -1,0 +1,5 @@
+Topic: Håndtering af kompleksitet: Find det rette niveau
+Source article: Kompleksitet dræber væksten i din forretning
+Keywords: kompleksitetshåndtering, niveau af kompleksitet, kundernes behov, kontrol
+
+Det optimale svar på kompleksitet er ikke altid at minimere den, men at finde det rette niveau. Kompleksitet skal kontrolleres, da en vis grad af kompleksitet kan være gavnlig. Nøglen er at håndtere kompleksitet passende i forhold til kundernes behov og virksomhedens mål.

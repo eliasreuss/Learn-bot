@@ -1,0 +1,4 @@
+Type: Artikel
+Title: Complexity Management
+URL: https://inact.io/blog/complexity-management/
+Beskrivelse: Flere produkter, kunder og leverandører gør utvivlsomt din virksomhed attraktiv for et bredere publikum. Men det betyder ikke automatisk øget rentabilitet.

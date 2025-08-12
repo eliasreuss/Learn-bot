@@ -1,0 +1,5 @@
+Topic: Standardizing Supply Chain Processes at Alfa Laval
+Source article: Alfa-Laval
+Keywords: supply chain, standardization, process optimization, capital binding, data-driven
+
+Alfa Laval aimed to standardize planning and inventory management across its global factories to reduce capital binding. The solution involved a technical platform with Insights and Actions: Inact Now, which analyzed ERP data to generate actionable insights for employees. Collaborating with Inact consultants, Alfa Laval achieved streamlined processes and data-driven optimization, leading to a 25% reduction in inventory at one factory.

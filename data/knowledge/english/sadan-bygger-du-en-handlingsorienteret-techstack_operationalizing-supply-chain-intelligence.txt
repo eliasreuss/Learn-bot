@@ -1,0 +1,5 @@
+Topic: Operationalizing Supply Chain Intelligence
+Source article: Sådan bygger du en handlingsorienteret techstack
+Keywords: ERP, BI reporting, supply chain intelligence, value of data, action over data
+
+To create value, operationalize supply chain intelligence. Pace Layered Architecture and the four analysis levels aim to make your tech stack mature, focused, and action-oriented. Inact is designed for this purpose.

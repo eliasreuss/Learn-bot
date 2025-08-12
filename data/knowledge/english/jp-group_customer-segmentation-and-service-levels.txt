@@ -1,0 +1,5 @@
+Topic: Customer Segmentation and Service Levels
+Source article: JP-Group
+Keywords: customer segmentation, service levels, ABC analysis
+
+Customer segmentation involves categorizing customers and defining service levels for each category. This ensures a tailored approach to customer service. For example, low-profit turnaround customers may be directed to online orders. Establish clear rules for handling different customer groups to optimize resource allocation.

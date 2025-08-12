@@ -1,0 +1,5 @@
+Topic: Trække rapporter fra systemer
+Source article: Specific-Pharma
+Keywords: rapporter, Excel, systemer, opdateret, karantæne
+
+1. Træk queries fra systemer. 2. Saml dem i en Excel-fil. 3. Del filen med relevante parter. 4. Kvalitetschefen kan trække daglige opdaterede rapporter over varer i karantæne.

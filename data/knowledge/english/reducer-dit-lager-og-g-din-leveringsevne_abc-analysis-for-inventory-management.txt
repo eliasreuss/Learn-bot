@@ -1,0 +1,5 @@
+Topic: ABC Analysis for Inventory Management
+Source article: Reducér dit lager og øg din leveringsevne
+Keywords: inventory, ABC analysis, categorization, A-items, B-items, C-items
+
+ABC analysis categorizes products into A, B, and C categories based on their importance and performance. A-items contribute to the majority of sales, B-items have moderate sales impact, and C-items are low-volume contributors. This classification helps prioritize inventory management efforts effectively.
