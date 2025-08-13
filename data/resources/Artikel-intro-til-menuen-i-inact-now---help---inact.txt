@@ -1,0 +1,4 @@
+Type: Artikel
+Title: Intro til Menuen i Inact Now - Help - Inact
+URL: https://help.inact.io/portfolio/1893/
+Beskrivelse: Du kan få adgang til 5 menupunkter i ABC Cloud. Her er en introduktion til netop disse menupunkter med forklaring og baggrunden bag.

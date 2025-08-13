@@ -1,0 +1,4 @@
+Type: Artikel
+Title: Tilpasning af dine Actions - Help - Inact
+URL: https://help.inact.io/portfolio/tilpas-dine-actions/
+Beskrivelse: Actions er de påkrævede handlemuligheder, du kan vælge når arbejder med en Action. Actions afhænger af formålet din Actions.

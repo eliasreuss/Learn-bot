@@ -1,0 +1,4 @@
+Type: Artikel
+Title: Opbygning af Insights - Help - Inact
+URL: https://help.inact.io/portfolio/insight-opsaetning/
+Beskrivelse: Med Reports kan du analyserer på Data. Rapporten bruges til at lave Dashboards og Checklister i inact Now. Læs gode råd til Inact Now her.

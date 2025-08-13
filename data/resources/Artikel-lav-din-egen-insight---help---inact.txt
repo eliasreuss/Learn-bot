@@ -1,0 +1,4 @@
+Type: Artikel
+Title: Lav din egen Insight - Help - Inact
+URL: https://help.inact.io/portfolio/lav-din-egen-insight/
+Beskrivelse: For at lave en Insight fra bunden skal du, for at få det mest optimale resultat, tage stilling til følgende trin.

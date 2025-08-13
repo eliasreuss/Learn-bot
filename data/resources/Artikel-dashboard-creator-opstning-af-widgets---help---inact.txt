@@ -1,0 +1,4 @@
+Type: Artikel
+Title: Dashboard Creator: Opsætning af Widgets - Help - Inact
+URL: https://help.inact.io/portfolio/dashboard-creator-opsaetning-af-widgets/
+Beskrivelse: Se hvordan du vælger og konfigurerer Widgets, både store og små, samt hvordan du indstiller Target og yderligere tilpasninger.
