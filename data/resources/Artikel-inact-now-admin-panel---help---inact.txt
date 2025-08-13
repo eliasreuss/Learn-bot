@@ -1,0 +1,4 @@
+Type: Artikel
+Title: Inact Now Admin Panel - Help - Inact
+URL: https://help.inact.io/portfolio/admin-panel/
+Beskrivelse: Inact Now Admin Panel - Help - Inact - Værktøjet er designet til at give Admin-brugere af Inact Now kontrol over deres organisationsstyring

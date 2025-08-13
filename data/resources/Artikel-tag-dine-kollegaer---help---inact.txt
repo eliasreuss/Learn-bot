@@ -1,0 +1,4 @@
+Type: Artikel
+Title: Tag dine kollegaer - Help - Inact
+URL: https://help.inact.io/portfolio/tag-dine-kollegaer/
+Beskrivelse: Du kan skrive direkte til dine kollegaer i Inact Now. Det er hurtigere og langt mere effektivt, da al historik bliver i Inact Now.

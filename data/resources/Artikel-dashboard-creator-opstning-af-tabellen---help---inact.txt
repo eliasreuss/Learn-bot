@@ -1,0 +1,4 @@
+Type: Artikel
+Title: Dashboard Creator: Opsætning af Tabellen - Help - Inact
+URL: https://help.inact.io/portfolio/dashboard-creator-opsaetning-af-tabellen/
+Beskrivelse: Se hvordan Du bedst laver sin Tabel, dække essentielle elementer som rækker, kolonner, Insightrækker, filterrækker og flere mål.

@@ -1,6 +1,0 @@
---- LEARNING RESOURCE ---
-
-Type: Artikel
-Titel: Artikel: Oprettelse af Insight
-URL: https://www.google.com/search?q=Snydt+igen&rlz=1C5CHFA_enDK1152DK1152&oq=Snydt+igen&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIKCAEQABgKGBYYHjIHCAIQABjvBTIHCAMQABjvBTIHCAQQABjvBTIHCAUQABjvBTIHCAYQABjvBdIBCDE3ODVqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8
-Beskrivelse: Denne trin-for-trin artikelguide viser dig pr�cis, hvordan du tilf�jer og laver en ny Insight i Inact Now. Den d�kker, hvordan du navigerer til Insights, udfylder den rigtige information. Dette er en meget nyttig l�ringsressource.

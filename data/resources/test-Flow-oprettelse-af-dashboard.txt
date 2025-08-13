@@ -1,6 +1,0 @@
---- LEARNING RESOURCE ---
-
-Type: Flow
-Titel: Flow: Oprettelse af Dashboard
-URL: https://www.google.com/search?q=Hejsa&rlz=1C5CHFA_enDK1152DK1152&oq=Hejsa&gs_lcrp=EgZjaHJvbWUyCQgAEEUYORiABDIHCAEQABiABDIHCAIQABiABDIKCAMQLhjUAhiABDIKCAQQLhjUAhiABDIHCAUQABiABDIHCAYQABiABDIHCAcQABiABDIHCAgQLhiABDIHCAkQLhiABNIBCDEzODZqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8
-Beskrivelse: Denne trin-for-trin interaktive flow viser dig pr�cis, hvordan du tilf�jer og laver et nyt dashboard i Inact Now. Dette er en meget nyttig l�ringsressource.

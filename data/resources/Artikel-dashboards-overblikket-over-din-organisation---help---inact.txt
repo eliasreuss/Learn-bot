@@ -1,0 +1,4 @@
+Type: Artikel
+Title: Dashboards: Overblikket over din organisation - Help - Inact
+URL: https://help.inact.io/portfolio/dashboards-overblikket-over-din-organisation/
+Beskrivelse: Dashboardet er det øverste på din Homepage og er værktøjet til at give dig og dine kollegaer et hurtigt overblik over tilstanden i dag.

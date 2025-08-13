@@ -1,0 +1,4 @@
+Type: Artikel
+Title: Overblik over dine Actions - Help - Inact
+URL: https://help.inact.io/portfolio/overblik-over-dine-actions/
+Beskrivelse: Overblikket viser dig dine Checklists.filtrere i din organisations Actions i forhold til Actions information.
