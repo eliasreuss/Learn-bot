@@ -2,5 +2,5 @@ Type: Artikel
 Title: Opbygning af Insights - Help - Inact
 URL: https://help.inact.io/portfolio/insight-opsaetning/
 Beskrivelse: Med Reports kan du analyserer på Data. Rapporten bruges til at lave Dashboards og Checklister i inact Now. Læs gode råd til Inact Now her.
-Keywords: action, actions, checklist, create checklist, opret action, lav action, alarm, alarmer, dashboard, dashboards, dashboard creator, widget, widgets, visualisering, overblik, chart, tabel, insight, insights, analyse, rapport, rapporter, view, master data, opbygning, help, inact, inact now, hjælp
+Keywords: grid view, matrix view, kpi view, profit view, master data, sum view, opbygning insights, både dashboards, dashboards checklister, inact now, view grid, view trend, trend view, kunder leverandører
 

@@ -2,5 +2,5 @@ Type: Artikel
 Title: Intro til Menuen i Inact Now - Help - Inact
 URL: https://help.inact.io/portfolio/1893/
 Beskrivelse: Du kan få adgang til 5 menupunkter i ABC Cloud. Her er en introduktion til netop disse menupunkter med forklaring og baggrunden bag.
-Keywords: abc, abc analyse, dobbelt abc, pareto, kategori a, kategori b, kategori c, intro, menuen, inact, help, inact now, hjælp
+Keywords: inact now, giver dig, private insights, insight admin, edit mode, hvis action, action admin, navn status, dashboard creator, creator opsætning, action, actions, inact, insights
 

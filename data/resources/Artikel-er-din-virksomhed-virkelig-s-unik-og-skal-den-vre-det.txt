@@ -2,5 +2,5 @@ Type: Artikel
 Title: Er din virksomhed virkelig så unik – og skal den være det?
 URL: https://inact.io/blog/er-din-virksomhed-virkelig-saa-unik/
 Beskrivelse: Mange virksomheder siger, at de er helt specielle - men visse elementer går igen på tværs af de fleste virksomheder og det skal du udnytte.
-Keywords: virksomhed, virkelig, unik, skal, være, inact, inact now, hjælp, help
+Keywords: supply chain, best practice, virksomheder, virksomhed, inact, standarder, tværs, elementer, fleste, handler, specielle, unik, visse, abc
 

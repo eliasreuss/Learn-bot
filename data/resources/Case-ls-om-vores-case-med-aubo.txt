@@ -2,5 +2,5 @@ Type: Case
 Title: Læs om vores case med AUBO
 URL: https://inact.io/case/aubo/
 Beskrivelse: Læs hvordan AUBO har reduceret deres varelager med 20% uden at gå på kompromis med hverken produktionskapacitet eller kundetilfredshed.
-Keywords: vores, case, aubo, inact, inact now, hjælp, help
+Keywords: heidi lindbøg, lindbøg karlsen, samarbejdet mellem, ansvarlig produktion, døde varer, års viden, mellem aubo, aubo inact, platformen inact, inact now, fik aubo, tcm group, hos aubo, stort varelager
 

@@ -2,5 +2,5 @@ Type: Webinar
 Title: 5 leveregler til en effektiv supply chain
 URL: https://inact.io/webinar/5-leveregler-til-en-effektiv-supply-chain/
 Beskrivelse: En analyse som sikrer, at I får et fælles internt sprog og 5 leveregler til at navigere efter i dagligdagen.
-Keywords: leveregler, effektiv, supply, chain, inact, inact now, hjælp, help
+Keywords: supply chain, hed abc, analyse, abc, leveregler, chain, supply, dagligdagen, effektiv, efter, får, fælles, internt, navigere
 

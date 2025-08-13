@@ -2,5 +2,5 @@ Type: Artikel
 Title: Tilpasning af dine Actions - Help - Inact
 URL: https://help.inact.io/portfolio/tilpas-dine-actions/
 Beskrivelse: Actions er de påkrævede handlemuligheder, du kan vælge når arbejder med en Action. Actions afhænger af formålet din Actions.
-Keywords: action, actions, checklist, create checklist, opret action, lav action, alarm, alarmer, tilpasning, dine, help, inact, inact now, hjælp
+Keywords: tilpasning actions, actions actions, dashboard creator, creator opsætning, actions, action, inact, dashboard, afhænger, arbejder, formålet, handlemuligheder, påkrævede, tilpasning
 

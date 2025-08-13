@@ -2,5 +2,5 @@ Type: Case
 Title: Læs vores case med Alfa Laval - Inact
 URL: https://inact.io/case/alfa-laval/
 Beskrivelse: Læs hvordan Alfa Laval har reduceret lageret på en af deres fabrikker med 25% og fået et fælles sprog på tværs af organisationen.
-Keywords: vores, case, alfa, laval, inact, inact now, hjælp, help
+Keywords: alfa laval, supply chain, inact now, project manager, chain project, alfa lavals, forskellige måder, fælles sprog, fabrikker spredt, spredt hele, hele verden, drive supply, løsningen alfa, erp system
 

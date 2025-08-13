@@ -2,5 +2,5 @@ Type: Artikel
 Title: De 5 fejlsikre trin til en superoptimeret supply chain
 URL: https://inact.io/blog/de-5-fejlsikre-trin-til-en-superoptimeret-supply-chain/
 Beskrivelse: Vi har udarbejdet en 5-trins model, på baggrund af +150 implementeringsforløb, der skitserer de forskellige modenhedsfaser en virksomhed gennemgår.
-Keywords: fejlsikre, trin, superoptimeret, supply, chain, inact, inact now, hjælp, help
+Keywords: supply chain, trin superoptimeret, superoptimeret supply, superoptimerede supply, fælles sprog, vigtigere end, fejlsikre trin, chain arbejder, virksomheden tæt, tæt sammen, sammen tværs, siloer leverandører, leverandører kunder, trin produktlønsomhed
 

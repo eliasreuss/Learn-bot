@@ -2,5 +2,5 @@ Type: Artikel
 Title: Sådan bygger du en handlingsorienteret techstack
 URL: https://inact.io/blog/saadan-bygger-du-en-handlingsorienteret-techstack/
 Beskrivelse: I denne artikel dykker vi ned i, hvordan du skaber en teknologistack, der kan håndtere virkeligheden – og ikke bare beskrive den.
-Keywords: sådan, bygger, handlingsorienteret, techstack, inact, inact now, hjælp, help
+Keywords: pace layered, layered architecture, supply chain, fire niveauer, mellem data, data strategi, data, inact, analyse, ofte, skaber, teknologistack, virkeligheden, beskrive
 

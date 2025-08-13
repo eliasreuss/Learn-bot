@@ -2,5 +2,5 @@ Type: Webinar
 Title: Trim din produktportefølje – uden at miste omsætning
 URL: https://inact.io/webinar/trim-din-produktportefoelje/
 Beskrivelse: Når virksomheden producerer, lagerfører og distribuerer produkter til markedet, påføres direkte og indirekte omkostninger.
-Keywords: trim, produktportefølje, uden, miste, omsætning, inact, inact now, hjælp, help
+Keywords: produkter kunder, virksomhedens produkter, hed abc, abc analyse, abc, produkter, analyse, omkostninger, virksomhedens, direkte, distribuerer, indirekte, kunder, lagerfører
 

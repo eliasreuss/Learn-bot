@@ -2,5 +2,5 @@ Type: Artikel
 Title: Guide til brug af Microsoft Authenticator-appen - Help - Inact
 URL: https://help.inact.io/portfolio/guide-til-to-faktor/
 Beskrivelse: 
-Keywords: guide, brug, microsoft, authenticator, appen, help, inact, inact now, hjælp
+Keywords: microsoft authenticator, authenticator appen, inact now, guide brug, brug microsoft, now konto, tilføj konto, cifret kode, dashboard creator, creator opsætning, inact, appen, microsoft, authenticator
 

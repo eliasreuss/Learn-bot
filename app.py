@@ -272,6 +272,10 @@ def get_vectorstore():
 def get_llm():
     return ChatOpenAI(temperature=0, openai_api_key=os.environ["OPENAI_API_KEY"], model_name="gpt-3.5-turbo")
 
+@st.cache_resource
+def get_embeddings():
+    return OpenAIEmbeddings(openai_api_key=os.environ["OPENAI_API_KEY"]) 
+
 # --- Language Detection and Prompt Templates ---
 
 @st.cache_data
@@ -335,6 +339,35 @@ def augment_question_for_resources(question: str, language: str) -> str:
     seen = set()
     extras = " ".join([s for s in additions if not (s in seen or seen.add(s))])
     return f"{q} {extras}".strip()
+
+
+def cosine_similarity(vec_a: List[float], vec_b: List[float]) -> float:
+    if not vec_a or not vec_b or len(vec_a) != len(vec_b):
+        return 0.0
+    dot = 0.0
+    na = 0.0
+    nb = 0.0
+    for a, b in zip(vec_a, vec_b):
+        dot += a * b
+        na += a * a
+        nb += b * b
+    if na == 0.0 or nb == 0.0:
+        return 0.0
+    import math
+    return dot / (math.sqrt(na) * math.sqrt(nb))
+
+
+def is_semantically_related(new_question: str, last_answer: str, threshold: float = 0.50) -> bool:
+    """Return True if new_question appears related to last_answer using embedding cosine similarity."""
+    try:
+        emb = get_embeddings()
+        q_vec = emb.embed_query(new_question[:1000])
+        a_vec = emb.embed_query((last_answer or "")[:1200])
+        sim = cosine_similarity(q_vec, a_vec)
+        return sim >= threshold
+    except Exception as e:
+        print(f"relatedness check failed: {e}")
+        return False
 
 
 def is_affirmative_reply(text: str) -> bool:
@@ -429,6 +462,26 @@ def extract_followup_question(text: str) -> Optional[str]:
         return qs[-1].strip()
     return None
 
+def build_recent_history(max_pairs: int = 1, char_limit: int = 1200) -> str:
+    """Return a compact string of the last max_pairs user/assistant turns before the current input."""
+    messages = st.session_state.get("messages", [])
+    if not messages:
+        return ""
+    # Exclude the just-submitted user message if present at the end
+    prior = messages[:-1] if messages and messages[-1].get("role") == "user" else messages
+    if not prior:
+        return ""
+    recent = prior[-(2 * max_pairs):]
+    lines = []
+    for m in recent:
+        role = "User" if m.get("role") == "user" else "Assistant"
+        content = (m.get("content") or "").strip().replace("\n\n", "\n")
+        lines.append(f"{role}: {content}")
+    joined = "\n".join(lines)
+    if len(joined) > char_limit:
+        joined = joined[-char_limit:]
+    return joined
+
 
 PROMPT_TEMPLATES = {
     "danish": ChatPromptTemplate.from_template(
@@ -438,7 +491,8 @@ PROMPT_TEMPLATES = {
         "Formatér dit svar sådan (skriv IKKE overskrifter eller tal som '1) Svar', 'Anbefalet Læring' eller 'Fortsæt/Spørgsmål' i selve svaret):\n"
         "- Start med et direkte, handlingsorienteret svar. Hvis relevant, korte, nummererede trin i Inact Now og nævn konkrete funktioner.\n"
         "- Hvis relevant, tilføj en kort uddybning, der forbinder til principper, trade-offs og faldgruber.\n"
-        "- Tjek **LÆRINGSRESSOURCE KONTEKST**. Hvis der findes relevante ressourcer, skriv sætningen: 'Her er nogle relevante læringsressourcer, der muligvis kan hjælpe:' og list derefter op til 3 punkter — ét punkt pr. linje — i formatet [Titel](URL) (ingen overskrift).\n"
+        "- Respekter altid brugerens spørgsmålstype. Hvis spørgsmålet er 'hvorfor', så fokuser på formål/fordele/effekt (ikke trin). Hvis det er 'hvordan', så giv trin. Hvis det er 'hvad', så definer/beskriv.\n"
+        "- Brug **LÆRINGSRESSOURCE KONTEKST** som baggrundsviden, men lad være med at liste eller linke til konkrete ressourcer. Applikationen tilføjer dem efter svaret.\n"
         "- Afslut med præcis ét kort opfølgende spørgsmål (kun hvis relevant), formuleret som et tilbud om at hjælpe videre. Brug formuleringer som: 'Skal jeg …', 'Vil du have, at jeg …' eller 'Skal jeg anbefale …?'. Ingen overskrift.\n\n"
         "(Tidligere udveksling – kun som kontekst, ignorer hvis ikke relevant)\n{history_context}\n\n"
         "---\n\n"
@@ -454,7 +508,8 @@ PROMPT_TEMPLATES = {
         "Format your output like this (do NOT print headings or labels such as '1) Answer', 'Recommended Learning', or 'Continue/Question' in the answer):\n"
         "- Begin with a direct, actionable answer. Where relevant, include short, numbered steps in Inact Now and name specific features.\n"
         "- If helpful, add a brief paragraph connecting to principles, trade-offs, and common pitfalls.\n"
-        "- Check **LEARNING RESOURCE CONTEXT**. If relevant resources are found, first write: 'Here are some relevant learning resources that might help:' and then list up to 3 items — one per line — as bullet points in the form [Title](URL) (no header).\n"
+        "- Always match the user's intent. If the question is 'why', lead with purpose/benefits/outcomes (not steps). If it's 'how', give steps. If it's 'what', define/describe.\n"
+        "- Use **LEARNING RESOURCE CONTEXT** only as background. Do not list or link any resources; the application will append them after your answer.\n"
         "- End with exactly one short follow-up question (only if relevant), phrased as an offer to help with the next step. Use openings like: 'Would you like me to …', 'Shall I …', or 'Do you want me to recommend …?'. No heading.\n\n"
         "(Recent exchange – context only; ignore if not relevant)\n{history_context}\n\n"
         "---\n\n"
@@ -465,6 +520,30 @@ PROMPT_TEMPLATES = {
     ),
 }
 
+
+def render_resources_section(resource_docs, language: str) -> str:
+    items = []
+    seen = set()
+    for doc in resource_docs:
+        meta = getattr(doc, "metadata", {}) or {}
+        title = meta.get("title") or meta.get("source") or "Resource"
+        url = meta.get("url")
+        if not url:
+            continue
+        key = (title.strip(), url.strip())
+        if key in seen:
+            continue
+        seen.add(key)
+        items.append(f"- [{title}]({url})")
+        if len(items) >= 3:
+            break
+    if not items:
+        return ""
+    header = (
+        "Her er nogle relevante læringsressourcer, der muligvis kan hjælpe:" if language == "danish" 
+        else "Here are some relevant learning resources that might help:"
+    )
+    return header + "\n" + "\n".join(items)
 
 # --- Main Application Logic ---
 
@@ -544,32 +623,37 @@ if user_question := st.chat_input("How do I create an Insight in Inact Now?"):
             message_placeholder.markdown(answer)
             append_assistant_answer_txt(st.session_state.user_id, answer)
         else:
-            # Build a small recent-history window (last 1 Q/A)
-            history_context = build_recent_history(max_pairs=1, char_limit=1200)
-
-            # Check for context-dependent follow-up and create an effective question
-            effective_question = user_question
+            # Determine if this question relates to the last assistant answer
             last_answer = st.session_state.get("last_assistant_answer")
-            
-            step_num_match = parse_step_followup(user_question)
-            step_content = None
-            if last_answer and step_num_match:
-                step_content = extract_step_content(last_answer, step_num_match)
+            use_history = False
+            if last_answer:
+                use_history = is_semantically_related(user_question, last_answer, threshold=0.50)
 
-            if step_content:
-                # User is following up on a specific step
-                if detected_language == "danish":
-                    effective_question = f"Brugeren spørger ind til trin {step_num_match}: '{step_content}'. Uddyb venligst dette trin i detaljer, og forklar, hvordan det udføres i Inact Now."
-                else:
-                    effective_question = f"The user is asking for details on step {step_num_match}: '{step_content}'. Please elaborate on this specific step, explaining how to perform it in Inact Now."
-            elif last_answer and is_affirmative_reply(user_question):
-                # User gives a general affirmative reply, check for a follow-up question
-                follow_up_q = extract_followup_question(last_answer)
-                if follow_up_q:
+            # Build a small recent-history window only if related
+            history_context = build_recent_history(max_pairs=1, char_limit=1200) if use_history else ""
+
+            # Create an effective question; only apply follow-up logic if related
+            effective_question = user_question
+            if use_history:
+                step_num_match = parse_step_followup(user_question)
+                step_content = None
+                if last_answer and step_num_match:
+                    step_content = extract_step_content(last_answer, step_num_match)
+
+                if step_content:
+                    # User is following up on a specific step
                     if detected_language == "danish":
-                        effective_question = f"Brugeren bekræfter opfølgning: '{follow_up_q}'. Fortsæt og leverer det efterspurgte i detaljer."
+                        effective_question = f"Brugeren spørger ind til trin {step_num_match}: '{step_content}'. Uddyb venligst dette trin i detaljer, og forklar, hvordan det udføres i Inact Now."
                     else:
-                        effective_question = f"The user confirmed the follow-up: '{follow_up_q}'. Please proceed to deliver what was offered in detail."
+                        effective_question = f"The user is asking for details on step {step_num_match}: '{step_content}'. Please elaborate on this specific step, explaining how to perform it in Inact Now."
+                elif last_answer and is_affirmative_reply(user_question):
+                    # User gives a general affirmative reply, check for a follow-up question
+                    follow_up_q = extract_followup_question(last_answer)
+                    if follow_up_q:
+                        if detected_language == "danish":
+                            effective_question = f"Brugeren bekræfter opfølgning: '{follow_up_q}'. Fortsæt og leverer det efterspurgte i detaljer."
+                        else:
+                            effective_question = f"The user confirmed the follow-up: '{follow_up_q}'. Please proceed to deliver what was offered in detail."
 
             # Augment question for resource retrieval if it's a resource-related query
             if "resource" in effective_question.lower():
@@ -624,6 +708,10 @@ if user_question := st.chat_input("How do I create an Insight in Inact Now?"):
                     "history_context": history_context,
                 })
                 answer = response.content
+                # Append curated resources strictly from retrieved docs (no hallucinated links)
+                resources_md = render_resources_section(resource_docs, detected_language)
+                if resources_md:
+                    answer = f"{answer}\n\n{resources_md}"
                 # Save last answer for next turn's context
                 st.session_state.last_assistant_answer = answer
                 # Display the answer and save it to session state
