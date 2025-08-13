@@ -32,6 +32,7 @@ from langchain_community.document_loaders import TextLoader
 from langchain.text_splitter import CharacterTextSplitter
 from langchain_openai import OpenAIEmbeddings, ChatOpenAI
 from langchain_community.vectorstores import Chroma
+from langchain_community.vectorstores import FAISS
 from langchain.prompts import ChatPromptTemplate
 try:
     from chromadb.config import Settings
@@ -210,6 +211,7 @@ def load_and_process_documents(directory="data"):
 DB_DIR = "chromadb_streamlit"
 FINGERPRINT_FILE = os.path.join(DB_DIR, ".source_fingerprint")
 CHROMA_SETTINGS = Settings(chroma_db_impl="duckdb+parquet", persist_directory=DB_DIR) if Settings else None
+FAISS_DIR = "faiss_index"
 
 def compute_data_fingerprint(directory: str = "data") -> str:
     hasher = hashlib.md5()
@@ -236,45 +238,64 @@ def get_vectorstore():
     embeddings = OpenAIEmbeddings(openai_api_key=os.environ["OPENAI_API_KEY"])
     current_fp = compute_data_fingerprint()
     
-    if os.path.exists(DB_DIR) and os.path.exists(FINGERPRINT_FILE):
-        try:
-            saved_fp = open(FINGERPRINT_FILE, 'r', encoding='utf-8').read().strip()
-        except Exception:
-            saved_fp = ""
-        if saved_fp == current_fp:
-            # Load the existing database
-            db = Chroma(persist_directory=DB_DIR, embedding_function=embeddings, client_settings=CHROMA_SETTINGS) if CHROMA_SETTINGS else Chroma(persist_directory=DB_DIR, embedding_function=embeddings)
-            print("Loaded existing ChromaDB database.")
-            return db
-        else:
-            print("Source data changed. Rebuilding ChromaDB...")
+    try:
+        if os.path.exists(DB_DIR) and os.path.exists(FINGERPRINT_FILE):
             try:
-                import shutil
-                shutil.rmtree(DB_DIR)
+                saved_fp = open(FINGERPRINT_FILE, 'r', encoding='utf-8').read().strip()
+            except Exception:
+                saved_fp = ""
+            if saved_fp == current_fp:
+                # Load the existing database
+                db = Chroma(persist_directory=DB_DIR, embedding_function=embeddings, client_settings=CHROMA_SETTINGS) if CHROMA_SETTINGS else Chroma(persist_directory=DB_DIR, embedding_function=embeddings)
+                print("Loaded existing ChromaDB database.")
+                return db
+            else:
+                print("Source data changed. Rebuilding ChromaDB...")
+                try:
+                    import shutil
+                    shutil.rmtree(DB_DIR)
+                except Exception as e:
+                    print(f"Failed to remove existing DB dir: {e}")
+        # Create the database if it doesn't exist or if source changed
+        with st.spinner("Første opstart: Opretter og indekserer databasen. Dette kan tage et øjeblik..."):
+            all_chunks = load_and_process_documents()
+            if not all_chunks:
+                st.error("Ingen dokumenter fundet i 'data' mappen. Sørg for at dine .txt filer er i repository'et.")
+                return None
+            
+            db = Chroma.from_documents(
+                documents=all_chunks, 
+                embedding=embeddings, 
+                persist_directory=DB_DIR,
+                client_settings=CHROMA_SETTINGS
+            )
+            try:
+                os.makedirs(DB_DIR, exist_ok=True)
+                with open(FINGERPRINT_FILE, 'w', encoding='utf-8') as f:
+                    f.write(current_fp)
             except Exception as e:
-                print(f"Failed to remove existing DB dir: {e}")
-    # Create the database if it doesn't exist or if source changed
-    with st.spinner("Første opstart: Opretter og indekserer databasen. Dette kan tage et øjeblik..."):
-        all_chunks = load_and_process_documents()
-        if not all_chunks:
-            st.error("Ingen dokumenter fundet i 'data' mappen. Sørg for at dine .txt filer er i repository'et.")
-            return None
-        
-        db = Chroma.from_documents(
-            documents=all_chunks, 
-            embedding=embeddings, 
-            persist_directory=DB_DIR,
-            client_settings=CHROMA_SETTINGS
-        )
+                print(f"Failed writing fingerprint file: {e}")
+            print("Created and persisted new ChromaDB database.")
+        return db
+    except Exception as e:
+        print(f"Chroma unavailable, falling back to FAISS: {e}")
+        # FAISS fallback (no sqlite requirement)
         try:
-            os.makedirs(DB_DIR, exist_ok=True)
-            with open(FINGERPRINT_FILE, 'w', encoding='utf-8') as f:
-                f.write(current_fp)
-        except Exception as e:
-            print(f"Failed writing fingerprint file: {e}")
-        print("Created and persisted new ChromaDB database.")
-    
-    return db
+            if os.path.exists(FAISS_DIR):
+                db = FAISS.load_local(FAISS_DIR, embeddings, allow_dangerous_deserialization=True)
+                print("Loaded existing FAISS index.")
+                return db
+        except Exception as e2:
+            print(f"Failed loading FAISS index: {e2}")
+        with st.spinner("Indekserer dokumenter i FAISS (første opstart)..."):
+            all_chunks = load_and_process_documents()
+            if not all_chunks:
+                st.error("Ingen dokumenter fundet i 'data' mappen. Sørg for at dine .txt filer er i repository'et.")
+                return None
+            db = FAISS.from_documents(all_chunks, embeddings)
+            db.save_local(FAISS_DIR)
+            print("Created and persisted new FAISS index.")
+            return db
 
 @st.cache_resource
 def get_llm():
