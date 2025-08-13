@@ -23,13 +23,8 @@ A chatbot that uses Retrieval-Augmented Generation (RAG) to answer questions bas
 - This chatbot is a prototype/demo. Answers may be inaccurate or incomplete.
 - Messages sent to the bot may be saved to help improve the assistant. The simple text log is stored in `user_questions.txt`.
 
-## Keeping the app running
-- Local development: macOS can put your machine to sleep. To prevent sleep while running Streamlit, you can use:
-  ```bash
-  caffeinate -dimsu streamlit run app.py
-  ```
-- GitHub: A scheduled workflow (`.github/workflows/keepalive.yml`) performs a daily empty commit to keep repository activity visible. This does not keep Streamlit Community Cloud apps awake; use an uptime pinger or an always-on plan if needed.
-
+- GitHub: A scheduled workflow (`.github/workflows/keepalive.yml`) performs a daily empty commit to keep website active
+  
 ## How it works
 - Uses LangChain to load, split, and embed your documents.
 - Stores embeddings in ChromaDB (local vector database).
