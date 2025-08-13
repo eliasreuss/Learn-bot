@@ -2,6 +2,8 @@
 
 import sys
 import os
+# Force Chroma to use DuckDB+Parquet backend (works on Streamlit Cloud without modern sqlite)
+os.environ.setdefault("CHROMA_DB_IMPL", "duckdb+parquet")
 import streamlit as st
 from dotenv import load_dotenv
 import logging
@@ -31,6 +33,7 @@ from langchain.text_splitter import CharacterTextSplitter
 from langchain_openai import OpenAIEmbeddings, ChatOpenAI
 from langchain_community.vectorstores import Chroma
 from langchain.prompts import ChatPromptTemplate
+from chromadb.config import Settings
 import re
 
 # Load environment variables (e.g., your OPENAI_API_KEY)
@@ -203,6 +206,7 @@ def load_and_process_documents(directory="data"):
 # --- Caching Resources (LLM and Vector Store) ---
 DB_DIR = "chromadb_streamlit"
 FINGERPRINT_FILE = os.path.join(DB_DIR, ".source_fingerprint")
+CHROMA_SETTINGS = Settings(chroma_db_impl="duckdb+parquet", persist_directory=DB_DIR)
 
 def compute_data_fingerprint(directory: str = "data") -> str:
     hasher = hashlib.md5()
@@ -236,7 +240,7 @@ def get_vectorstore():
             saved_fp = ""
         if saved_fp == current_fp:
             # Load the existing database
-            db = Chroma(persist_directory=DB_DIR, embedding_function=embeddings)
+            db = Chroma(persist_directory=DB_DIR, embedding_function=embeddings, client_settings=CHROMA_SETTINGS)
             print("Loaded existing ChromaDB database.")
             return db
         else:
@@ -256,7 +260,8 @@ def get_vectorstore():
         db = Chroma.from_documents(
             documents=all_chunks, 
             embedding=embeddings, 
-            persist_directory=DB_DIR
+            persist_directory=DB_DIR,
+            client_settings=CHROMA_SETTINGS
         )
         try:
             os.makedirs(DB_DIR, exist_ok=True)
