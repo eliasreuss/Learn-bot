@@ -2,3 +2,5 @@ Type: Webinar
 Title: Power BI og Inact Now - det perfekte makkerpar
 URL: https://inact.io/webinar/power-bi-og-inact-now/
 Beskrivelse: Hvad er forskellen? Inact Now skiller sig ud på ét helt særligt område – nemlig dens evne til at sikre handling i hverdagen.
+Keywords: power, inact, perfekte, makkerpar, inact now, hjælp, help
+

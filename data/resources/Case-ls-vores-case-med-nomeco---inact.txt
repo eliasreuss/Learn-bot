@@ -2,3 +2,5 @@ Type: Case
 Title: Læs vores case med Nomeco - Inact
 URL: https://inact.io/case/nomeco/
 Beskrivelse: Læs hvordan Nomeco på ét år har øget omsætningen med 9,2 procent og indtjeningen med 9,8 procent på 40 varekategorier med Inact.
+Keywords: vores, case, nomeco, inact, inact now, hjælp, help
+

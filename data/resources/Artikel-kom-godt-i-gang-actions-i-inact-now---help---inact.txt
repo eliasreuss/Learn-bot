@@ -2,3 +2,5 @@ Type: Artikel
 Title: Kom godt i gang: Actions i inact Now - Help - Inact
 URL: https://help.inact.io/portfolio/kom-i-gang-actions/
 Beskrivelse: Inact Actions er alarmer designet til at overvåge din drift. Actions er regel-baseret og giver dig besked, når noget kræver en handling.
+Keywords: action, actions, checklist, create checklist, opret action, lav action, alarm, alarmer, godt, gang, inact, help, inact now, hjælp
+

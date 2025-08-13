@@ -2,3 +2,5 @@ Type: Artikel
 Title: ABC-kategorisering: sådan får du overblik
 URL: https://inact.io/blog/abc-kategorisering-saadan-faar-du-overblik/
 Beskrivelse: Teorien bag ABC-analysen bygger på, at nogle varer er vigtigere end andre. Din succes afhænger af din evne til at fokusere på de få afgørende varer.
+Keywords: abc, abc analyse, dobbelt abc, pareto, kategori a, kategori b, kategori c, kategorisering, sådan, overblik, inact, inact now, hjælp, help
+

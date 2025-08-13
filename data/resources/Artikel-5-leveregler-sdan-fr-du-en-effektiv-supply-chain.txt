@@ -2,3 +2,5 @@ Type: Artikel
 Title: 5 leveregler: sådan får du en effektiv supply chain
 URL: https://inact.io/blog/5-leveregler-til-en-effektiv-supply-chain/
 Beskrivelse: Forsyningskæden er nøglen til glade kunder. Vi har udviklet 5 leveregler til din ABC-kategorisering, som sikrer de rette varer i de rette mængder.
+Keywords: abc, abc analyse, dobbelt abc, pareto, kategori a, kategori b, kategori c, leveregler, sådan, effektiv, supply, chain, inact, inact now, hjælp, help
+

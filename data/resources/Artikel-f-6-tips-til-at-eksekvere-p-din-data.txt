@@ -2,3 +2,5 @@ Type: Artikel
 Title: Få 6 tips til at eksekvere på din data
 URL: https://inact.io/blog/6-tips-til-at-eksekvere-paa-din-data/
 Beskrivelse: De fleste undlader at navigere i de data som deres it-systemer indeholder, og ikke mindst at bruge dem.
+Keywords: tips, eksekvere, data, inact, inact now, hjælp, help
+

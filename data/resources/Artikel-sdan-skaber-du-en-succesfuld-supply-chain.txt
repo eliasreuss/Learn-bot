@@ -2,3 +2,5 @@ Type: Artikel
 Title: Sådan skaber du en succesfuld supply chain
 URL: https://inact.io/blog/saadan-skaber-du-en-succesfuld-supply-chain/
 Beskrivelse: Værdikæden bliver i langt de fleste virksomheder opfattet som flaskehals for kundetilfredsheden og beskyldes for ikke at fungere optimalt.
+Keywords: sådan, skaber, succesfuld, supply, chain, inact, inact now, hjælp, help
+

@@ -2,3 +2,5 @@ Type: Artikel
 Title: Dashboard Creator: Kom godt i gang - Help - Inact
 URL: https://help.inact.io/portfolio/dashboard-creator-kom-godt-i-gang/
 Beskrivelse: Dashboard Creator – et kraftfuldt værktøj, der giver dig mulighed for at skabe, tilpasse og administrere dashboards efter dine behov.
+Keywords: dashboard, dashboards, dashboard creator, widget, widgets, visualisering, overblik, chart, tabel, admin, admin panel, brugere, roller, permissions, rettigheder, creator, godt, gang, help, inact, inact now, hjælp
+

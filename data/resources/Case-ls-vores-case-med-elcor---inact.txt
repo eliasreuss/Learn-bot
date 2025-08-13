@@ -2,3 +2,5 @@ Type: Case
 Title: Læs vores case med Elcor - Inact
 URL: https://inact.io/case/elcor/
 Beskrivelse: Læs hvordan Elcor har reduceret deres lagerværdi med 18 mio. kroner og øget deres omsætningshastigheden med 37%
+Keywords: vores, case, elcor, inact, inact now, hjælp, help
+

@@ -2,3 +2,5 @@ Type: Artikel
 Title: 7 gode råd til din næste leverandørforhandling
 URL: https://inact.io/blog/7-raad-til-leverandoerforhandling/
 Beskrivelse: Hvordan sikrer man sig den bedste aftale? Her er syv gode råd til din næste forhandling, herunder hvordan du undgår at forhandle om ubetydelige varer.
+Keywords: gode, næste, leverandørforhandling, inact, inact now, hjælp, help
+

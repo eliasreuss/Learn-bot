@@ -2,3 +2,5 @@ Type: Artikel
 Title: Download dine data - Help - Inact
 URL: https://help.inact.io/portfolio/download-dine-data/
 Beskrivelse: Inact Now behandler dine ERP data og beriger dem med informationer og analyser. Download dine data - Help - Inact
+Keywords: download, dine, data, help, inact, inact now, hjælp
+
