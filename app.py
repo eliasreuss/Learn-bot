@@ -33,7 +33,10 @@ from langchain.text_splitter import CharacterTextSplitter
 from langchain_openai import OpenAIEmbeddings, ChatOpenAI
 from langchain_community.vectorstores import Chroma
 from langchain.prompts import ChatPromptTemplate
-from chromadb.config import Settings
+try:
+    from chromadb.config import Settings
+except Exception:
+    Settings = None
 import re
 
 # Load environment variables (e.g., your OPENAI_API_KEY)
@@ -206,7 +209,7 @@ def load_and_process_documents(directory="data"):
 # --- Caching Resources (LLM and Vector Store) ---
 DB_DIR = "chromadb_streamlit"
 FINGERPRINT_FILE = os.path.join(DB_DIR, ".source_fingerprint")
-CHROMA_SETTINGS = Settings(chroma_db_impl="duckdb+parquet", persist_directory=DB_DIR)
+CHROMA_SETTINGS = Settings(chroma_db_impl="duckdb+parquet", persist_directory=DB_DIR) if Settings else None
 
 def compute_data_fingerprint(directory: str = "data") -> str:
     hasher = hashlib.md5()
@@ -240,7 +243,7 @@ def get_vectorstore():
             saved_fp = ""
         if saved_fp == current_fp:
             # Load the existing database
-            db = Chroma(persist_directory=DB_DIR, embedding_function=embeddings, client_settings=CHROMA_SETTINGS)
+            db = Chroma(persist_directory=DB_DIR, embedding_function=embeddings, client_settings=CHROMA_SETTINGS) if CHROMA_SETTINGS else Chroma(persist_directory=DB_DIR, embedding_function=embeddings)
             print("Loaded existing ChromaDB database.")
             return db
         else:
