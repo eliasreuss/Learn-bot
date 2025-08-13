@@ -2,3 +2,5 @@ Type: Webinar
 Title: Dobbelt ABC-analyse for begyndere
 URL: https://inact.io/webinar/dobbelt-abc-analyse-for-begyndere/
 Beskrivelse: Nogle produkter og kunder bidrager væsentlig mere til din bundlinje end andre. Lær hvordan du laver en dobbelt ABC-analyse
+Keywords: abc, abc analyse, dobbelt abc, pareto, kategori a, kategori b, kategori c, dobbelt, analyse, begyndere, inact, inact now, hjælp, help
+

@@ -2,3 +2,5 @@ Type: Artikel
 Title: Master Data - Dyk ned i din data - Help - Inact
 URL: https://help.inact.io/portfolio/master-data-dyk-ned-i-din-data/
 Beskrivelse: Master Data er ét samlet overblik over dit produkt, din kunde eller din leverandør. Dyk ned i din data og tag action.
+Keywords: action, actions, checklist, create checklist, opret action, lav action, alarm, alarmer, master data, view, kolonner, filtre, slice, filtrering, master, data, help, inact, inact now, hjælp
+

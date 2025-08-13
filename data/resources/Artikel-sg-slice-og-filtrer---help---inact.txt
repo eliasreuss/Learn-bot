@@ -2,3 +2,5 @@ Type: Artikel
 Title: Søg, Slice og Filtrer - Help - Inact
 URL: https://help.inact.io/portfolio/1935/
 Beskrivelse: Ligesom filter-funktionen i Excel kan du bruge “Søg, Slice & filtrer”-funktionen i inact Now. Den fungerer på samme måde og er en stor hjælp
+Keywords: slice, filtrer, help, inact, inact now, hjælp
+

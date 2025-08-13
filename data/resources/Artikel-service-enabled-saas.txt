@@ -2,3 +2,5 @@ Type: Artikel
 Title: Service-enabled SaaS
 URL: https://inact.io/blog/service-enabled-saas/
 Beskrivelse: Vi introducerer Service-enabled SaaS – en revolutionerende abonnementsmodel, der går længere end den traditionelle model.
+Keywords: service, enabled, saas, inact, inact now, hjælp, help
+

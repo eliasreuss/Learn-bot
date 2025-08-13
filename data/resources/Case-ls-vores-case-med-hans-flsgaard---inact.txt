@@ -2,3 +2,5 @@ Type: Case
 Title: Læs vores case med Hans Følsgaard - Inact
 URL: https://inact.io/case/hans-foelsgaard/
 Beskrivelse: Læs hvordan Hans Følsgaard reducerede deres lagerbeholdning fra 118 millioner til 88 millioner kroner med Inact.
+Keywords: vores, case, hans, følsgaard, inact, inact now, hjælp, help
+

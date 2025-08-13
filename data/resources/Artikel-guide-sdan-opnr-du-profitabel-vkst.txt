@@ -2,3 +2,5 @@ Type: Artikel
 Title: Guide: Sådan opnår du profitabel vækst
 URL: https://inact.io/blog/guide-saadan-opnaar-du-profitable-vaekst/
 Beskrivelse: Undersøgelser viser, at kun 2/3 af en virksomheds kunde- og produktmix er rentabelt. Læs vores guide til hvordan du opnår profitabel vækst.
+Keywords: guide, sådan, opnår, profitabel, vækst, inact, inact now, hjælp, help
+

@@ -2,3 +2,5 @@ Type: Artikel
 Title: Kompleksitet dræber væksten i din forretning
 URL: https://inact.io/blog/kompleksitet-draeber-vaeksten-i-din-forretning/
 Beskrivelse: Undersøgelser viser, at kompleksitet kan æde op til 40 procent af virksomhedens indtjening. Har i styr på jeres kompleksitet?
+Keywords: kompleksitet, dræber, væksten, forretning, inact, inact now, hjælp, help
+

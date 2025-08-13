@@ -2,3 +2,5 @@ Type: Artikel
 Title: 5 anbefalinger til hvordan du undgår store økonomiske tab
 URL: https://inact.io/blog/5-anbefalinger-til-at-undgaa-oekonomisk-tab/
 Beskrivelse: Vi har samlet nogle gode råd og anbefalinger til at bruge data, så du undgår store økonomiske tab.
+Keywords: anbefalinger, hvordan, undgår, store, økonomiske, inact, inact now, hjælp, help
+

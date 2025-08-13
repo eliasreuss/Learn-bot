@@ -2,3 +2,5 @@ Type: Webinar
 Title: Derfor er kompleksitet virksomhedens største udfording
 URL: https://inact.io/webinar/derfor-er-kompleksitet-virksomhedens-stoerste-udfording/
 Beskrivelse: Webinaret dykker længere ned i kompleksitet i værdikæden og hvorfor kompleksitet er en udfordring samt præsenterer dig for hvalkurven.
+Keywords: derfor, kompleksitet, virksomhedens, største, udfording, inact, inact now, hjælp, help
+
