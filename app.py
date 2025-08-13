@@ -440,6 +440,15 @@ if "user_id" not in st.session_state:
 if "last_assistant_answer" not in st.session_state:
     st.session_state.last_assistant_answer = None
 
+# If no history yet, show a disclaimer as the first assistant message
+if not st.session_state.messages:
+    disclaimer = (
+        "Note: This chatbot is a prototype/demo. Answers may be inaccurate or incomplete. "
+        "Messages you send may be saved to help improve the assistant."
+    )
+    st.session_state.messages.append({"role": "assistant", "content": disclaimer})
+    append_assistant_answer_txt(st.session_state.user_id, disclaimer)
+
 # Page Header
 st.markdown(
     """
@@ -464,7 +473,7 @@ if user_question := st.chat_input("How do I create an Insight in Inact Now?"):
 
     with st.chat_message("assistant"):
         message_placeholder = st.empty()
-        message_placeholder.markdown("Tænker...")
+        message_placeholder.markdown("thinking...")
 
         # 1. Detect language and select prompt
         detected_language = detect_language(user_question)
