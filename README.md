@@ -24,6 +24,22 @@ A chatbot that uses Retrieval-Augmented Generation (RAG) to answer questions bas
 - Messages sent to the bot may be saved to help improve the assistant. The simple text log is stored in `user_questions.txt`.
 - GitHub: A scheduled workflow (`.github/workflows/keepalive.yml`) performs a daily empty commit to keep website active
 
+## Resources and recommendations
+- Resource files live under `data/resources/*.txt` and support the following header fields:
+  - `Type: Artikel|Video|Webinar|Case`
+  - `Title: ...`
+  - `URL: ...`
+  - `Beskrivelse: ...` or `Description: ...`
+  - `Keywords: comma, separated, keywords` (optional but recommended)
+- You can also import resources from URLs and add keywords:
+  ```bash
+  python scripts/import_resources.py --urls "https://inact.io/blog/your-article" --keywords action, checklist, alarm
+  ```
+- The app augments resource queries with synonyms (e.g., action/actions/checklist/alarm) and indexes resource keywords into embeddings to improve recall.
+
+## Data changes and DB rebuild
+- The vector DB is stored in `chromadb_streamlit/`. The app keeps a fingerprint of files in `data/` and automatically rebuilds the DB when those files change.
+
 ## How it works
 - Uses LangChain to load, split, and embed your documents.
 - Stores embeddings in ChromaDB (local vector database).

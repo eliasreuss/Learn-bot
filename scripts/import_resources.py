@@ -17,6 +17,7 @@ HEADER_TMPL = (
     "Title: {title}\n"
     "URL: {url}\n"
     "Beskrivelse: {description}\n"
+    "Keywords: {keywords}\n"
 )
 
 
@@ -76,7 +77,7 @@ def detect_type(url: str, title: str, og_type: str) -> str:
     return "Artikel"
 
 
-def write_resource(meta: dict) -> Path:
+def write_resource(meta: dict, keywords: List[str]) -> Path:
     filename = f"{meta['type']}-{slugify(meta['title'])}.txt"
     path = RESOURCES_DIR / filename
     body = HEADER_TMPL.format(
@@ -84,12 +85,13 @@ def write_resource(meta: dict) -> Path:
         title=meta["title"],
         url=meta["url"],
         description=meta["description"] or "",
+        keywords=", ".join(keywords).strip(),
     )
     path.write_text(body, encoding="utf-8")
     return path
 
 
-def process_urls(urls: List[str]) -> List[Path]:
+def process_urls(urls: List[str], keywords: List[str]) -> List[Path]:
     written: List[Path] = []
     for url in urls:
         url = url.strip()
@@ -99,7 +101,7 @@ def process_urls(urls: List[str]) -> List[Path]:
         if not html:
             continue
         meta = extract_metadata(html, url)
-        out = write_resource(meta)
+        out = write_resource(meta, keywords)
         written.append(out)
         print(f"Saved: {out}")
     return written
@@ -109,6 +111,7 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="Create resource .txt files from URLs.")
     parser.add_argument("--urls", nargs="*", help="One or more URLs to import")
     parser.add_argument("--file", help="Path to a text file with one URL per line", default=None)
+    parser.add_argument("--keywords", nargs="*", default=[], help="Optional keywords to include (space-separated or multiple flags)")
     args = parser.parse_args()
 
     urls: List[str] = []
@@ -123,7 +126,7 @@ def main() -> None:
         print("No URLs provided. Use --urls or --file.")
         return
 
-    process_urls(urls)
+    process_urls(urls, args.keywords)
 
 
 if __name__ == "__main__":
