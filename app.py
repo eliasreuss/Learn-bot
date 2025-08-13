@@ -7,6 +7,8 @@ from dotenv import load_dotenv
 import logging
 import uuid
 from typing import Optional
+import hashlib
+from typing import List
 
 # --- Paths ---
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -132,6 +134,7 @@ def load_and_process_documents(directory="data"):
                     r_title_m = re.search(r"^\s*Title:\s*(.+)$", text, flags=re.I | re.M)
                     r_url_m = re.search(r"^\s*URL:\s*(.+)$", text, flags=re.I | re.M)
                     r_desc_m = re.search(r"^\s*(Description|Beskrivelse):\s*(.+)$", text, flags=re.I | re.M)
+                    r_keywords_m = re.search(r"^\s*Keywords?:\s*(.+)$", text, flags=re.I | re.M)
 
                     if topic_m and source_m and keywords_m and doc_type == "knowledge":
                         # Strip header lines to keep only content
@@ -160,6 +163,16 @@ def load_and_process_documents(directory="data"):
                         doc.metadata['url'] = r_url_m.group(1).strip()
                         if r_desc_m:
                             doc.metadata['description'] = r_desc_m.group(2).strip()
+                        if r_keywords_m:
+                            # Normalize and store parsed keywords for resources
+                            kw_list = [k.strip() for k in r_keywords_m.group(1).split(',') if k.strip()]
+                            if kw_list:
+                                doc.metadata['keywords'] = ", ".join(kw_list)
+                                # Ensure keywords influence embeddings by appending to content
+                                doc.page_content = f"{doc.metadata['title']}\n{doc.metadata.get('description', '')}\nKeywords: {', '.join(kw_list)}".strip()
+                        else:
+                            # At least index title and description so retrieval works better
+                            doc.page_content = f"{doc.metadata['title']}\n{doc.metadata.get('description', '')}".strip()
                         processed_docs.append(doc)
                         curated_handled_any = True
                 
@@ -189,6 +202,23 @@ def load_and_process_documents(directory="data"):
 
 # --- Caching Resources (LLM and Vector Store) ---
 DB_DIR = "chromadb_streamlit"
+FINGERPRINT_FILE = os.path.join(DB_DIR, ".source_fingerprint")
+
+def compute_data_fingerprint(directory: str = "data") -> str:
+    hasher = hashlib.md5()
+    for root, _, files in os.walk(directory):
+        for name in sorted(files):
+            if not name.endswith('.txt'):
+                continue
+            path = os.path.join(root, name)
+            try:
+                stat = os.stat(path)
+            except FileNotFoundError:
+                continue
+            hasher.update(path.encode('utf-8'))
+            hasher.update(str(stat.st_mtime_ns).encode('utf-8'))
+            hasher.update(str(stat.st_size).encode('utf-8'))
+    return hasher.hexdigest()
 
 @st.cache_resource
 def get_vectorstore():
@@ -197,26 +227,45 @@ def get_vectorstore():
     by processing documents from the 'data' folder.
     """
     embeddings = OpenAIEmbeddings(openai_api_key=os.environ["OPENAI_API_KEY"])
+    current_fp = compute_data_fingerprint()
     
-    if os.path.exists(DB_DIR):
-        # Load the existing database
-        db = Chroma(persist_directory=DB_DIR, embedding_function=embeddings)
-        print("Loaded existing ChromaDB database.")
-    else:
-        # Create the database if it doesn't exist
-        with st.spinner("Første opstart: Opretter og indekserer databasen. Dette kan tage et øjeblik..."):
-            all_chunks = load_and_process_documents()
-            if not all_chunks:
-                st.error("Ingen dokumenter fundet i 'data' mappen. Sørg for at dine .txt filer er i repository'et.")
-                return None
-            
-            db = Chroma.from_documents(
-                documents=all_chunks, 
-                embedding=embeddings, 
-                persist_directory=DB_DIR
-            )
-            print("Created and persisted new ChromaDB database.")
+    if os.path.exists(DB_DIR) and os.path.exists(FINGERPRINT_FILE):
+        try:
+            saved_fp = open(FINGERPRINT_FILE, 'r', encoding='utf-8').read().strip()
+        except Exception:
+            saved_fp = ""
+        if saved_fp == current_fp:
+            # Load the existing database
+            db = Chroma(persist_directory=DB_DIR, embedding_function=embeddings)
+            print("Loaded existing ChromaDB database.")
+            return db
+        else:
+            print("Source data changed. Rebuilding ChromaDB...")
+            try:
+                import shutil
+                shutil.rmtree(DB_DIR)
+            except Exception as e:
+                print(f"Failed to remove existing DB dir: {e}")
+    # Create the database if it doesn't exist or if source changed
+    with st.spinner("Første opstart: Opretter og indekserer databasen. Dette kan tage et øjeblik..."):
+        all_chunks = load_and_process_documents()
+        if not all_chunks:
+            st.error("Ingen dokumenter fundet i 'data' mappen. Sørg for at dine .txt filer er i repository'et.")
+            return None
         
+        db = Chroma.from_documents(
+            documents=all_chunks, 
+            embedding=embeddings, 
+            persist_directory=DB_DIR
+        )
+        try:
+            os.makedirs(DB_DIR, exist_ok=True)
+            with open(FINGERPRINT_FILE, 'w', encoding='utf-8') as f:
+                f.write(current_fp)
+        except Exception as e:
+            print(f"Failed writing fingerprint file: {e}")
+        print("Created and persisted new ChromaDB database.")
+    
     return db
 
 @st.cache_resource
@@ -259,32 +308,33 @@ def is_greeting_or_smalltalk(text: str) -> bool:
         "hej", "hej med dig", "hejsa", "godmorgen", "godaften", "god aften", "hej hej"
     ]):
         return True
-    # Very short messages with a single common greeting token
-    tokens = normalized.split()
-    return len(tokens) <= 3 and any(t in {
-        "hi", "hello", "hey", "hej", "hejsa", "hola", "yo", "morgen", "aften"
-    } for t in tokens)
+    return False
 
-
-def build_recent_history(max_pairs: int = 1, char_limit: int = 1200) -> str:
-    """Return a compact string of the last `max_pairs` user/assistant turns (excluding the current user question)."""
-    messages = st.session_state.get("messages", [])
-    if not messages:
-        return ""
-    prior = messages[:-1]  # exclude the just-submitted user question
-    if not prior:
-        return ""
-    # Keep the last 2 * max_pairs messages (e.g., previous user and assistant)
-    recent = prior[-(2 * max_pairs):]
-    lines = []
-    for m in recent:
-        role = "User" if m.get("role") == "user" else "Assistant"
-        content = (m.get("content") or "").strip().replace("\n\n", "\n")
-        lines.append(f"{role}: {content}")
-    joined = "\n".join(lines)
-    if len(joined) > char_limit:
-        joined = joined[-char_limit:]
-    return joined
+def augment_question_for_resources(question: str, language: str) -> str:
+    """Augment the resource retrieval query with domain synonyms to improve recall."""
+    q = question or ""
+    normalized = q.lower()
+    synonyms_map_danish = {
+        "action": ["actions", "alarm", "alarmer", "checklist", "create checklist", "opret action", "lav action"],
+        "dashboard": ["dashboards", "dashboard creator", "widget", "widgets", "overblik", "visualisering"],
+        "insight": ["insights", "analyse", "rapport", "rapporter", "view", "master data"],
+    }
+    synonyms_map_english = {
+        "action": ["actions", "alert", "alerts", "checklist", "create checklist", "create action"],
+        "dashboard": ["dashboards", "widgets", "charts", "visualization"],
+        "insight": ["insights", "analysis", "report", "reports", "view"],
+    }
+    mapping = synonyms_map_danish if language == "danish" else synonyms_map_english
+    additions: List[str] = []
+    for key, syns in mapping.items():
+        if key in normalized or any(s in normalized for s in syns):
+            additions.extend(syns + [key])
+    if not additions:
+        return q
+    # Deduplicate while preserving order
+    seen = set()
+    extras = " ".join([s for s in additions if not (s in seen or seen.add(s))])
+    return f"{q} {extras}".strip()
 
 
 def is_affirmative_reply(text: str) -> bool:
@@ -520,6 +570,10 @@ if user_question := st.chat_input("How do I create an Insight in Inact Now?"):
                         effective_question = f"Brugeren bekræfter opfølgning: '{follow_up_q}'. Fortsæt og leverer det efterspurgte i detaljer."
                     else:
                         effective_question = f"The user confirmed the follow-up: '{follow_up_q}'. Please proceed to deliver what was offered in detail."
+
+            # Augment question for resource retrieval if it's a resource-related query
+            if "resource" in effective_question.lower():
+                effective_question = augment_question_for_resources(effective_question, detected_language)
 
             # 2. Build filters based on detected language
             resource_filter = {"doc_type": "resource"}
