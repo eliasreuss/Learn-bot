@@ -22,9 +22,8 @@ A chatbot that uses Retrieval-Augmented Generation (RAG) to answer questions bas
 ## Important notice
 - This chatbot is a prototype/demo. Answers may be inaccurate or incomplete.
 - Messages sent to the bot may be saved to help improve the assistant. The simple text log is stored in `user_questions.txt`.
-
 - GitHub: A scheduled workflow (`.github/workflows/keepalive.yml`) performs a daily empty commit to keep website active
-  
+
 ## How it works
 - Uses LangChain to load, split, and embed your documents.
 - Stores embeddings in ChromaDB (local vector database).
