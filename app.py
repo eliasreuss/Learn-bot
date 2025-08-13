@@ -33,6 +33,7 @@ from langchain.text_splitter import CharacterTextSplitter
 from langchain_openai import OpenAIEmbeddings, ChatOpenAI
 from langchain_community.vectorstores import Chroma
 from langchain_community.vectorstores import FAISS
+from langchain_community.vectorstores import DocArrayInMemorySearch
 from langchain.prompts import ChatPromptTemplate
 try:
     from chromadb.config import Settings
@@ -292,10 +293,16 @@ def get_vectorstore():
             if not all_chunks:
                 st.error("Ingen dokumenter fundet i 'data' mappen. Sørg for at dine .txt filer er i repository'et.")
                 return None
-            db = FAISS.from_documents(all_chunks, embeddings)
-            db.save_local(FAISS_DIR)
-            print("Created and persisted new FAISS index.")
-            return db
+            try:
+                db = FAISS.from_documents(all_chunks, embeddings)
+                db.save_local(FAISS_DIR)
+                print("Created and persisted new FAISS index.")
+                return db
+            except Exception as e3:
+                print(f"FAISS creation failed, falling back to in-memory DocArray: {e3}")
+                db = DocArrayInMemorySearch.from_documents(all_chunks, embeddings)
+                print("Using DocArrayInMemorySearch (not persisted).")
+                return db
 
 @st.cache_resource
 def get_llm():
