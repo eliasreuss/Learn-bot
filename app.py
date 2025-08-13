@@ -31,9 +31,9 @@ except ImportError:
 from langchain_community.document_loaders import TextLoader
 from langchain.text_splitter import CharacterTextSplitter
 from langchain_openai import OpenAIEmbeddings, ChatOpenAI
-from langchain_community.vectorstores import Chroma
-from langchain_community.vectorstores import FAISS
-from langchain_community.vectorstores import DocArrayInMemorySearch
+from langchain_chroma import Chroma
+from langchain_community.vectorstores.faiss import FAISS
+from langchain_community.vectorstores.docarray import DocArrayInMemorySearch
 from langchain.prompts import ChatPromptTemplate
 try:
     from chromadb.config import Settings

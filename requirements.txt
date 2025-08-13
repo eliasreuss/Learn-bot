@@ -3,6 +3,7 @@ streamlit
 langchain
 langchain-community
 langchain-openai
+langchain-chroma
 python-dotenv
 chromadb
 docx2txt
@@ -13,3 +14,5 @@ pydantic
 pypdf
 requests
 beautifulsoup4
+faiss-cpu
+docarray
