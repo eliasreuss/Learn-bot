@@ -2,5 +2,5 @@ Type: Artikel
 Title: Subscriptions: Dine analyser leveret i indbakken - Help - Inact
 URL: https://help.inact.io/portfolio/reporting-service-dine-analyser-leveret-i-indbakken/
 Beskrivelse: Hold dig informeret med ABC Clouds Reporting Service. Med denne service har det aldrig været nemmere at følge dine KPI'er
-Keywords: subscription, subscriptions, planlagt, e-mail, levering i indbakken, schedule, abc, abc analyse, dobbelt abc, pareto, kategori a, kategori b, kategori c, dine, analyser, leveret, indbakken, help, inact, inact now, hjælp
+Keywords: inact now, subscriptions analyser, analyser leveret, leveret indbakken, dashboard creator, creator opsætning, inact, dashboard, subscriptions, insight, service, now, abc, aldrig
 

@@ -2,5 +2,5 @@ Type: Artikel
 Title: Tag dine kollegaer - Help - Inact
 URL: https://help.inact.io/portfolio/tag-dine-kollegaer/
 Beskrivelse: Du kan skrive direkte til dine kollegaer i Inact Now. Det er hurtigere og langt mere effektivt, da al historik bliver i Inact Now.
-Keywords: dine, kollegaer, help, inact, inact now, hjælp
+Keywords: master data, tag kollegaer, inact now, data vælg, dashboard creator, creator opsætning, inact, data, master, dashboard, kollegaer, now, direkte, effektivt
 

@@ -2,5 +2,5 @@ Type: Artikel
 Title: Konvertering af .csv til excel - Help - Inact
 URL: https://help.inact.io/portfolio/konvertering-af-csv-til-excel/
 Beskrivelse: Når du åbner .csv filen i excel kan data stå anderledes. Her kan du følge simple trin til at konvertere det til et format du kender
-Keywords: konvertering, excel, help, inact, inact now, hjælp
+Keywords: download data, dobbeltklik filen, filen åbne, åbne excel, excel mark, mark kolonne, kolonne vælg, vælg tekst, tekst kolonner, kolonner data, data fanebladet, fanebladet vælg, vælg afgrænset, afgrænset vælg
 

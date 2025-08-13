@@ -2,5 +2,5 @@ Type: Artikel
 Title: Vælg de rigtige KPI på din Data - Help - Inact
 URL: https://help.inact.io/portfolio/vaelg-de-rigtige-kpi-paa-din-data/
 Beskrivelse: Få et strategisk overblik over din din organisations performance ved at vælge de rigtige KPI’er som bliver fremhævet i dine Insights.
-Keywords: insight, insights, analyse, rapport, rapporter, view, master data, vælg, rigtige, data, help, inact, inact now, hjælp
+Keywords: rigtige kpi, vælg rigtige, kpi data, forskellige views, master data, dashboard creator, creator opsætning, data, insights, insight, kpi, dashboard, rigtige, inact
 

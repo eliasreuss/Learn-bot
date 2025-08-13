@@ -2,5 +2,5 @@ Type: Artikel
 Title: Lav din egen Actions - Help - Inact
 URL: https://help.inact.io/portfolio/lav-din-egen-actions/
 Beskrivelse: Skal du lave en Action fra bunden, skal du starte i den Insight du vil basere din Action på. Vælg Data du vil se i din Action.
-Keywords: action, actions, checklist, create checklist, opret action, lav action, alarm, alarmer, insight, insights, analyse, rapport, rapporter, view, master data, egen, help, inact, inact now, hjælp
+Keywords: lav egen, egen actions, inact now, ønskede emner, dette eksempel, dashboard creator, creator opsætning, actions, action, insight, inact, data, dashboard, lave
 

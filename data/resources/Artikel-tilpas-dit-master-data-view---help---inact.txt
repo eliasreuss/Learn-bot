@@ -2,5 +2,5 @@ Type: Artikel
 Title: Tilpas dit Master-data view - Help - Inact
 URL: https://help.inact.io/portfolio/tilpas-dit-master-data-view/
 Beskrivelse: Du kan som admin selv tilpasse dit Master-data, Master Data er det samlede overblik over dit produkt, din kunde eller din leverandør.
-Keywords: master data, view, kolonner, filtre, slice, filtrering, admin, admin panel, brugere, roller, permissions, rettigheder, tilpas, master, data, help, inact, inact now, hjælp
+Keywords: master data, edit mode, data view, produkt kunde, kunde leverandør, dette view, all data, tilpas master, info view, gøres ved, ved trykke, dashboard creator, creator opsætning, data
 

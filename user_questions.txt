@@ -46,3 +46,204 @@ Skal jeg hjælpe dig med at forstå, hvordan du kan implementere disse koncepter
 At reducere "lange hale" produkter kan frigøre kapital og lagerplads til mere rentable varer, samtidig med at det reducerer overskydende lager og potentielle tab. Det er vigtigt at finde den rette balance mellem at opretholde et varieret sortiment og minimere lageromkostninger.
 
 Skal jeg hjælpe dig med at implementere disse trin i din lagerstyring i Inact Now?
+2025-08-13 11:07:58 - Assistant (ba02): Note: This chatbot is a prototype/demo. Answers may be inaccurate or incomplete. Messages you send may be saved to help improve the assistant.
+2025-08-13 11:08:04 - User (ba02): Hvordan laver jeg en action?
+2025-08-13 11:10:37 - Assistant (6c80): Note: This chatbot is a prototype/demo. Answers may be inaccurate or incomplete. Messages you send may be saved to help improve the assistant.
+2025-08-13 11:10:43 - User (6c80): Hvordan klaver jeg en action?
+2025-08-13 11:10:49 - Assistant (6c80): For at oprette en ny Action i Inact Now, skal du følge disse trin:
+1. Start i den Insight, du vil basere din Action på.
+2. Brug slicing og filtrering til at vælge de emner, du ønsker at overvåge.
+3. Tryk på checkliste-knappen (✔ Create Checklist) for at navngive din Action. Hvis du ikke ønsker en begrænset Action, fjern markeringen i "limit" checkboxen.
+4. Vælg specifikke emner ved at holde 'Ctrl' nede og klikke på dem, før du opretter Action'en.
+
+Det er vigtigt at sikre, at din Action er præcist defineret for at undgå unødvendige alarmer eller manglende vigtige notifikationer.
+
+Her er nogle relevante læringsressourcer, der muligvis kan hjælpe:
+- [Artikel: Oprettelse af Action](https://www.google.com/search?q=googel&rlz=1C5CHFA_enDK1152DK1152&oq=googel&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIPCAEQLhgKGMcBGNEDGIAEMgkIAhAAGAoYgAQyCQgDEAAYChiABDIJCAQQABgKGIAEMgkIBRAAGAoYgAQyBggGEEUYPDIGCAcQBRhA0gEHNjg2ajBqNKgCALACAQ&sourceid=chrome&ie=UTF-8)
+- [Lav din egen Actions - Help - Inact](https://help.inact.io/portfolio/lav-din-egen-actions/)
+- [Kom godt i gang: Actions i Inact Now - Help - Inact](Inact Now - Help - Inact)
+
+Skal jeg hjælpe med yderligere spørgsmål om oprettelse af Actions eller andre funktioner i Inact Now?
+2025-08-13 11:13:09 - Assistant (19b9): Note: This chatbot is a prototype/demo. Answers may be inaccurate or incomplete. Messages you send may be saved to help improve the assistant.
+2025-08-13 11:13:17 - User (19b9): Hvordan alver jeg en action?
+2025-08-13 11:13:26 - Assistant (19b9): For at oprette en Action i Inact Now, skal du følge disse trin:
+1. Start i den Insight, du vil basere din Action på.
+2. Slice eller filtrer dataene for at identificere de emner, du ønsker at oprette en alarm på.
+3. Tryk på checkliste-knappen (✔ Create Checklist) for at give din Action et navn. Hvis du ikke ønsker en begrænset Action, skal du fjerne markeringen i "limit" checkboxen.
+4. Vælg specifikke emner ved at holde 'Ctrl' nede og klikke på de enkelte rækker, før du opretter Action'en.
+
+At oprette Actions direkte fra en Insight giver dig mulighed for at skabe regelbaserede alarmer, der holder dig opdateret om vigtige begivenheder i din drift.
+
+Her er nogle relevante læringsressourcer, der muligvis kan hjælpe:
+- [Artikel: Oprettelse af Action](https://www.google.com/search?q=googel&rlz=1C5CHFA_enDK1152DK1152&oq=googel&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIPCAEQLhgKGMcBGNEDGIAEMgkIAhAAGAoYgAQyCQgDEAAYChiABDIJCAQQABgKGIAEMgkIBRAAGAoYgAQyBggGEEUYPDIGCAcQBRhA0gEHNjg2ajBqNKgCALACAQ&sourceid=chrome&ie=UTF-8)
+- [Lav din egen Actions - Help - Inact](https://help.inact.io/portfolio/lav-din-egen-actions/)
+- [Tilpasning af dine Actions - Help - Inact](URL)
+
+Skal jeg hjælpe med yderligere spørgsmål om oprettelse af Actions i Inact Now?
+2025-08-13 11:13:43 - Assistant (b0d2): Note: This chatbot is a prototype/demo. Answers may be inaccurate or incomplete. Messages you send may be saved to help improve the assistant.
+2025-08-13 11:13:47 - Assistant (122c): Note: This chatbot is a prototype/demo. Answers may be inaccurate or incomplete. Messages you send may be saved to help improve the assistant.
+2025-08-13 11:15:23 - Assistant (7363): Note: This chatbot is a prototype/demo. Answers may be inaccurate or incomplete. Messages you send may be saved to help improve the assistant.
+2025-08-13 11:19:26 - Assistant (5454): Note: This chatbot is a prototype/demo. Answers may be inaccurate or incomplete. Messages you send may be saved to help improve the assistant.
+2025-08-13 11:19:32 - User (5454): Hvodan laver jeg en action?
+2025-08-13 11:19:36 - Assistant (5454): For at oprette en Action i Inact Now, skal du følge disse trin:
+
+1. Start i den Insight, hvor du vil basere din Action.
+2. Brug slicing og filtrering til at udvælge de emner, du ønsker at oprette en alarm på.
+3. Tryk på checkliste-knappen (✔ Create Checklist) for at give din Action et navn. Hvis du ikke ønsker en begrænset Action (f.eks. top 50), skal du fjerne hakket i "limit" checkboxen.
+4. Du kan også vælge specifikke emner ved at holde 'Ctrl' nede og klikke på de enkelte rækker, før du opretter Action'en.
+
+Når du opretter en Action, husk at tænke på, hvilke kriterier og regler der skal udløse alarmen. Det er vigtigt at sikre, at dine Actions er præcise og relevante for at undgå unødvendige eller for mange notifikationer. Ved at følge disse trin og overvejelser kan du effektivt bruge Actions til at overvåge din drift og handle proaktivt.
+
+Her er nogle relevante læringsressourcer, der muligvis kan hjælpe:
+- [Lav din egen Actions - Help - Inact](https://help.inact.io/portfolio/lav-din-egen-actions/)
+- [Kom godt i gang: Actions i inact Now - Help - Inact](https://help.inact.io/portfolio/kom-i-gang-actions/)
+- [Tilpasning af dine Actions - Help - Inact](https://help.inact.io/portfolio/tilpas-dine-actions/)
+2025-08-13 11:20:32 - User (5454): Hvordan kan Actions hjælpe min virksomhed?
+2025-08-13 11:20:41 - Assistant (5454): 1. For at oprette en Action i Inact Now, skal du starte i den Insight, hvor du vil basere din handling.
+2. Brug slicing og filtrering til at udvælge de specifikke emner, du ønsker at oprette en alarm på.
+3. Tryk på checkliste-knappen (✔ Create Checklist) for at give din Action et navn. Hvis du ikke ønsker en begrænset Action (f.eks. top 50), skal du fjerne hakket i "limit" checkboxen.
+4. Du kan også vælge specifikke emner ved at holde 'Ctrl' nede og klikke på de enkelte rækker, før du opretter Action'en.
+
+Actions i Inact Now fungerer som alarmer, der overvåger din drift og giver dig besked, når noget kræver handling. Ved at oprette præcise og relevante Actions kan du proaktivt håndtere situationer, der kræver opmærksomhed. Det er vigtigt at tænke på, hvilke kriterier og regler der skal udløse alarmen for at undgå unødvendige eller for mange notifikationer.
+
+Ved at bruge Actions effektivt kan din virksomhed opnå bedre overvågning af vigtige parametre og handle hurtigt på potentielle problemer eller muligheder. Det kan bidrage til at forbedre din driftseffektivitet og beslutningsprocesser baseret på realtidsdata.
+
+Her er nogle relevante læringsressourcer, der muligvis kan hjælpe:
+- [Tilpasning af dine Actions - Help - Inact](https://help.inact.io/portfolio/tilpas-dine-actions/)
+- [Kom godt i gang: Actions i inact Now - Help - Inact](https://help.inact.io/portfolio/kom-i-gang-actions/)
+- [Lav din egen Actions - Help - Inact](https://help.inact.io/portfolio/lav-din-egen-actions/)
+2025-08-13 12:05:56 - Assistant (bcac): Note: This chatbot is a prototype/demo. Answers may be inaccurate or incomplete. Messages you send may be saved to help improve the assistant.
+2025-08-13 12:06:13 - User (bcac): Hvordan alver jeg en Insight?
+2025-08-13 12:06:18 - Assistant (bcac): For at oprette en Insight i Inact Now, skal du først have de nødvendige tilladelser. Hvis du kun ønsker at oprette private Insights (kun synlige for dig selv), skal du have "Insight Create" tilladelsen. Hvis du ønsker at oprette offentlige Insights (synlige for andre), skal du have "Insight Administrator" tilladelsen.
+
+Det første skridt er at vælge en passende Data Source, da dette danner grundlaget for de tilgængelige data og kolonner i din Insight. Når du har valgt din Data Source, kan du begynde at oprette din Insight ved at vælge de ønskede views (f.eks. Matrix-view, Grid-view, KPI-view osv.) og tilpasse visualiseringen efter dit behov.
+
+Husk at tage hensyn til, hvilke data og informationer der er relevante for brugerne af din Insight, og sørg for at strukturere og præsentere dem på en klar og forståelig måde. Ved at følge disse trin kan du oprette en effektiv og informativ Insight i Inact Now.
+
+Her er nogle relevante læringsressourcer, der muligvis kan hjælpe:
+- [Lav din egen Insight - Help - Inact](https://help.inact.io/portfolio/lav-din-egen-insight/)
+- [Dashboard Creator: Opsætning af Tabellen - Help - Inact](https://help.inact.io/portfolio/dashboard-creator-opsaetning-af-tabellen/)
+- [Lav din egen Actions - Help - Inact](https://help.inact.io/portfolio/lav-din-egen-actions/)
+2025-08-13 12:06:35 - Assistant (29dd): Note: This chatbot is a prototype/demo. Answers may be inaccurate or incomplete. Messages you send may be saved to help improve the assistant.
+2025-08-13 12:08:12 - Assistant (8ad6): Note: This chatbot is a prototype/demo. Answers may be inaccurate or incomplete. Messages you send may be saved to help improve the assistant.
+2025-08-13 12:08:16 - User (8ad6): Hvad er en Insight?
+2025-08-13 12:08:20 - Assistant (8ad6): En Insight i Inact Now er en visualisering af data, der kan præsenteres på forskellige måder afhængigt af formålet. Du kan oprette din egen Insight ved at tage stilling til forskellige trin, herunder valg af datakilde, navngivning, beskrivelse og valg af visningsmetode. Når du opretter en Insight, er det vigtigt at give den et klart navn og en god beskrivelse, så brugerne forstår, hvilke kriterier den er baseret på. Du kan vælge mellem forskellige visningsmetoder som Matrix-view, Grid-view, KPI-view, Sumsheet, Profit view og Trend View.
+
+Skal jeg hjælpe med at oprette en Insight eller forklare mere om de forskellige visningsmetoder?
+
+Her er nogle relevante læringsressourcer, der muligvis kan hjælpe:
+- [Lav din egen Insight - Help - Inact](https://help.inact.io/portfolio/lav-din-egen-insight/)
+- [Opbygning af Insights - Help - Inact](https://help.inact.io/portfolio/insight-opsaetning/)
+- [Dashboard Creator: Opsætning af Tabellen - Help - Inact](https://help.inact.io/portfolio/dashboard-creator-opsaetning-af-tabellen/)
+2025-08-13 12:08:53 - User (8ad6): Kan du forklare mere om KPI-view?
+2025-08-13 12:08:57 - Assistant (8ad6): I KPI-view i Inact Now kan du fokusere på de vigtigste Key Performance Indicators (KPI'er) for din organisation. Dette view giver dig mulighed for at se disse nøgleindikatorer på en overskuelig måde, hvilket gør det nemt at følge med i, hvordan din virksomhed præsterer i forhold til de definerede mål. Du kan tilpasse KPI-viewet til at vise de specifikke KPI'er, der er mest relevante for dig, og du kan også justere visningen for at få det bedste overblik.
+
+Skal jeg hjælpe med at opsætte dit KPI-view eller uddybe yderligere om dets funktioner?
+
+Her er nogle relevante læringsressourcer, der muligvis kan hjælpe:
+- [Vælg de rigtige KPI på din Data - Help - Inact](https://help.inact.io/portfolio/vaelg-de-rigtige-kpi-paa-din-data/)
+- [Tilpas dit Master-data view - Help - Inact](https://help.inact.io/portfolio/tilpas-dit-master-data-view/)
+- [Opbygning af Insights - Help - Inact](https://help.inact.io/portfolio/insight-opsaetning/)
+2025-08-13 12:09:13 - User (8ad6): Hvordan har Inact hjulpet andre virksomheder?
+2025-08-13 12:09:21 - Assistant (8ad6): For at opsætte dit KPI-view i Inact Now, skal du først logge ind på platformen og navigere til dashboardet. Herefter kan du tilpasse dit KPI-view ved at vælge de specifikke Key Performance Indicators (KPI'er), der er mest relevante for din virksomhed. Du kan justere visningen for at få det bedste overblik over din virksomheds præstation i forhold til de definerede mål.
+
+At vælge de rigtige KPI'er er afgørende for at sikre, at du måler de relevante parametre for din virksomheds succes. Det er vigtigt at finde en balance mellem at have tilstrækkeligt med KPI'er til at få et helhedsbillede, men samtidig undgå at blive overvældet af for mange indikatorer. 
+
+Skal jeg hjælpe med at identificere de mest relevante KPI'er for din virksomhed, eller har du brug for yderligere vejledning om, hvordan du bedst tilpasser dit KPI-view i Inact Now?
+
+Her er nogle relevante læringsressourcer, der muligvis kan hjælpe:
+- [Læs vores case med JP Group - Inact](https://inact.io/case/jp-group/)
+- [Læs vores case med Bygma - Inact](https://inact.io/case/bygma/)
+- [Læs vores case med Hans Følsgaard - Inact](https://inact.io/case/hans-foelsgaard/)
+2025-08-13 12:34:55 - Assistant (fdc7): Note: This chatbot is a prototype/demo. Answers may be inaccurate or incomplete. Messages you send may be saved to help improve the assistant.
+2025-08-13 12:46:07 - Assistant (f52f): Note: This chatbot is a prototype/demo. Answers may be inaccurate or incomplete. Messages you send may be saved to help improve the assistant.
+2025-08-13 12:46:20 - User (f52f): Hvordan laver jeg en Insight?
+2025-08-13 12:46:26 - Assistant (f52f): For at lave en Insight i Inact Now, skal du først have "Insight Create" tilladelse. Dette giver dig mulighed for at oprette Private Insights, som kun er synlige for dig selv. For at oprette Public Insights, som er synlige for andre, skal du have "Insight Administrator" tilladelse.
+
+Det første skridt er at vælge en passende Data Source, da dette danner grundlaget for de tilgængelige data og kolonner i din Insight. Når du har valgt din Data Source, kan du tilpasse og vælge de synlige kolonner i din Insight for at sikre, at den er brugervenlig og relevant for formålet.
+
+Husk at gemme din opsætning ved at trykke på "Save"-knappen i Edit Mode.
+
+Skal jeg hjælpe med yderligere spørgsmål om oprettelse af Insights?
+
+Her er nogle relevante læringsressourcer, der muligvis kan hjælpe:
+- [Lav din egen Insight - Help - Inact](https://help.inact.io/portfolio/lav-din-egen-insight/)
+- [Lav din egen Actions - Help - Inact](https://help.inact.io/portfolio/lav-din-egen-actions/)
+- [Dashboard Creator: Opsætning af Tabellen - Help - Inact](https://help.inact.io/portfolio/dashboard-creator-opsaetning-af-tabellen/)
+2025-08-13 12:48:14 - Assistant (a578): Note: This chatbot is a prototype/demo. Answers may be inaccurate or incomplete. Messages you send may be saved to help improve the assistant.
+2025-08-13 12:49:45 - User (a578): Hvad er en action?
+2025-08-13 12:49:49 - Assistant (a578): For at oprette en ny Action i Inact Now, skal du starte med at gå til din dashboard og klikke på 'Actions' i hovedmenuen. Herefter kan du vælge at oprette en ny Action ved at følge disse trin:
+1. Klik på 'Create New Action'.
+2. Vælg de relevante filtre og kriterier for din Action.
+3. Navngiv din Action og tilføj eventuelle beskrivelser.
+4. Gem din nye Action.
+
+Actions i Inact Now er regelbaserede lister, der fungerer som alarmer for at overvåge din drift. Når noget kræver din opmærksomhed og handling, vil du modtage besked gennem dine Actions. Disse lister opdateres dagligt og scanner data for at tilføje eller fjerne elementer baseret på de angivne filtre og kriterier.
+
+Skal jeg hjælpe med at tilpasse dine Actions yderligere?
+
+Her er nogle relevante læringsressourcer, der muligvis kan hjælpe:
+- [Tilpasning af dine Actions - Help - Inact](https://help.inact.io/portfolio/tilpas-dine-actions/)
+- [Kom godt i gang: Actions i inact Now - Help - Inact](https://help.inact.io/portfolio/kom-i-gang-actions/)
+- [Lav din egen Actions - Help - Inact](https://help.inact.io/portfolio/lav-din-egen-actions/)
+2025-08-13 12:49:55 - Assistant (f12a): Note: This chatbot is a prototype/demo. Answers may be inaccurate or incomplete. Messages you send may be saved to help improve the assistant.
+2025-08-13 12:50:04 - User (f12a): Hvorfor er det godt at lave en action?
+2025-08-13 12:50:07 - Assistant (f12a): For at oprette en ny Action i Inact Now, skal du starte med at gå til din Insight og vælge de relevante data, du vil inkludere i din Action. Herefter kan du tilføje og oprette en ny Action ved at følge trinene i dashboard creator. Actions i Inact Now er designet til at overvåge din drift og give dig besked, når der kræves handling.
+
+Det er vigtigt at tilpasse dine Actions til formålet, da de afhænger af den specifikke situation eller problemstilling, du ønsker at overvåge. Ved at tilpasse dine Actions korrekt kan du sikre, at du modtager relevante og nyttige notifikationer, der hjælper dig med at træffe informerede beslutninger.
+
+Skal jeg hjælpe med at oprette en ny Action eller tilpasse dine eksisterende Actions yderligere?
+
+Her er nogle relevante læringsressourcer, der muligvis kan hjælpe:
+- [Kom godt i gang: Actions i inact Now - Help - Inact](https://help.inact.io/portfolio/kom-i-gang-actions/)
+- [Tilpasning af dine Actions - Help - Inact](https://help.inact.io/portfolio/tilpas-dine-actions/)
+- [Lav din egen Actions - Help - Inact](https://help.inact.io/portfolio/lav-din-egen-actions/)
+2025-08-13 12:52:44 - Assistant (ebd8): Note: This chatbot is a prototype/demo. Answers may be inaccurate or incomplete. Messages you send may be saved to help improve the assistant.
+2025-08-13 12:52:51 - User (ebd8): Why is it good to create actions?
+2025-08-13 12:52:54 - Assistant (ebd8): To create a new Action in Inact Now, follow these steps:
+1. Start by selecting the Insight you want to base your Action on.
+2. Choose the specific data you want to include in your Action.
+
+Creating Actions in Inact Now allows you to set up rule-based lists that notify you when specific criteria are met, helping you stay on top of important tasks and issues. By customizing your Actions based on your needs and priorities, you can streamline your workflow and ensure nothing falls through the cracks.
+
+Would you like me to guide you on how to set up categories within your Actions to better organize your tasks and priorities?
+
+Here are some relevant learning resources that might help:
+- [Kom godt i gang: Actions i inact Now - Help - Inact](https://help.inact.io/portfolio/kom-i-gang-actions/)
+- [Tilpasning af dine Actions - Help - Inact](https://help.inact.io/portfolio/tilpas-dine-actions/)
+- [Lav din egen Actions - Help - Inact](https://help.inact.io/portfolio/lav-din-egen-actions/)
+2025-08-13 15:06:41 - Assistant (d7cf): Note: This chatbot is a prototype/demo. Answers may be inaccurate or incomplete. Messages you send may be saved to help improve the assistant.
+2025-08-13 15:06:49 - User (d7cf): Hvad bruger man insight til?
+2025-08-13 15:08:11 - Assistant (85dc): Note: This chatbot is a prototype/demo. Answers may be inaccurate or incomplete. Messages you send may be saved to help improve the assistant.
+2025-08-13 15:08:15 - User (85dc): Hvad er en Insight?
+2025-08-13 15:08:21 - Assistant (85dc): En Insight i Inact Now er en visualisering af data, der giver brugerne et overblik over specifikke informationer eller analyser. Du kan oprette din egen Insight ved at følge disse trin: Vælg datakilde, angiv kriterier, vælg visningsmetode (fx matrix-view, grid-view, KPI-view osv.), og navngiv og beskriv din Insight for at sikre klarhed og forståelse. Skal jeg hjælpe med at oprette en Insight eller forklare mere om, hvordan de kan bruges effektivt?
+
+Her er nogle relevante læringsressourcer, der muligvis kan hjælpe:
+- [Lav din egen Insight - Help - Inact](https://help.inact.io/portfolio/lav-din-egen-insight/)
+- [Opbygning af Insights - Help - Inact](https://help.inact.io/portfolio/insight-opsaetning/)
+- [Dashboard Creator: Opsætning af Tabellen - Help - Inact](https://help.inact.io/portfolio/dashboard-creator-opsaetning-af-tabellen/)
+2025-08-13 15:09:02 - User (85dc): Hvordan har andre firmaer gjort brug af Inact?
+2025-08-13 15:09:10 - Assistant (85dc): Andre firmaer har gjort brug af Inact på forskellige måder for at optimere deres forretningsprocesser. For eksempel har Bygma brugt Inact til at opnå bedre overblik, forbedre leverandøraftaler og øge profitabiliteten. Vikan har brugt Inact til at identificere fejl i deres håndtering af varer og forbedre leveringsperformance. JP Group har brugt Inact til at blive mere proaktive og opdage faldgruber i tide. Widex har fundet den rette balance mellem service og lagerværdi med Inact, og Hans Følsgaard har reduceret deres lagerbeholdning betydeligt med hjælp fra Inact.
+
+Skal jeg hjælpe med at udforske flere cases eller give konkrete eksempler på, hvordan disse virksomheder har implementeret Inact i deres forretningsstrategi?
+
+Her er nogle relevante læringsressourcer, der muligvis kan hjælpe:
+- [Læs vores case med Bygma - Inact](https://inact.io/case/bygma/)
+- [Læs vores case med Vikan - Inact](https://inact.io/case/vikan/)
+- [Læs vores case med JP Group - Inact](https://inact.io/case/jp-group/)
+2025-08-13 15:09:36 - User (85dc): Hvordan kan Inact hjælpe med min lagerstyring?
+2025-08-13 15:09:41 - Assistant (85dc): For at optimere din lagerstyring med Inact, kan du starte med at bruge platformens dagligt opdaterede lageroverblik og klare instrukser. Dette vil give dig et præcist billede af din aktuelle lagerstatus og hjælpe dig med at træffe informerede beslutninger om lagerbeholdning og indkøb. 
+
+Yderligere kan du drage fordel af de automatiserede beregninger i Inact, der sikrer, at du altid har adgang til friske og nøjagtige data. Dette vil hjælpe dig med at identificere trends, optimere lagerbeholdningen og forbedre din omsætningshastighed.
+
+Ved at bruge Inact's brugervenlige løsning med konkrete anbefalinger, kan du implementere effektive lagerstyringsstrategier og minimere risikoen for over- eller underbeholdning af varer.
+
+Ved at følge disse trin og udnytte Inact's funktioner til lagerstyring, kan du potentielt opnå en reduktion af lagerværdi og en øget effektivitet, ligesom Elcor gjorde med en reduktion af 18 mio. kr. og en stigning i omsætningshastighed med 37%.
+
+Skal jeg hjælpe med at udforske specifikke funktioner i Inact, der kan styrke din lagerstyring yderligere?
+
+Her er nogle relevante læringsressourcer, der muligvis kan hjælpe:
+- [Læs vores case med Hans Følsgaard - Inact](https://inact.io/case/hans-foelsgaard/)
+- [Læs vores case med Vikan - Inact](https://inact.io/case/vikan/)
+- [Læs vores case med Widex - Inact](https://inact.io/case/widex/)
+2025-08-13 15:10:03 - Assistant (d6ca): Note: This chatbot is a prototype/demo. Answers may be inaccurate or incomplete. Messages you send may be saved to help improve the assistant.
