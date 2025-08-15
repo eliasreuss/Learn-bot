@@ -52,11 +52,15 @@ logger.setLevel(logging.INFO)
 # --- Better Stack Logging ---
 LOGTAIL_TOKEN = os.environ.get("LOGTAIL_TOKEN")
 
+print(f"Attempting to set up Better Stack logging...")
 if LOGTAIL_TOKEN:
+    print(f"LOGTAIL_TOKEN found: ...{LOGTAIL_TOKEN[-4:]}")
     handler = LogtailHandler(source_token=LOGTAIL_TOKEN)
     logger.addHandler(handler)
+    print("LogtailHandler added to logger.")
 else:
     # Fallback to local file logging if the token is not set
+    print("LOGTAIL_TOKEN not found. Falling back to local file logging.")
     if not logger.handlers:
         f_handler = logging.FileHandler(LOG_FILE, mode='a', encoding='utf-8')
         f_format = logging.Formatter("%(asctime)s - %(message)s")
