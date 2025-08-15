@@ -11,7 +11,37 @@ import uuid
 from typing import Optional
 import hashlib
 from typing import List
-from logtail import LogtailHandler
+import requests
+import json
+from datetime import datetime
+
+def send_log_manually(message: str):
+    """Bypasses the logging library to send a log directly to Better Stack."""
+    token = os.environ.get("LOGTAIL_TOKEN")
+    if not token:
+        # This won't be visible in Streamlit logs if it's not configured, but good practice.
+        print("MANUAL LOG FAIL: No LOGTAIL_TOKEN found.")
+        return
+
+    # This URL is from the Better Stack setup page.
+    url = "https://in.logs.betterstack.com"
+
+    headers = {
+        "Content-Type": "application/json",
+        "Authorization": f"Bearer {token}"
+    }
+    payload = {
+        "dt": datetime.utcnow().isoformat() + "Z",
+        "message": message
+    }
+
+    try:
+        response = requests.post(url, headers=headers, data=json.dumps(payload), timeout=10)
+        # Raise an exception if the request was not successful.
+        response.raise_for_status()
+    except requests.exceptions.RequestException as e:
+        # This will print the error to the Streamlit logs for debugging.
+        print(f"MANUAL LOG FAILED: Could not send log to Better Stack. Error: {e}")
 
 # --- Paths ---
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -50,29 +80,21 @@ logger = logging.getLogger("user_questions")
 logger.setLevel(logging.INFO)
 
 # --- Better Stack Logging ---
-LOGTAIL_TOKEN = os.environ.get("LOGTAIL_TOKEN")
-
-print(f"Attempting to set up Better Stack logging...")
-if LOGTAIL_TOKEN:
-    print(f"LOGTAIL_TOKEN found: ...{LOGTAIL_TOKEN[-4:]}")
-    handler = LogtailHandler(source_token=LOGTAIL_TOKEN)
-    logger.addHandler(handler)
-    print("LogtailHandler added to logger.")
-else:
-    # Fallback to local file logging if the token is not set
-    print("LOGTAIL_TOKEN not found. Falling back to local file logging.")
-    if not logger.handlers:
-        f_handler = logging.FileHandler(LOG_FILE, mode='a', encoding='utf-8')
-        f_format = logging.Formatter("%(asctime)s - %(message)s")
-        f_handler.setFormatter(f_format)
-        logger.addHandler(f_handler)
+# We will use our manual function instead of the handler for now.
+# LOGTAIL_TOKEN = os.environ.get("LOGTAIL_TOKEN")
+# if LOGTAIL_TOKEN:
+#     handler = LogtailHandler(source_token=LOGTAIL_TOKEN)
+#     logger.addHandler(handler)
+# else:
+# Fallback to local file logging if the token is not set
+if not logger.handlers:
+    f_handler = logging.FileHandler(LOG_FILE, mode='a', encoding='utf-8')
+    f_format = logging.Formatter("%(asctime)s - %(message)s")
+    f_handler.setFormatter(f_format)
+    logger.addHandler(f_handler)
 
 # --- Page Configuration ---
 st.set_page_config(page_title="Inact Learn Chatbot", page_icon="💬")
-
-# --- DEBUGGING ---
-st.error(f"DEBUG: LOGTAIL_TOKEN is set: {os.environ.get('LOGTAIL_TOKEN') is not None}")
-# --- END DEBUGGING ---
 
 # --- Styling ---
 st.markdown("""
@@ -608,7 +630,7 @@ if not st.session_state.messages:
         "Messages you send may be saved to help improve the assistant."
     )
     st.session_state.messages.append({"role": "assistant", "content": disclaimer})
-    logger.info(f"Assistant ({st.session_state.user_id}): {disclaimer}")
+    send_log_manually(f"Assistant ({st.session_state.user_id}): {disclaimer}")
 
 # Page Header
 st.markdown(
@@ -625,8 +647,7 @@ for message in st.session_state.messages:
 
 # Handle user input
 if user_question := st.chat_input("How do I create an Insight in Inact Now?"):
-    log_message = f"User ({st.session_state.user_id}): {user_question}"
-    logger.info(log_message)
+    send_log_manually(f"User ({st.session_state.user_id}): {user_question}")
     st.session_state.messages.append({"role": "user", "content": user_question})
     with st.chat_message("user"):
         st.markdown(user_question)
@@ -652,7 +673,7 @@ if user_question := st.chat_input("How do I create an Insight in Inact Now?"):
                 )
             st.session_state.last_assistant_answer = None
             message_placeholder.markdown(answer)
-            logger.info(f"Assistant ({st.session_state.user_id}): {answer}")
+            send_log_manually(f"Assistant ({st.session_state.user_id}): {answer}")
         else:
             # Determine if this question relates to the last assistant answer
             last_answer = st.session_state.get("last_assistant_answer")
@@ -728,7 +749,7 @@ if user_question := st.chat_input("How do I create an Insight in Inact Now?"):
                     )
                 st.session_state.last_assistant_answer = None
                 message_placeholder.markdown(answer)
-                logger.info(f"Assistant ({st.session_state.user_id}): {answer}")
+                send_log_manually(f"Assistant ({st.session_state.user_id}): {answer}")
             else:
                 # 4. Create and invoke the chain
                 chain = prompt_template | llm
@@ -747,6 +768,6 @@ if user_question := st.chat_input("How do I create an Insight in Inact Now?"):
                 st.session_state.last_assistant_answer = answer
                 # Display the answer and save it to session state
                 message_placeholder.markdown(answer)
-                logger.info(f"Assistant ({st.session_state.user_id}): {answer}")
+                send_log_manually(f"Assistant ({st.session_state.user_id}): {answer}")
         
     st.session_state.messages.append({"role": "assistant", "content": answer})
