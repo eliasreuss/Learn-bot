@@ -15,32 +15,35 @@ import requests
 import json
 from datetime import datetime
 
+# Prefer region-specific ingest URL if provided (copy from Better Stack "Ingesting host").
+BETTERSTACK_INGEST_URL = os.environ.get("BETTERSTACK_INGEST_URL") or os.environ.get("LOGTAIL_ENDPOINT") or "https://in.logs.betterstack.com"
+
 def send_log_manually(message: str):
-    """Bypasses the logging library to send a log directly to Better Stack."""
+    """Send a log directly to Better Stack via HTTP.
+    Uses `BETTERSTACK_INGEST_URL`/`LOGTAIL_ENDPOINT` if set; otherwise falls back to the generic endpoint.
+    """
     token = os.environ.get("LOGTAIL_TOKEN")
     if not token:
-        # This won't be visible in Streamlit logs if it's not configured, but good practice.
         print("MANUAL LOG FAIL: No LOGTAIL_TOKEN found.")
         return
 
-    # This URL is from the Better Stack setup page.
-    url = "https://in.logs.betterstack.com"
+    url = BETTERSTACK_INGEST_URL
 
     headers = {
         "Content-Type": "application/json",
-        "Authorization": f"Bearer {token}"
+        "Authorization": f"Bearer {token}",
     }
     payload = {
         "dt": datetime.utcnow().isoformat() + "Z",
-        "message": message
+        "message": message,
     }
 
     try:
         response = requests.post(url, headers=headers, data=json.dumps(payload), timeout=10)
-        # Raise an exception if the request was not successful.
+        if response.status_code // 100 != 2:
+            print(f"MANUAL LOG ERROR: {response.status_code} - {response.text}")
         response.raise_for_status()
     except requests.exceptions.RequestException as e:
-        # This will print the error to the Streamlit logs for debugging.
         print(f"MANUAL LOG FAILED: Could not send log to Better Stack. Error: {e}")
 
 # --- Paths ---
