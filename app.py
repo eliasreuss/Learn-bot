@@ -70,6 +70,10 @@ else:
 # --- Page Configuration ---
 st.set_page_config(page_title="Inact Learn Chatbot", page_icon="💬")
 
+# --- DEBUGGING ---
+st.error(f"DEBUG: LOGTAIL_TOKEN is set: {os.environ.get('LOGTAIL_TOKEN') is not None}")
+# --- END DEBUGGING ---
+
 # --- Styling ---
 st.markdown("""
     <style>
