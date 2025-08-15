@@ -18,9 +18,10 @@ from datetime import datetime
 # Prefer region-specific ingest URL if provided (copy from Better Stack "Ingesting host").
 BETTERSTACK_INGEST_URL = os.environ.get("BETTERSTACK_INGEST_URL") or os.environ.get("LOGTAIL_ENDPOINT") or "https://in.logs.betterstack.com"
 
-def send_log_manually(message: str):
+def send_log_manually(message: str = None, **fields):
     """Send a log directly to Better Stack via HTTP.
     Uses `BETTERSTACK_INGEST_URL`/`LOGTAIL_ENDPOINT` if set; otherwise falls back to the generic endpoint.
+    Accepts arbitrary keyword fields to enable structured filtering in Better Stack.
     """
     token = os.environ.get("LOGTAIL_TOKEN")
     if not token:
@@ -35,8 +36,10 @@ def send_log_manually(message: str):
     }
     payload = {
         "dt": datetime.utcnow().isoformat() + "Z",
-        "message": message,
+        "message": message or "",
     }
+    # Merge structured fields for easier querying (role, event, user_id, etc.)
+    payload.update({k: v for k, v in fields.items() if v is not None})
 
     try:
         response = requests.post(url, headers=headers, data=json.dumps(payload), timeout=10)
@@ -45,6 +48,11 @@ def send_log_manually(message: str):
         response.raise_for_status()
     except requests.exceptions.RequestException as e:
         print(f"MANUAL LOG FAILED: Could not send log to Better Stack. Error: {e}")
+
+
+def log_chat_message(role: str, user_id: str, text: str, event: str):
+    """Convenience wrapper to emit a structured chat log entry."""
+    send_log_manually(message=text, role=role, user_id=user_id, event=event, app="inact-bot")
 
 # --- Paths ---
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -633,7 +641,7 @@ if not st.session_state.messages:
         "Messages you send may be saved to help improve the assistant."
     )
     st.session_state.messages.append({"role": "assistant", "content": disclaimer})
-    send_log_manually(f"Assistant ({st.session_state.user_id}): {disclaimer}")
+    log_chat_message("assistant", st.session_state.user_id, disclaimer, event="system")
 
 # Page Header
 st.markdown(
@@ -650,7 +658,7 @@ for message in st.session_state.messages:
 
 # Handle user input
 if user_question := st.chat_input("How do I create an Insight in Inact Now?"):
-    send_log_manually(f"User ({st.session_state.user_id}): {user_question}")
+    log_chat_message("user", st.session_state.user_id, user_question, event="question")
     st.session_state.messages.append({"role": "user", "content": user_question})
     with st.chat_message("user"):
         st.markdown(user_question)
@@ -676,7 +684,7 @@ if user_question := st.chat_input("How do I create an Insight in Inact Now?"):
                 )
             st.session_state.last_assistant_answer = None
             message_placeholder.markdown(answer)
-            send_log_manually(f"Assistant ({st.session_state.user_id}): {answer}")
+            log_chat_message("assistant", st.session_state.user_id, answer, event="answer")
         else:
             # Determine if this question relates to the last assistant answer
             last_answer = st.session_state.get("last_assistant_answer")
@@ -752,7 +760,7 @@ if user_question := st.chat_input("How do I create an Insight in Inact Now?"):
                     )
                 st.session_state.last_assistant_answer = None
                 message_placeholder.markdown(answer)
-                send_log_manually(f"Assistant ({st.session_state.user_id}): {answer}")
+                log_chat_message("assistant", st.session_state.user_id, answer, event="answer")
             else:
                 # 4. Create and invoke the chain
                 chain = prompt_template | llm
@@ -771,6 +779,6 @@ if user_question := st.chat_input("How do I create an Insight in Inact Now?"):
                 st.session_state.last_assistant_answer = answer
                 # Display the answer and save it to session state
                 message_placeholder.markdown(answer)
-                send_log_manually(f"Assistant ({st.session_state.user_id}): {answer}")
+                log_chat_message("assistant", st.session_state.user_id, answer, event="answer")
         
     st.session_state.messages.append({"role": "assistant", "content": answer})
