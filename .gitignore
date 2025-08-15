@@ -50,3 +50,6 @@ chromadb_streamlit/
 
 # Node
 node_modules/
+
+# Log files
+*.log

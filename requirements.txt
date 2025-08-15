@@ -16,3 +16,4 @@ requests
 beautifulsoup4
 faiss-cpu
 docarray
+logtail-python
