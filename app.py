@@ -11,11 +11,11 @@ import uuid
 from typing import Optional
 import hashlib
 from typing import List
+from logtail import LogtailHandler
 
 # --- Paths ---
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 LOG_FILE = os.path.join(BASE_DIR, "user_questions.log")
-LOG_TXT_FILE = os.path.join(BASE_DIR, "user_questions.txt")
 
 # --- ChromaDB/SQLite3 Workaround for Streamlit Cloud ---
 # This must be at the very top of the script
@@ -49,31 +49,19 @@ load_dotenv()
 logger = logging.getLogger("user_questions")
 logger.setLevel(logging.INFO)
 
-# Create handlers
-if not logger.handlers:
-    f_handler = logging.FileHandler(LOG_FILE, mode='a', encoding='utf-8')
-    f_format = logging.Formatter("%(asctime)s - %(message)s")
-    f_handler.setFormatter(f_format)
-    logger.addHandler(f_handler)
+# --- Better Stack Logging ---
+LOGTAIL_TOKEN = os.environ.get("LOGTAIL_TOKEN")
 
-
-def append_user_question_txt(user_id: str, question: str) -> None:
-    try:
-        with open(LOG_TXT_FILE, "a", encoding="utf-8") as f:
-            from datetime import datetime
-            ts = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-            f.write(f"{ts} - User ({user_id}): {question}\n")
-    except Exception as e:
-        print(f"Failed to append to {LOG_TXT_FILE}: {e}")
-
-def append_assistant_answer_txt(user_id: str, answer: str) -> None:
-    try:
-        with open(LOG_TXT_FILE, "a", encoding="utf-8") as f:
-            from datetime import datetime
-            ts = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-            f.write(f"{ts} - Assistant ({user_id}): {answer}\n")
-    except Exception as e:
-        print(f"Failed to append to {LOG_TXT_FILE}: {e}")
+if LOGTAIL_TOKEN:
+    handler = LogtailHandler(source_token=LOGTAIL_TOKEN)
+    logger.addHandler(handler)
+else:
+    # Fallback to local file logging if the token is not set
+    if not logger.handlers:
+        f_handler = logging.FileHandler(LOG_FILE, mode='a', encoding='utf-8')
+        f_format = logging.Formatter("%(asctime)s - %(message)s")
+        f_handler.setFormatter(f_format)
+        logger.addHandler(f_handler)
 
 # --- Page Configuration ---
 st.set_page_config(page_title="Inact Learn Chatbot", page_icon="💬")
@@ -612,7 +600,7 @@ if not st.session_state.messages:
         "Messages you send may be saved to help improve the assistant."
     )
     st.session_state.messages.append({"role": "assistant", "content": disclaimer})
-    append_assistant_answer_txt(st.session_state.user_id, disclaimer)
+    logger.info(f"Assistant ({st.session_state.user_id}): {disclaimer}")
 
 # Page Header
 st.markdown(
@@ -631,7 +619,6 @@ for message in st.session_state.messages:
 if user_question := st.chat_input("How do I create an Insight in Inact Now?"):
     log_message = f"User ({st.session_state.user_id}): {user_question}"
     logger.info(log_message)
-    append_user_question_txt(st.session_state.user_id, user_question)
     st.session_state.messages.append({"role": "user", "content": user_question})
     with st.chat_message("user"):
         st.markdown(user_question)
@@ -657,7 +644,7 @@ if user_question := st.chat_input("How do I create an Insight in Inact Now?"):
                 )
             st.session_state.last_assistant_answer = None
             message_placeholder.markdown(answer)
-            append_assistant_answer_txt(st.session_state.user_id, answer)
+            logger.info(f"Assistant ({st.session_state.user_id}): {answer}")
         else:
             # Determine if this question relates to the last assistant answer
             last_answer = st.session_state.get("last_assistant_answer")
@@ -733,7 +720,7 @@ if user_question := st.chat_input("How do I create an Insight in Inact Now?"):
                     )
                 st.session_state.last_assistant_answer = None
                 message_placeholder.markdown(answer)
-                append_assistant_answer_txt(st.session_state.user_id, answer)
+                logger.info(f"Assistant ({st.session_state.user_id}): {answer}")
             else:
                 # 4. Create and invoke the chain
                 chain = prompt_template | llm
@@ -752,6 +739,6 @@ if user_question := st.chat_input("How do I create an Insight in Inact Now?"):
                 st.session_state.last_assistant_answer = answer
                 # Display the answer and save it to session state
                 message_placeholder.markdown(answer)
-                append_assistant_answer_txt(st.session_state.user_id, answer)
+                logger.info(f"Assistant ({st.session_state.user_id}): {answer}")
         
     st.session_state.messages.append({"role": "assistant", "content": answer})
