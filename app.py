@@ -50,9 +50,77 @@ def send_log_manually(message: str = None, **fields):
         print(f"MANUAL LOG FAILED: Could not send log to Better Stack. Error: {e}")
 
 
+def append_local_chat_log(role: str, user_id: str, text: str, event: str):
+    try:
+        local_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "chat_messages.jsonl")
+        record = {
+            "dt": datetime.utcnow().isoformat() + "Z",
+            "role": role,
+            "user_id": user_id,
+            "event": event,
+            "message": text or "",
+            "app": "inact-bot",
+        }
+        with open(local_path, "a", encoding="utf-8") as f:
+            f.write(json.dumps(record, ensure_ascii=False) + "\n")
+    except Exception as e:
+        print(f"LOCAL CHAT LOG FAILED: {e}")
+
+
 def log_chat_message(role: str, user_id: str, text: str, event: str):
     """Convenience wrapper to emit a structured chat log entry."""
+    # Skip noisy system logs (e.g., startup disclaimers) unless explicitly enabled
+    log_system = os.environ.get("LOG_SYSTEM_MESSAGES", "0").strip().lower() in {"1", "true", "yes"}
+    if event == "system" and not log_system:
+        return
+    # Always persist questions and answers locally to avoid data loss
+    if event in {"question", "answer"}:
+        append_local_chat_log(role, user_id, text, event)
     send_log_manually(message=text, role=role, user_id=user_id, event=event, app="inact-bot")
+
+
+def render_admin_sidebar():
+    """Admin-only tools gated by a secret key stored in Streamlit secrets or env.
+    Exposes a download button for the local JSONL without making it public.
+    """
+    st.session_state.setdefault("is_admin", False)
+    with st.sidebar:
+        st.markdown("### Admin")
+        if not st.session_state["is_admin"]:
+            admin_key = st.text_input("Admin key", type="password", key="admin_key_input")
+            if st.button("Unlock", key="unlock_admin"):
+                expected = None
+                try:
+                    if hasattr(st, "secrets") and "ADMIN_KEY" in st.secrets:
+                        expected = st.secrets["ADMIN_KEY"]
+                except Exception:
+                    expected = None
+                if not expected:
+                    expected = os.environ.get("ADMIN_KEY")
+                if expected and admin_key and admin_key == expected:
+                    st.session_state["is_admin"] = True
+                    st.success("Admin unlocked")
+                else:
+                    st.error("Invalid key")
+        else:
+            path = os.path.join(BASE_DIR, "chat_messages.jsonl")
+            if os.path.exists(path):
+                try:
+                    with open(path, "r", encoding="utf-8") as f:
+                        data = f.read()
+                    st.download_button(
+                        label="Download chat_messages.jsonl",
+                        data=data,
+                        file_name="chat_messages.jsonl",
+                        mime="application/json",
+                        key="download_jsonl_btn",
+                    )
+                except Exception as e:
+                    st.error(f"Could not read local log: {e}")
+            else:
+                st.info("No local log file yet.")
+            if st.button("Lock admin", key="lock_admin"):
+                st.session_state["is_admin"] = False
 
 # --- Paths ---
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -782,3 +850,5 @@ if user_question := st.chat_input("How do I create an Insight in Inact Now?"):
                 log_chat_message("assistant", st.session_state.user_id, answer, event="answer")
         
     st.session_state.messages.append({"role": "assistant", "content": answer})
+
+render_admin_sidebar()
