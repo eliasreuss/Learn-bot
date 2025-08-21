@@ -53,3 +53,4 @@ node_modules/
 
 # Log files
 *.log
+chat_messages.jsonl
