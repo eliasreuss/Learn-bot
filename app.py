@@ -52,7 +52,9 @@ def send_log_manually(message: str = None, **fields):
 
 def append_local_chat_log(role: str, user_id: str, text: str, event: str):
     try:
-        local_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "chat_messages.jsonl")
+        db_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "chromadb_streamlit")
+        os.makedirs(db_dir, exist_ok=True)
+        local_path = os.path.join(db_dir, "chat_messages.jsonl")
         record = {
             "dt": datetime.utcnow().isoformat() + "Z",
             "role": role,
@@ -103,10 +105,10 @@ def render_admin_sidebar():
                 else:
                     st.error("Invalid key")
         else:
-            path = os.path.join(BASE_DIR, "chat_messages.jsonl")
-            if os.path.exists(path):
+            log_path = os.path.join(BASE_DIR, "chromadb_streamlit", "chat_messages.jsonl")
+            if os.path.exists(log_path):
                 try:
-                    with open(path, "r", encoding="utf-8") as f:
+                    with open(log_path, "r", encoding="utf-8") as f:
                         data = f.read()
                     st.download_button(
                         label="Download chat_messages.jsonl",
