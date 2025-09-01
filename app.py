@@ -525,9 +525,26 @@ def get_embeddings():
 # Supabase client cache
 @st.cache_resource
 def get_supabase_client():
-    url = os.environ.get("SUPABASE_URL")
-    key = os.environ.get("SUPABASE_SERVICE_KEY")
-    if not url or not key or not create_client:
+    url = None
+    key = None
+    # Try Streamlit secrets first
+    try:
+        if hasattr(st, "secrets"):
+            url = st.secrets.get("SUPABASE_URL") or st.secrets.get("supabase_url")
+            key = (
+                st.secrets.get("SUPABASE_SERVICE_KEY")
+                or st.secrets.get("supabase_service_key")
+                or st.secrets.get("SUPABASE_KEY")
+            )
+    except Exception:
+        pass
+    # Fallback to environment variables
+    url = url or os.environ.get("SUPABASE_URL")
+    key = key or os.environ.get("SUPABASE_SERVICE_KEY") or os.environ.get("SUPABASE_KEY")
+    if not create_client:
+        print("Supabase client unavailable: supabase package not installed.")
+        return None
+    if not url or not key:
         return None
     try:
         return create_client(url, key)
