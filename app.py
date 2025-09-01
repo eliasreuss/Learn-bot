@@ -129,40 +129,7 @@ def render_admin_sidebar():
             else:
                 st.info("No local log file yet.")
 
-            # Optional: Download persisted logs from Better Stack if credentials provided
-            bs_api_token = None
-            bs_source_ids = None
-            try:
-                if hasattr(st, "secrets"):
-                    bs_api_token = st.secrets.get("BETTERSTACK_API_TOKEN") or st.secrets.get("LOGTAIL_API_TOKEN")
-                    bs_source_ids = st.secrets.get("BETTERSTACK_SOURCE_IDS")
-            except Exception:
-                bs_api_token = bs_api_token or None
-                bs_source_ids = bs_source_ids or None
-            bs_api_token = bs_api_token or os.environ.get("BETTERSTACK_API_TOKEN") or os.environ.get("LOGTAIL_API_TOKEN")
-            bs_source_ids = bs_source_ids or os.environ.get("BETTERSTACK_SOURCE_IDS")
-
-            if bs_api_token and bs_source_ids:
-                if st.button("Fetch logs from Better Stack", key="fetch_betterstack_logs"):
-                    with st.spinner("Fetching logs from Better Stack…"):
-                        rows = fetch_betterstack_question_logs(bs_source_ids, bs_api_token)
-                        if rows:
-                            try:
-                                ndjson = "\n".join(json.dumps(r, ensure_ascii=False) for r in rows)
-                                st.download_button(
-                                    label="Download Better Stack questions (JSONL)",
-                                    data=ndjson,
-                                    file_name="betterstack_questions.jsonl",
-                                    mime="application/json",
-                                    key="download_betterstack_jsonl_btn",
-                                )
-                                st.success(f"Fetched {len(rows)} logs from Better Stack.")
-                            except Exception as e:
-                                st.error(f"Failed preparing download: {e}")
-                        else:
-                            st.warning("No logs returned from Better Stack. Check retention, source IDs, or query.")
-            else:
-                st.caption("Tip: Set BETTERSTACK_API_TOKEN and BETTERSTACK_SOURCE_IDS to enable persisted log downloads.")
+            # Better Stack download disabled.
 
             # Supabase logs download (if configured)
             sb_client = get_supabase_client()
@@ -197,6 +164,21 @@ def render_admin_sidebar():
                                 file_name="supabase_chat_logs.jsonl",
                                 mime="application/json",
                                 key="download_supabase_jsonl_btn",
+                            )
+                            # CSV download
+                            import io, csv
+                            csv_buf = io.StringIO()
+                            fieldnames = ["dt", "user_id", "role", "event", "message", "id"]
+                            writer = csv.DictWriter(csv_buf, fieldnames=fieldnames, extrasaction="ignore")
+                            writer.writeheader()
+                            for r in rows:
+                                writer.writerow(r)
+                            st.download_button(
+                                label="Download Supabase logs (CSV)",
+                                data=csv_buf.getvalue(),
+                                file_name="supabase_chat_logs.csv",
+                                mime="text/csv",
+                                key="download_supabase_csv_btn",
                             )
                             st.success(f"Fetched {len(rows)} logs from Supabase.")
                         else:
