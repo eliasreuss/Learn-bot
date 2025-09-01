@@ -18,6 +18,12 @@ from datetime import datetime
 # Prefer region-specific ingest URL if provided (copy from Better Stack "Ingesting host").
 BETTERSTACK_INGEST_URL = os.environ.get("BETTERSTACK_INGEST_URL") or os.environ.get("LOGTAIL_ENDPOINT") or "https://in.logs.betterstack.com"
 
+# Optional Supabase imports will be resolved at runtime
+try:
+    from supabase import create_client  # type: ignore
+except Exception:
+    create_client = None
+
 def send_log_manually(message: str = None, **fields):
     """Send a log directly to Better Stack via HTTP.
     Uses `BETTERSTACK_INGEST_URL`/`LOGTAIL_ENDPOINT` if set; otherwise falls back to the generic endpoint.
@@ -78,6 +84,7 @@ def log_chat_message(role: str, user_id: str, text: str, event: str):
     # Always persist questions and answers locally to avoid data loss
     if event in {"question", "answer"}:
         append_local_chat_log(role, user_id, text, event)
+        persist_log_to_supabase(role, user_id, text, event)
     send_log_manually(message=text, role=role, user_id=user_id, event=event, app="inact-bot")
 
 
@@ -121,6 +128,84 @@ def render_admin_sidebar():
                     st.error(f"Could not read local log: {e}")
             else:
                 st.info("No local log file yet.")
+
+            # Optional: Download persisted logs from Better Stack if credentials provided
+            bs_api_token = None
+            bs_source_ids = None
+            try:
+                if hasattr(st, "secrets"):
+                    bs_api_token = st.secrets.get("BETTERSTACK_API_TOKEN") or st.secrets.get("LOGTAIL_API_TOKEN")
+                    bs_source_ids = st.secrets.get("BETTERSTACK_SOURCE_IDS")
+            except Exception:
+                bs_api_token = bs_api_token or None
+                bs_source_ids = bs_source_ids or None
+            bs_api_token = bs_api_token or os.environ.get("BETTERSTACK_API_TOKEN") or os.environ.get("LOGTAIL_API_TOKEN")
+            bs_source_ids = bs_source_ids or os.environ.get("BETTERSTACK_SOURCE_IDS")
+
+            if bs_api_token and bs_source_ids:
+                if st.button("Fetch logs from Better Stack", key="fetch_betterstack_logs"):
+                    with st.spinner("Fetching logs from Better Stack…"):
+                        rows = fetch_betterstack_question_logs(bs_source_ids, bs_api_token)
+                        if rows:
+                            try:
+                                ndjson = "\n".join(json.dumps(r, ensure_ascii=False) for r in rows)
+                                st.download_button(
+                                    label="Download Better Stack questions (JSONL)",
+                                    data=ndjson,
+                                    file_name="betterstack_questions.jsonl",
+                                    mime="application/json",
+                                    key="download_betterstack_jsonl_btn",
+                                )
+                                st.success(f"Fetched {len(rows)} logs from Better Stack.")
+                            except Exception as e:
+                                st.error(f"Failed preparing download: {e}")
+                        else:
+                            st.warning("No logs returned from Better Stack. Check retention, source IDs, or query.")
+            else:
+                st.caption("Tip: Set BETTERSTACK_API_TOKEN and BETTERSTACK_SOURCE_IDS to enable persisted log downloads.")
+
+            # Supabase logs download (if configured)
+            sb_client = get_supabase_client()
+            if sb_client:
+                st.markdown("---")
+                st.markdown("**Supabase logs**")
+                import datetime as _dt
+                today = _dt.date.today()
+                default_start = today - _dt.timedelta(days=30)
+                date_range = st.date_input(
+                    "Select date range",
+                    value=(default_start, today),
+                    key="sb_date_range",
+                )
+                limit = st.number_input("Max rows", min_value=1000, max_value=100000, value=10000, step=1000, key="sb_limit")
+                if st.button("Fetch logs from Supabase", key="fetch_supabase_logs"):
+                    try:
+                        if isinstance(date_range, (list, tuple)) and len(date_range) == 2:
+                            start_date, end_date = date_range
+                        else:
+                            start_date = default_start
+                            end_date = today
+                        from_iso = f"{start_date.isoformat()}T00:00:00Z"
+                        to_iso = f"{end_date.isoformat()}T23:59:59Z"
+                        with st.spinner("Fetching logs from Supabase…"):
+                            rows = fetch_logs_supabase(from_iso, to_iso, limit=int(limit))
+                        if rows:
+                            ndjson = "\n".join(json.dumps(r, ensure_ascii=False) for r in rows)
+                            st.download_button(
+                                label="Download Supabase logs (JSONL)",
+                                data=ndjson,
+                                file_name="supabase_chat_logs.jsonl",
+                                mime="application/json",
+                                key="download_supabase_jsonl_btn",
+                            )
+                            st.success(f"Fetched {len(rows)} logs from Supabase.")
+                        else:
+                            st.warning("No logs returned for the selected range.")
+                    except Exception as e:
+                        st.error(f"Supabase fetch failed: {e}")
+            else:
+                st.caption("Tip: Add SUPABASE_URL and SUPABASE_SERVICE_KEY to enable Supabase logging & downloads.")
+
             if st.button("Lock admin", key="lock_admin"):
                 st.session_state["is_admin"] = False
 
@@ -151,6 +236,50 @@ try:
 except Exception:
     Settings = None
 import re
+
+# Better Stack Query API helper for persisted logs
+def fetch_betterstack_question_logs(source_ids: str, api_token: str, start_iso: Optional[str] = None, end_iso: Optional[str] = None, batch_size: int = 500) -> List[dict]:
+    """Fetch question logs from Better Stack Logs Query API.
+    Requires a Better Stack API token and one or more source IDs (comma-separated).
+    Returns a list of dicts.
+    """
+    try:
+        url = "https://telemetry.betterstack.com/api/v2/query/live-tail"
+        params = {
+            "source_ids": source_ids,
+            # Filter to only chatbot question events we emit via send_log_manually
+            "query": "app=inact-bot AND event=question",
+            "order": "oldest_first",
+            "batch": str(max(50, min(1000, batch_size))),
+        }
+        if start_iso:
+            params["from"] = start_iso
+        if end_iso:
+            params["to"] = end_iso
+        headers = {"Authorization": f"Bearer {api_token}"}
+        rows: List[dict] = []
+        session = requests.Session()
+        while True:
+            resp = session.get(url, headers=headers, params=params, timeout=15, allow_redirects=True)
+            if resp.status_code // 100 != 2:
+                print(f"Better Stack query failed: {resp.status_code} - {resp.text[:300]}")
+                break
+            payload = resp.json() or {}
+            data = payload.get("data", [])
+            if not isinstance(data, list):
+                break
+            rows.extend(data)
+            pagination = payload.get("pagination") or {}
+            next_url = pagination.get("next")
+            if not next_url:
+                break
+            # Use absolute next URL for pagination
+            url = next_url
+            params = {}
+        return rows
+    except Exception as e:
+        print(f"Better Stack fetch error: {e}")
+        return []
 
 # Load environment variables (e.g., your OPENAI_API_KEY)
 load_dotenv()
@@ -410,6 +539,58 @@ def get_llm():
 @st.cache_resource
 def get_embeddings():
     return OpenAIEmbeddings(openai_api_key=os.environ["OPENAI_API_KEY"]) 
+
+# Supabase client cache
+@st.cache_resource
+def get_supabase_client():
+    url = os.environ.get("SUPABASE_URL")
+    key = os.environ.get("SUPABASE_SERVICE_KEY")
+    if not url or not key or not create_client:
+        return None
+    try:
+        return create_client(url, key)
+    except Exception as e:
+        print(f"Supabase init failed: {e}")
+        return None
+
+
+def persist_log_to_supabase(role: str, user_id: str, text: str, event: str):
+    """Insert a log row into Supabase if configured. Safe no-op if not configured."""
+    try:
+        sb = get_supabase_client()
+        if not sb:
+            return
+        payload = {
+            "dt": datetime.utcnow().isoformat() + "Z",
+            "role": role,
+            "user_id": user_id,
+            "event": event,
+            "message": text or "",
+        }
+        sb.table("chat_logs").insert(payload).execute()
+    except Exception as e:
+        print(f"Supabase insert failed: {e}")
+
+
+def fetch_logs_supabase(from_iso: str, to_iso: str, limit: int = 10000):
+    """Fetch logs from Supabase in a time window. Returns list[dict] or []."""
+    try:
+        sb = get_supabase_client()
+        if not sb:
+            return []
+        resp = (
+            sb.table("chat_logs")
+              .select("*")
+              .gte("dt", from_iso)
+              .lte("dt", to_iso)
+              .order("dt", desc=False)
+              .limit(limit)
+              .execute()
+        )
+        return getattr(resp, "data", []) or []
+    except Exception as e:
+        print(f"Supabase fetch failed: {e}")
+        return []
 
 # --- Language Detection and Prompt Templates ---
 
