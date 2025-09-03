@@ -16,5 +16,8 @@ requests
 beautifulsoup4
 faiss-cpu
 docarray
-logtail-python
+
+# Better Stack removed
+
+# Supabase client
 supabase>=2.4.0

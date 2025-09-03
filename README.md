@@ -2,10 +2,13 @@
 
 A chatbot that uses Retrieval-Augmented Generation (RAG) to answer questions based on your company data.
 
+## Requirements
+- Python 3.11
+
 ## Setup
 
-1. Place your .txt, .png or .doxc files with company knowledge in the `data/` folder.
-2. Add your OpenAI API key to the `.env` file.
+1. Place your .txt, .png or .docx files with company knowledge in the `data/` folder.
+2. Copy `env.example` to `.env` and set `OPENAI_API_KEY=...` (or copy `streamlit-secrets.example.toml` to `.streamlit/secrets.toml`).
 3. Install dependencies:
    ```bash
    pip install -r requirements.txt
@@ -19,9 +22,11 @@ A chatbot that uses Retrieval-Augmented Generation (RAG) to answer questions bas
    streamlit run app.py
    ```
 
+6. Optional: To enable Supabase logging, add `SUPABASE_URL` and `SUPABASE_SERVICE_KEY` to `.env` or `.streamlit/secrets.toml`.
+
 ## Important notice
 - This chatbot is a prototype/demo. Answers may be inaccurate or incomplete.
-- Messages sent to the bot may be saved to help improve the assistant. The simple text log is stored in `user_questions.txt`.
+- Messages sent to the bot may be saved to help improve the assistant. The simple text log is stored in `chat_messages.jsonl`.
 - GitHub: A scheduled workflow (`.github/workflows/keepalive.yml`) performs a daily empty commit to keep website active
 
 ## Resources and recommendations

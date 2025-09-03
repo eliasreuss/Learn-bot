@@ -15,8 +15,8 @@ import requests
 import json
 from datetime import datetime
 
-# Prefer region-specific ingest URL if provided (copy from Better Stack "Ingesting host").
-BETTERSTACK_INGEST_URL = os.environ.get("BETTERSTACK_INGEST_URL") or os.environ.get("LOGTAIL_ENDPOINT") or "https://in.logs.betterstack.com"
+# (Deprecated) Better Stack disabled
+BETTERSTACK_INGEST_URL = ""
 
 # Optional Supabase imports will be resolved at runtime
 try:
@@ -25,35 +25,7 @@ except Exception:
     create_client = None
 
 def send_log_manually(message: str = None, **fields):
-    """Send a log directly to Better Stack via HTTP.
-    Uses `BETTERSTACK_INGEST_URL`/`LOGTAIL_ENDPOINT` if set; otherwise falls back to the generic endpoint.
-    Accepts arbitrary keyword fields to enable structured filtering in Better Stack.
-    """
-    token = os.environ.get("LOGTAIL_TOKEN")
-    if not token:
-        print("MANUAL LOG FAIL: No LOGTAIL_TOKEN found.")
-        return
-
-    url = BETTERSTACK_INGEST_URL
-
-    headers = {
-        "Content-Type": "application/json",
-        "Authorization": f"Bearer {token}",
-    }
-    payload = {
-        "dt": datetime.utcnow().isoformat() + "Z",
-        "message": message or "",
-    }
-    # Merge structured fields for easier querying (role, event, user_id, etc.)
-    payload.update({k: v for k, v in fields.items() if v is not None})
-
-    try:
-        response = requests.post(url, headers=headers, data=json.dumps(payload), timeout=10)
-        if response.status_code // 100 != 2:
-            print(f"MANUAL LOG ERROR: {response.status_code} - {response.text}")
-        response.raise_for_status()
-    except requests.exceptions.RequestException as e:
-        print(f"MANUAL LOG FAILED: Could not send log to Better Stack. Error: {e}")
+    return
 
 
 def append_local_chat_log(role: str, user_id: str, text: str, event: str):
@@ -85,7 +57,7 @@ def log_chat_message(role: str, user_id: str, text: str, event: str):
     if event in {"question", "answer"}:
         append_local_chat_log(role, user_id, text, event)
         persist_log_to_supabase(role, user_id, text, event)
-    send_log_manually(message=text, role=role, user_id=user_id, event=event, app="inact-bot")
+    # External Better Stack logging removed
 
 
 def render_admin_sidebar():
@@ -220,48 +192,8 @@ except Exception:
 import re
 
 # Better Stack Query API helper for persisted logs
-def fetch_betterstack_question_logs(source_ids: str, api_token: str, start_iso: Optional[str] = None, end_iso: Optional[str] = None, batch_size: int = 500) -> List[dict]:
-    """Fetch question logs from Better Stack Logs Query API.
-    Requires a Better Stack API token and one or more source IDs (comma-separated).
-    Returns a list of dicts.
-    """
-    try:
-        url = "https://telemetry.betterstack.com/api/v2/query/live-tail"
-        params = {
-            "source_ids": source_ids,
-            # Filter to only chatbot question events we emit via send_log_manually
-            "query": "app=inact-bot AND event=question",
-            "order": "oldest_first",
-            "batch": str(max(50, min(1000, batch_size))),
-        }
-        if start_iso:
-            params["from"] = start_iso
-        if end_iso:
-            params["to"] = end_iso
-        headers = {"Authorization": f"Bearer {api_token}"}
-        rows: List[dict] = []
-        session = requests.Session()
-        while True:
-            resp = session.get(url, headers=headers, params=params, timeout=15, allow_redirects=True)
-            if resp.status_code // 100 != 2:
-                print(f"Better Stack query failed: {resp.status_code} - {resp.text[:300]}")
-                break
-            payload = resp.json() or {}
-            data = payload.get("data", [])
-            if not isinstance(data, list):
-                break
-            rows.extend(data)
-            pagination = payload.get("pagination") or {}
-            next_url = pagination.get("next")
-            if not next_url:
-                break
-            # Use absolute next URL for pagination
-            url = next_url
-            params = {}
-        return rows
-    except Exception as e:
-        print(f"Better Stack fetch error: {e}")
-        return []
+def fetch_betterstack_question_logs(*args, **kwargs) -> List[dict]:
+    return []
 
 # Load environment variables (e.g., your OPENAI_API_KEY)
 load_dotenv()
