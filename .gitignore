@@ -56,3 +56,4 @@ node_modules/
 chat_messages.jsonl
 .DS_Store
 long-knowledge/
+user-data.ipynb
