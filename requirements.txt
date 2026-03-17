@@ -3,6 +3,7 @@ langchain
 langchain-community
 langchain-openai
 langchain-chroma
+langchain-text-splitters
 python-dotenv
 chromadb
 docx2txt
