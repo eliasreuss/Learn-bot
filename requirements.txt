@@ -1,5 +1,4 @@
 pysqlite3-binary; sys_platform != 'darwin'
-streamlit
 langchain
 langchain-community
 langchain-openai
@@ -14,10 +13,6 @@ pydantic
 pypdf
 requests
 beautifulsoup4
-faiss-cpu
-docarray
 
-# Better Stack removed
-
-# Supabase client
+# Supabase client (optional, for logging)
 supabase>=2.4.0
