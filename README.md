@@ -2,37 +2,37 @@
 
 A chatbot that uses Retrieval-Augmented Generation (RAG) to answer questions based on your company data.
 
-## Quick start (kør lokalt)
+## Quick start (run locally)
 
-**Forudsætninger:** Python 3.11, Node.js, og en [OpenAI API-nøgle](https://platform.openai.com/api-keys).
+**Prerequisites:** Python 3.11, Node.js, and an [OpenAI API key](https://platform.openai.com/api-keys).
 
-1. **Klon og gå ind i projektet**
+1. **Clone and enter the project**
    ```bash
    git clone <repo-url>
    cd ts-gpt-chatbot
    ```
 
-2. **Sæt OpenAI API-nøgle**
+2. **Set OpenAI API key**
    ```bash
    cp env.example .env
    ```
-   Åbn `.env` og erstat `your-openai-api-key` med din rigtige nøgle (fx `sk-proj-...`). Gem filen.
+   Open `.env` and replace `your-openai-api-key` with your actual key (e.g. `sk-proj-...`). Save the file.
 
-3. **Backend** (ét terminalvindue)
+3. **Backend** (one terminal window)
    ```bash
    python -m venv venv
-   source venv/bin/activate   # Mac/Linux — på Windows: venv\Scripts\activate
+   source venv/bin/activate   # Mac/Linux — on Windows: venv\Scripts\activate
    pip install -r requirements.txt
    uvicorn chatbot:app --host 0.0.0.0 --port 8000 --reload
    ```
-   Første gang bygges vektordatabasen (1–2 min). Vent til du ser "Ready."
+   On first run, the vector database is built (1–2 min). Wait until you see "Ready."
 
-4. **Frontend** (nyt terminalvindue)
+4. **Frontend** (new terminal window)
    ```bash
    cd ui && npm install && npm run dev
    ```
 
-5. **Åbn** [http://localhost:5173](http://localhost:5173)
+5. **Open** [http://localhost:5173](http://localhost:5173)
 
 ---
 
