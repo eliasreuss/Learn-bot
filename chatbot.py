@@ -698,17 +698,16 @@ async def health():
     return {"status": "ok"}
 
 
-# Serve built React frontend — must come after all /api routes
-STATIC_DIR = os.path.join(BASE_DIR, "ui", "dist")
-if os.path.exists(STATIC_DIR):
-    app.mount("/assets", StaticFiles(directory=os.path.join(STATIC_DIR, "assets")), name="assets")
+# Serve React frontend (production build)
+UI_DIST = os.path.join(BASE_DIR, "ui", "dist")
+if os.path.exists(UI_DIST):
+    app.mount("/assets", StaticFiles(directory=os.path.join(UI_DIST, "assets")), name="assets")
 
-    @app.get("/{full_path:path}")
+    @app.get("/{full_path:path}", include_in_schema=False)
     async def serve_frontend(full_path: str):
-        return FileResponse(os.path.join(STATIC_DIR, "index.html"))
+        return FileResponse(os.path.join(UI_DIST, "index.html"))
 
 
 if __name__ == "__main__":
     import uvicorn
-    port = int(os.environ.get("PORT", 8000))
-    uvicorn.run(app, host="0.0.0.0", port=port)
+    uvicorn.run(app, host="0.0.0.0", port=int(os.environ.get("PORT", 8000)))
